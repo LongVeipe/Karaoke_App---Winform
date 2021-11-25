@@ -1,0 +1,12 @@
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\bin\Debug\KaraokeApp.exe.config
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\bin\Debug\KaraokeApp.exe
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\bin\Debug\KaraokeApp.pdb
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\bin\Debug\Guna.UI2.dll
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\obj\Debug\KaraokeApp.csprojAssemblyReference.cache
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\obj\Debug\KaraokeApp.Form1.resources
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\obj\Debug\KaraokeApp.Properties.Resources.resources
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\obj\Debug\KaraokeApp.csproj.GenerateResource.cache
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\obj\Debug\KaraokeApp.csproj.CoreCompileInputs.cache
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\obj\Debug\KaraokeApp.csproj.CopyComplete
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\obj\Debug\KaraokeApp.exe
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\obj\Debug\KaraokeApp.pdb
