@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VPKSoft.DropOutStack</name>
+    </assembly>
+    <members>
+        <member name="T:VPKSoft.DropOutStack.DropOutStack`1">
+            <summary>
+            A class for limited capacity dropout stack.
+            Implements the <see cref="T:System.Collections.Generic.IEnumerable`1" />
+            Implements the <see cref="T:System.Collections.Generic.IEnumerator`1" />
+            </summary>
+            <typeparam name="T">Specifies the type of elements in the stack.</typeparam>
+            <seealso cref="T:System.Collections.Generic.IEnumerable`1" />
+            <seealso cref="T:System.Collections.Generic.IEnumerator`1" />
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/> class.
+            </summary>
+            <param name="capacity">The maximum capacity of the stack.</param>
+        </member>
+        <member name="P:VPKSoft.DropOutStack.DropOutStack`1.Item(System.Int32)">
+            <summary>
+            Gets the <typeparamref name="T"/> at the specified index.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">index - The index is out of range.</exception>
+        </member>
+        <member name="P:VPKSoft.DropOutStack.DropOutStack`1.Capacity">
+            <summary>
+            Gets or sets the maximum capacity for items for this <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/> instance. 
+            </summary>
+            <value>The maximum capacity for items for this <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/> instance.</value>
+            <remarks>Setting the capacity value to a new one will clear the data stored in this <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/> instance.</remarks>
+        </member>
+        <member name="P:VPKSoft.DropOutStack.DropOutStack`1.Count">
+             <summary>
+            Gets the number of elements contained in the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/>.
+             </summary>
+             <value>The number of elements contained in the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/>.</value>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.Clear">
+            <summary>
+            Removes all objects from the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/>.
+            </summary>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.Peek">
+            <summary>
+            Returns the object at the top of the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/> without removing it.
+            </summary>
+            <returns>The object at the top of the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/>.</returns>
+            <exception cref="T:System.InvalidOperationException">The <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/> is empty.</exception>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.Pop">
+            <summary>
+            Removes and returns the object at the top of the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/>.
+            </summary>
+            <returns>The object removed from the top of the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/>.</returns>
+            <exception cref="T:System.InvalidOperationException">The <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/> is empty.</exception>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.Push(`0)">
+            <summary>
+            Inserts an object at the top of the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/>.
+            </summary>
+            <param name="item">The object to push onto the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/>. The value can be null for reference types.</param>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.ToArray">
+            <summary>
+            Copies the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/> to a new array.
+            </summary>
+            <returns>A new array containing copies of the elements of the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/>.</returns>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>An enumerator that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.MoveNext">
+            <summary>
+            Advances the enumerator to the next element of the collection.
+            </summary>
+            <returns><see langword="true" /> if the enumerator was successfully advanced to the next element; <see langword="false" /> if the enumerator has passed the end of the collection.</returns>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.Reset">
+            <summary>
+            Sets the enumerator to its initial position, which is before the first element in the collection.
+            </summary>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.Initialize(System.Int32)">
+            <summary>
+            Initializes the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/> with a new capacity.
+            </summary>
+            <param name="capacityValue">The new capacity value for the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/>.</param>
+        </member>
+        <member name="P:VPKSoft.DropOutStack.DropOutStack`1.Current">
+            <summary>
+            Gets the element in the collection at the current position of the enumerator.
+            </summary>
+            <value>The current.</value>
+        </member>
+        <member name="P:VPKSoft.DropOutStack.DropOutStack`1.System#Collections#IEnumerator#Current">
+            <summary>
+            Gets the element in the collection at the current position of the enumerator.
+            </summary>
+            <value>The current.</value>
+        </member>
+        <member name="M:VPKSoft.DropOutStack.DropOutStack`1.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:VPKSoft.DropOutStack.DropOutStack`1"/> class.
+            </summary>
+        </member>
+    </members>
+</doc>
