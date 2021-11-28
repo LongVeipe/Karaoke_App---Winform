@@ -75,9 +75,15 @@ namespace KaraokeApp
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        public void PlayMusic(string path)
+        public void PlayMusic(string newPath="")
         {
-            player.URL = path;
+            if (newPath == player.URL)
+                return;
+            else if (newPath != "")
+            {
+                ShowPlayingInfo(newPath);
+                player.URL = newPath;
+            }
             player.Ctlcontrols.play();
             //buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             buttonPlay.Image = Properties.Resources.icons8_pause_button_48;
@@ -153,7 +159,7 @@ namespace KaraokeApp
 
         private void panelTop_MouseDown(object sender, MouseEventArgs e)
         {
-            DragForm(sender, e);
+            //DragForm(sender, e);
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
@@ -161,9 +167,7 @@ namespace KaraokeApp
             OpenFileDialog ofd = new OpenFileDialog();
             if(ofd.ShowDialog() == DialogResult.OK)
             {
-                ShowPlayingInfo(ofd.FileName);
-                player.URL = ofd.FileName;
-                PlayMusic(player.URL);
+                PlayMusic(ofd.FileName);
                 RecentlyMusics.getInstant().Add(ofd.FileName);
             }
         }
@@ -194,7 +198,7 @@ namespace KaraokeApp
                 }
                 else if (player.playState == WMPLib.WMPPlayState.wmppsPaused)
                 {
-                    PlayMusic(player.URL);
+                    PlayMusic();
                 }
             }
         }

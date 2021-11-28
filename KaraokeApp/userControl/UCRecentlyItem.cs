@@ -73,6 +73,7 @@ namespace KaraokeApp
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             ((FormMain)(this.Parent.Parent.Parent.Parent.Parent.Parent)).PlayMusic(musicPath);
+
         }
     }
 }
