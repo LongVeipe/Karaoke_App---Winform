@@ -98,5 +98,10 @@ namespace KaraokeApp
                 panelAlbums.AutoScrollPosition = new Point(panelAlbumsLocation, 0);
             }
         }
+
+        private void panelAlbums_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

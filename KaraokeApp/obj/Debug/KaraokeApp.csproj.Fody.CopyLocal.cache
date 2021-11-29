@@ -1,44 +1,64 @@
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Accord.Controls.3.8.0\lib\net462\Accord.Controls.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Accord.3.8.0\lib\net462\Accord.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Accord.MachineLearning.3.8.0\lib\net462\Accord.MachineLearning.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Accord.Math.3.8.0\lib\net462\Accord.Math.Core.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Accord.Math.3.8.0\lib\net462\Accord.Math.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Accord.Statistics.3.8.0\lib\net462\Accord.Statistics.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\FftSharp.1.0.8\lib\netstandard2.0\FftSharp.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Guna.UI2.WinForms.2.0.2.5\lib\net40\Guna.UI2.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\NAudio.Asio.2.0.0\lib\netstandard2.0\NAudio.Asio.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\NAudio.Core.2.0.0\lib\netstandard2.0\NAudio.Core.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\NAudio.Midi.2.0.1\lib\netstandard2.0\NAudio.Midi.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\NAudio.Wasapi.2.0.0\lib\netstandard2.0\NAudio.Wasapi.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\NAudio.WinForms.2.0.1\lib\net472\NAudio.WinForms.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\NAudio.WinMM.2.0.1\lib\netstandard2.0\NAudio.WinMM.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\taglib-sharp-netstandard2.0.2.1.0\lib\netstandard2.0\taglib-sharp.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\VPKSoft.DropOutStack.1.0.0\lib\netstandard2.0\VPKSoft.DropOutStack.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Accord.3.8.0\lib\net462\Accord.xml
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Accord.Controls.3.8.0\lib\net462\Accord.Controls.xml
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Accord.MachineLearning.3.8.0\lib\net462\Accord.MachineLearning.xml
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Accord.Math.3.8.0\lib\net462\Accord.Math.xml
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Accord.Math.3.8.0\lib\net462\Accord.Math.Core.xml
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Accord.Statistics.3.8.0\lib\net462\Accord.Statistics.xml
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.xml
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.xml
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.xml
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\VPKSoft.DropOutStack.1.0.0\lib\netstandard2.0\VPKSoft.DropOutStack.xml
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.xml
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\de\ZedGraph.resources.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\es\ZedGraph.resources.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\fr\ZedGraph.resources.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\hu\ZedGraph.resources.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\it\ZedGraph.resources.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\ja\ZedGraph.resources.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\pt\ZedGraph.resources.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\ru\ZedGraph.resources.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\sk\ZedGraph.resources.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\sv\ZedGraph.resources.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\tr\ZedGraph.resources.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\zh-cn\ZedGraph.resources.dll
-C:\Users\LongVeipe\Desktop\KaraokeApp\packages\ZedGraph.5.1.7\lib\net35-Client\zh-tw\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Accord.Controls.3.8.0\lib\net462\Accord.Controls.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Accord.3.8.0\lib\net462\Accord.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Accord.MachineLearning.3.8.0\lib\net462\Accord.MachineLearning.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Accord.Math.3.8.0\lib\net462\Accord.Math.Core.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Accord.Math.3.8.0\lib\net462\Accord.Math.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Accord.Statistics.3.8.0\lib\net462\Accord.Statistics.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\DnsClient.1.4.0\lib\net471\DnsClient.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\FftSharp.1.0.8\lib\netstandard2.0\FftSharp.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Guna.UI2.WinForms.2.0.2.5\lib\net40\Guna.UI2.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\MongoDB.Bson.2.14.0\lib\net472\MongoDB.Bson.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\MongoDB.Driver.Core.2.14.0\lib\net472\MongoDB.Driver.Core.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\MongoDB.Driver.2.14.0\lib\net472\MongoDB.Driver.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\MongoDB.Libmongocrypt.1.3.0\lib\net472\MongoDB.Libmongocrypt.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\NAudio.Asio.2.0.0\lib\netstandard2.0\NAudio.Asio.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\NAudio.Core.2.0.0\lib\netstandard2.0\NAudio.Core.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\NAudio.Midi.2.0.1\lib\netstandard2.0\NAudio.Midi.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\NAudio.Wasapi.2.0.0\lib\netstandard2.0\NAudio.Wasapi.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\NAudio.WinForms.2.0.1\lib\net472\NAudio.WinForms.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\NAudio.WinMM.2.0.1\lib\netstandard2.0\NAudio.WinMM.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\SharpCompress.0.30.1\lib\net461\SharpCompress.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\taglib-sharp-netstandard2.0.2.1.0\lib\netstandard2.0\taglib-sharp.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\VPKSoft.DropOutStack.1.0.0\lib\netstandard2.0\VPKSoft.DropOutStack.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Accord.3.8.0\lib\net462\Accord.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Accord.Controls.3.8.0\lib\net462\Accord.Controls.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Accord.MachineLearning.3.8.0\lib\net462\Accord.MachineLearning.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Accord.Math.3.8.0\lib\net462\Accord.Math.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Accord.Math.3.8.0\lib\net462\Accord.Math.Core.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Accord.Statistics.3.8.0\lib\net462\Accord.Statistics.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\DnsClient.1.4.0\lib\net471\DnsClient.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\MongoDB.Bson.2.14.0\lib\net472\MongoDB.Bson.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\MongoDB.Driver.2.14.0\lib\net472\MongoDB.Driver.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\MongoDB.Driver.Core.2.14.0\lib\net472\MongoDB.Driver.Core.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Memory.4.5.4\lib\net461\System.Memory.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\VPKSoft.DropOutStack.1.0.0\lib\netstandard2.0\VPKSoft.DropOutStack.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\de\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\es\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\fr\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\hu\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\it\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\ja\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\pt\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\ru\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\sk\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\sv\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\tr\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\zh-cn\ZedGraph.resources.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\packages\ZedGraph.5.1.7\lib\net35-Client\zh-tw\ZedGraph.resources.dll

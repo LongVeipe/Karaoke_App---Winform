@@ -26,8 +26,10 @@ namespace KaraokeApp
         public FormMain()
         {
             InitializeComponent();
+            //DatabaseHelper.CreateConnection();
 
-            OpenChildForm(new FormHome());
+            OpenChildForm(new FormPlayer());
+            //LyricUtil.ReadLRCFile("./ZO0AZO7E.lrc");
         }
 
 
