@@ -63,3 +63,4 @@ C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\bin\Debug\taglib-sharp.dll
 C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\obj\Debug\KaraokeApp.FormHome.resources
 C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\obj\Debug\KaraokeApp.UCAlbumItem.resources
 C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\obj\Debug\KaraokeApp.UCRecentlyItem.resources
+C:\Users\LongVeipe\Desktop\KaraokeApp\KaraokeApp\obj\Debug\KaraokeApp.FormFavorite.resources

@@ -118,6 +118,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="data\RecentlyMusics.cs" />
+    <Compile Include="FormFavorite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFavorite.Designer.cs">
+      <DependentUpon>FormFavorite.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControl\UCRecentlyItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormFavorite.resx">
+      <DependentUpon>FormFavorite.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
