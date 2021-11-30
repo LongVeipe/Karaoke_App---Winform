@@ -167,6 +167,7 @@ namespace KaraokeApp
         {
             ActivateButton(sender);
             FormPlayer formPlayer = new FormPlayer();
+
             OpenChildForm(formPlayer);
             formPlayer.UpdateLyric(trackBar.Value);
             
@@ -183,6 +184,10 @@ namespace KaraokeApp
             {
                 PlayMusic(ofd.FileName);
                 RecentlyMusics.getInstant().Add(ofd.FileName);
+
+                // Update Current Song
+                Song newSong = new Song(labelPlayingTitle.Text, ofd.FileName);
+                DataPool.UpdateCurrentSong(newSong);
             }
         }
 
