@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KaraokeApp.data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,8 @@ namespace KaraokeApp
 
         public void UpdateLyric(long ms)
         {
-            lyricViewPanel.UpdateToCurrentPosition(ms);
+            if(DataPool.GetCurrentSong() != null)
+                lyricViewPanel.UpdateToCurrentPosition(ms);
         }
 
         public void PauseLyric()

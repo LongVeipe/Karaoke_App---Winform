@@ -34,20 +34,20 @@ namespace KaraokeApp.customControl
 
         public LyricView()
         {
+                //this.BackColor = Color.FromArgb(25, Color.Transparent);
+                //Set Lyric List
+                lyricList = LyricUtil.ReadLRCFile("./ZO0AZO7E.lrc");
 
-            //this.BackColor = Color.FromArgb(25, Color.Transparent);
-            //Set Lyric List
-            lyricList = LyricUtil.ReadLRCFile("./ZO0AZO7E.lrc");
+                //Set the current line
+                currentPen = new Pen(currentColor, currentSize);
+                currentPen.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
 
-            //Set the current line
-            currentPen = new Pen(currentColor, currentSize);
-            currentPen.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
+                //Set the other lines
+                otherPen = new Pen(otherColor, otherSize);
+                otherPen.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
 
-            //Set the other lines
-            otherPen = new Pen(otherColor, otherSize);
-            otherPen.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
-
-            this.Paint += new PaintEventHandler(LyricView_Paint);
+                this.Paint += new PaintEventHandler(LyricView_Paint);
+            
         }
 
 
@@ -86,46 +86,51 @@ namespace KaraokeApp.customControl
         {
             Panel pnlLyricView = sender as Panel;
             Graphics grap = e.Graphics;
-            if(currentLine < lyricList.Count)
+
+            if(DataPool.GetCurrentSong() != null)
             {
-                if(lyricList != null && lyricList.Count > 0)
+                if (currentLine < lyricList.Count)
                 {
-                    Lyric lyrc = null;
-
-                    //Previous Line
-                    for(int i = currentLine - 1; i >= 0;i--)
+                    if (lyricList != null && lyricList.Count > 0)
                     {
-                        lyrc = lyricList[i];
-                        grap.DrawString(lyrc.lyricString,font,otherBrush,0,
-                            this.Height/2 + lineSpacing * (i - currentLine));
+                        Lyric lyrc = null;
 
+                        //Previous Line
+                        for (int i = currentLine - 1; i >= 0; i--)
+                        {
+                            lyrc = lyricList[i];
+                            grap.DrawString(lyrc.lyricString, font, otherBrush, 0,
+                                this.Height / 2 + lineSpacing * (i - currentLine));
+
+                        }
+
+                        //Current Line
+                        lyrc = lyricList[currentLine];
+                        grap.DrawString(lyrc.lyricString, font, currentBrush, 0,
+                                this.Height / 2);
+
+
+
+                        // Next Line
+                        for (int i = currentLine + 1; i < lyricList.Count; i++)
+                        {
+                            lyrc = lyricList[i];
+                            grap.DrawString(lyrc.lyricString, font, otherBrush, 0,
+                                this.Height / 2 + lineSpacing * (i - currentLine));
+
+                        }
+
+                        //Time between two lyric: current and next
+                        int spleepTime = (int)(lyricList[currentLine + 1].timePoint -
+                            lyricList[currentLine].timePoint);
+                        if (!paused)
+                        {
+                            currentLine++;
+                            DelayTime(spleepTime);
+                        }
                     }
-
-                    //Current Line
-                    lyrc = lyricList[currentLine];
-                    grap.DrawString(lyrc.lyricString, font, currentBrush,0,
-                            this.Height / 2);
-
-
-
-                    // Next Line
-                    for(int i = currentLine + 1; i < lyricList.Count; i++)
-                    {
-                        lyrc = lyricList[i];
-                        grap.DrawString(lyrc.lyricString, font, otherBrush,0,
-                            this.Height / 2 + lineSpacing * (i - currentLine));
-
-                    }
-
-                    //Time between two lyric: current and next
-                    int spleepTime =(int) (lyricList[currentLine + 1].timePoint -
-                        lyricList[currentLine].timePoint);
-                    if(!paused)
-                    {
-                        currentLine++;
-                        DelayTime(spleepTime);
-                    }                        
                 }
+
             }
 
         }
