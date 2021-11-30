@@ -34,6 +34,7 @@ namespace KaraokeApp.customControl
         public LyricView()
         {
 
+            this.BackColor = Color.FromArgb(25, Color.Transparent);
             //Set Lyric List
             lyricList = LyricUtil.ReadLRCFile("./ZO0AZO7E.lrc");
 

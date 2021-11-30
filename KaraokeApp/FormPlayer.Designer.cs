@@ -30,10 +30,10 @@ namespace KaraokeApp
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lyricView1 = new KaraokeApp.customControl.LyricView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.lyricView1 = new KaraokeApp.customControl.LyricView();
             this.panel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +49,15 @@ namespace KaraokeApp
             this.panel1.Size = new System.Drawing.Size(849, 611);
             this.panel1.TabIndex = 0;
             // 
+            // lyricView1
+            // 
+            this.lyricView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lyricView1.Location = new System.Drawing.Point(55, 46);
+            this.lyricView1.Name = "lyricView1";
+            this.lyricView1.Size = new System.Drawing.Size(742, 490);
+            this.lyricView1.TabIndex = 1;
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -56,7 +65,7 @@ namespace KaraokeApp
             this.guna2Panel1.BorderRadius = 10;
             this.guna2Panel1.Controls.Add(this.guna2Button2);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
-            this.guna2Panel1.Location = new System.Drawing.Point(274, 563);
+            this.guna2Panel1.Location = new System.Drawing.Point(279, 563);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(304, 45);
@@ -105,15 +114,6 @@ namespace KaraokeApp
             this.guna2Button1.Size = new System.Drawing.Size(144, 37);
             this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Text = "Karaoke";
-            // 
-            // lyricView1
-            // 
-            this.lyricView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lyricView1.Location = new System.Drawing.Point(55, 46);
-            this.lyricView1.Name = "lyricView1";
-            this.lyricView1.Size = new System.Drawing.Size(742, 490);
-            this.lyricView1.TabIndex = 1;
             // 
             // FormPlayer
             // 
