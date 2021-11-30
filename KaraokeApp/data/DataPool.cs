@@ -9,30 +9,39 @@ namespace KaraokeApp.data
     class DataPool
     {
         private static List<Song> songList;
-        private static List<Album> albumList;
         private static Song currentSong;
+        private static List<Song> recentlyPlayedList;
+        private static List<Album> albumList;
 
 
-        public static void UpdateCurrentSong(Song _currentSong)
+        public static void UpdateCurrentSong(Song _song)
         {
-            currentSong = _currentSong;
+            currentSong = _song;
         }
-
 
         public static Song GetCurrentSong()
         {
             return currentSong;
         }
-
-
+        
         public static void UpdateSongList(List<Song> _songList)
         {
             songList = _songList;
         }
 
-        public static List<Song> GetCurrentSongList()
+        public static List<Song> GetSongList()
         {
             return songList;
+        }
+
+        public static void UpdateRecentlyPlayedList(List<Song> _songList)
+        {
+            recentlyPlayedList = _songList;
+        }
+
+        public static List<Song> GetRecentlyPlayedList()
+        {
+            return recentlyPlayedList;
         }
     }
 }

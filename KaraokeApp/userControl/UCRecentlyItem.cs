@@ -70,10 +70,16 @@ namespace KaraokeApp
             labelTitle.Text = title;
         }
 
+        public void PauseMusic()
+        {
+            buttonPlay.Visible = true;
+        }
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            ((FormMain)(this.Parent.Parent.Parent.Parent.Parent.Parent)).PlayMusic(musicPath);
+            buttonPlay.Visible = false;
 
+            ((FormHome)(this.Parent.Parent.Parent)).PlayRecently(this);
         }
+
     }
 }

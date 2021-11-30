@@ -22,13 +22,13 @@ namespace KaraokeApp
 
         private Guna2CircleButton currentBtn;
         private Form currentChildForm;
+        
 
         public FormMain()
         {
             InitializeComponent();
-            //DatabaseHelper.CreateConnection();
 
-            OpenChildForm(new FormPlayer());
+            OpenChildForm(new FormHome());
             //LyricUtil.ReadLRCFile("./ZO0AZO7E.lrc");
         }
 
@@ -97,6 +97,10 @@ namespace KaraokeApp
             player.Ctlcontrols.pause();
             //buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("buttonPlay.Image")));
             buttonPlay.Image = Properties.Resources.icons8_circled_play_48;
+            if(currentChildForm is FormPlayer)
+            {
+                ((FormPlayer)currentChildForm).PauseLyric();
+            }
         }
 
         void RepeatMusic()
@@ -159,6 +163,14 @@ namespace KaraokeApp
             ActivateButton(sender);
         }
 
+        private void buttonLyric_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            FormPlayer formPlayer = new FormPlayer();
+            OpenChildForm(formPlayer);
+            formPlayer.UpdateLyric(trackBar.Value);
+            
+        }
         private void panelTop_MouseDown(object sender, MouseEventArgs e)
         {
             //DragForm(sender, e);
@@ -197,10 +209,15 @@ namespace KaraokeApp
                 if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
                     PauseMusic();
+
                 }
                 else if (player.playState == WMPLib.WMPPlayState.wmppsPaused)
                 {
                     PlayMusic();
+                    if(currentChildForm is FormPlayer)
+                    {
+                        ((FormPlayer)currentChildForm).ContinueLyric(trackBar.Value);
+                    }
                 }
             }
         }
@@ -210,7 +227,12 @@ namespace KaraokeApp
             if (player.Ctlcontrols.currentItem == null)
                 trackBar.Value = 0;
             player.Ctlcontrols.currentPosition = trackBar.Value;
+            
 
+            if(currentChildForm is FormPlayer)
+            {
+                ((FormPlayer)currentChildForm).UpdateLyric(trackBar.Value * 1000);
+            }
         }
 
         private void trackBar_ValueChanged(object sender, EventArgs e)
@@ -219,5 +241,6 @@ namespace KaraokeApp
                 RepeatMusic();
         }
 
+       
     }
 }

@@ -15,6 +15,23 @@ namespace KaraokeApp
         public FormPlayer()
         {
             InitializeComponent();
+            
+        }
+
+        public void UpdateLyric(long ms)
+        {
+            lyricViewPanel.UpdateToCurrentPosition(ms);
+        }
+
+        public void PauseLyric()
+        {
+            lyricViewPanel.PauseLyric();
+        }
+
+        public void ContinueLyric(long ms)
+        {
+            lyricViewPanel.UpdateToCurrentPosition(ms);
+            lyricViewPanel.ContinueLyric();
         }
     }
 }

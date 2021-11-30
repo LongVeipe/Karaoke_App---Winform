@@ -30,7 +30,7 @@ namespace KaraokeApp
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lyricView1 = new KaraokeApp.customControl.LyricView();
+            this.lyricViewPanel = new KaraokeApp.customControl.LyricView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -41,7 +41,7 @@ namespace KaraokeApp
             // panel1
             // 
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.lyricView1);
+            this.panel1.Controls.Add(this.lyricViewPanel);
             this.panel1.Controls.Add(this.guna2Panel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -49,14 +49,14 @@ namespace KaraokeApp
             this.panel1.Size = new System.Drawing.Size(849, 611);
             this.panel1.TabIndex = 0;
             // 
-            // lyricView1
+            // lyricViewPanel
             // 
-            this.lyricView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lyricViewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lyricView1.Location = new System.Drawing.Point(55, 46);
-            this.lyricView1.Name = "lyricView1";
-            this.lyricView1.Size = new System.Drawing.Size(742, 490);
-            this.lyricView1.TabIndex = 1;
+            this.lyricViewPanel.Location = new System.Drawing.Point(55, 46);
+            this.lyricViewPanel.Name = "lyricViewPanel";
+            this.lyricViewPanel.Size = new System.Drawing.Size(742, 490);
+            this.lyricViewPanel.TabIndex = 1;
             // 
             // guna2Panel1
             // 
@@ -137,6 +137,6 @@ namespace KaraokeApp
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private customControl.LyricView lyricView1;
+        private customControl.LyricView lyricViewPanel;
     }
 }

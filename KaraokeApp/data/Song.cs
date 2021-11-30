@@ -1,17 +1,37 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using System.Runtime.Serialization;
 
 namespace KaraokeApp.data
 {
     class Song
     {
-        private string name;
-        private string streamLink;
-        private string beatLink;
-        private string lyricLink;
+
+        [BsonId]
+        [DataMember]
+        public MongoDB.Bson.ObjectId _id { get; set; }
+
+        [DataMember]
+        [BsonElement("name")]
+        public string name { get; set; }
+
+        [DataMember]
+        [BsonElement("streamLink")]
+        public string streamLink { get; set; }
+
+        [DataMember]
+        [BsonElement("beatLink")]
+        public string beatLink { get; set; }
+
+        [DataMember]
+        [BsonElement("lyricLink")]
+        public string lyricLink { get; set; }
 
         public Song(string _name = "", string _streamLink = "")
         {

@@ -36,8 +36,6 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelLovely = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonAlbumRight = new KaraokeApp.RoundedButton();
-            this.buttonAlbumLeft = new KaraokeApp.RoundedButton();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -45,8 +43,6 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.buttonAlbumRight);
-            this.guna2Panel1.Controls.Add(this.buttonAlbumLeft);
             this.guna2Panel1.Controls.Add(this.panelAlbums);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -63,7 +59,6 @@
             this.panelAlbums.Size = new System.Drawing.Size(865, 233);
             this.panelAlbums.TabIndex = 2;
             this.panelAlbums.WrapContents = false;
-            this.panelAlbums.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAlbums_Paint);
             // 
             // labelScreenName
             // 
@@ -131,46 +126,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Your Lovely Playlist";
             // 
-            // buttonAlbumRight
-            // 
-            this.buttonAlbumRight.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonAlbumRight.BackColor = System.Drawing.Color.White;
-            this.buttonAlbumRight.BackgroundColor = System.Drawing.Color.White;
-            this.buttonAlbumRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAlbumRight.BorderColor = System.Drawing.Color.White;
-            this.buttonAlbumRight.BorderRadius = 20;
-            this.buttonAlbumRight.BorderSize = 1;
-            this.buttonAlbumRight.FlatAppearance.BorderSize = 0;
-            this.buttonAlbumRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAlbumRight.ForeColor = System.Drawing.Color.White;
-            this.buttonAlbumRight.Location = new System.Drawing.Point(795, 93);
-            this.buttonAlbumRight.Name = "buttonAlbumRight";
-            this.buttonAlbumRight.Size = new System.Drawing.Size(40, 40);
-            this.buttonAlbumRight.TabIndex = 1;
-            this.buttonAlbumRight.TextColor = System.Drawing.Color.White;
-            this.buttonAlbumRight.UseVisualStyleBackColor = false;
-            this.buttonAlbumRight.Click += new System.EventHandler(this.buttonAlbumRight_Click);
-            // 
-            // buttonAlbumLeft
-            // 
-            this.buttonAlbumLeft.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonAlbumLeft.BackColor = System.Drawing.Color.White;
-            this.buttonAlbumLeft.BackgroundColor = System.Drawing.Color.White;
-            this.buttonAlbumLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAlbumLeft.BorderColor = System.Drawing.Color.White;
-            this.buttonAlbumLeft.BorderRadius = 20;
-            this.buttonAlbumLeft.BorderSize = 1;
-            this.buttonAlbumLeft.FlatAppearance.BorderSize = 0;
-            this.buttonAlbumLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAlbumLeft.ForeColor = System.Drawing.Color.White;
-            this.buttonAlbumLeft.Location = new System.Drawing.Point(30, 93);
-            this.buttonAlbumLeft.Name = "buttonAlbumLeft";
-            this.buttonAlbumLeft.Size = new System.Drawing.Size(40, 40);
-            this.buttonAlbumLeft.TabIndex = 0;
-            this.buttonAlbumLeft.TextColor = System.Drawing.Color.White;
-            this.buttonAlbumLeft.UseVisualStyleBackColor = false;
-            this.buttonAlbumLeft.Click += new System.EventHandler(this.buttonAlbumLeft_Click);
-            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,8 +151,6 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private RoundedButton buttonAlbumLeft;
-        private RoundedButton buttonAlbumRight;
         private System.Windows.Forms.FlowLayoutPanel panelAlbums;
         private System.Windows.Forms.Label labelScreenName;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;

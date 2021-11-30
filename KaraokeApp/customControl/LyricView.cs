@@ -15,13 +15,14 @@ namespace KaraokeApp.customControl
 
         private int currentLine = 0;
         private int lineSpacing = 70;
+        private bool paused = false;
 
 
         //current playing line
         private Pen currentPen;
         private Color currentColor = Color.Yellow;
         private int currentSize = 55;
-        private Font font = new Font("Helvetica", 10, FontStyle.Bold);
+        private Font font = new Font("Helvetica", 18, FontStyle.Bold);
         Brush currentBrush = new SolidBrush(Color.Yellow);
         //other line 
         private Pen otherPen;
@@ -34,7 +35,7 @@ namespace KaraokeApp.customControl
         public LyricView()
         {
 
-            this.BackColor = Color.FromArgb(25, Color.Transparent);
+            //this.BackColor = Color.FromArgb(25, Color.Transparent);
             //Set Lyric List
             lyricList = LyricUtil.ReadLRCFile("./ZO0AZO7E.lrc");
 
@@ -50,6 +51,16 @@ namespace KaraokeApp.customControl
         }
 
 
+        public void UpdateToCurrentPosition(long ms)
+        {
+            for(int i = currentLine; i < lyricList.Count; i++)
+            {
+                if (lyricList[i].timePoint <= ms)
+                    currentLine = i;
+                else
+                    break;
+            }
+        }
         public void SetLRC(List<Lyric> _lyricList, Pen _currentPen,Pen _otherPen,
             int _lineSpacing)
         {
@@ -59,6 +70,18 @@ namespace KaraokeApp.customControl
             this.lineSpacing = _lineSpacing;
         }
 
+
+        public void PauseLyric()
+        {
+            paused = true;
+        }
+
+
+        public void ContinueLyric()
+        {
+            paused = false;
+            Invalidate();
+        }
         private void LyricView_Paint(object sender, PaintEventArgs e)
         {
             Panel pnlLyricView = sender as Panel;
@@ -73,14 +96,14 @@ namespace KaraokeApp.customControl
                     for(int i = currentLine - 1; i >= 0;i--)
                     {
                         lyrc = lyricList[i];
-                        grap.DrawString(lyrc.lyricString,font,otherBrush, this.Width /4,
+                        grap.DrawString(lyrc.lyricString,font,otherBrush,0,
                             this.Height/2 + lineSpacing * (i - currentLine));
 
                     }
 
                     //Current Line
                     lyrc = lyricList[currentLine];
-                    grap.DrawString(lyrc.lyricString, font, currentBrush, this.Width / 4,
+                    grap.DrawString(lyrc.lyricString, font, currentBrush,0,
                             this.Height / 2);
 
 
@@ -89,7 +112,7 @@ namespace KaraokeApp.customControl
                     for(int i = currentLine + 1; i < lyricList.Count; i++)
                     {
                         lyrc = lyricList[i];
-                        grap.DrawString(lyrc.lyricString, font, otherBrush, this.Width / 4,
+                        grap.DrawString(lyrc.lyricString, font, otherBrush,0,
                             this.Height / 2 + lineSpacing * (i - currentLine));
 
                     }
@@ -97,8 +120,11 @@ namespace KaraokeApp.customControl
                     //Time between two lyric: current and next
                     int spleepTime =(int) (lyricList[currentLine + 1].timePoint -
                         lyricList[currentLine].timePoint);
-                    currentLine++;
-                    DelayTime(spleepTime);
+                    if(!paused)
+                    {
+                        currentLine++;
+                        DelayTime(spleepTime);
+                    }                        
                 }
             }
 

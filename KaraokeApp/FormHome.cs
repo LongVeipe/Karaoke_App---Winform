@@ -18,7 +18,7 @@ namespace KaraokeApp
     {
         private ObservableCollection<Album> newAlbums;
         private ObservableCollection<string> recentlyMusics;
-        private int panelAlbumsLocation;
+        private UCRecentlyItem currentMusic;
 
         protected override CreateParams CreateParams
         {
@@ -36,7 +36,6 @@ namespace KaraokeApp
             newAlbums = Albums.getInstant().GetAlbums();
             recentlyMusics = RecentlyMusics.getInstant().GetAll();
             recentlyMusics.CollectionChanged += RecentlyMusicsChange;
-
         }
 
         void RecentlyMusicsChange(object sender, NotifyCollectionChangedEventArgs e)
@@ -44,7 +43,9 @@ namespace KaraokeApp
             switch(e.Action)
             {
                 case NotifyCollectionChangedAction.Add:
-                    UCRecentlyItem uc = new UCRecentlyItem(e.NewItems[0].ToString());
+                    string path = e.NewItems[0].ToString();
+                    UCRecentlyItem uc = new UCRecentlyItem(path);
+                    uc.Tag = path;
                     this.panelRecently.Controls.Add(uc);
                     this.panelRecently.Controls.SetChildIndex(uc, 0);
                     break;
@@ -52,11 +53,17 @@ namespace KaraokeApp
                     break;
             }
         }
-
+        public void PlayRecently(UCRecentlyItem uc)
+        {
+            if(currentMusic != null)
+            {
+                currentMusic.PauseMusic();
+            }
+            currentMusic = uc;
+            ((FormMain)(this.Parent.Parent.Parent)).PlayMusic(uc.Tag.ToString());
+        }
         private void FormHome_Load(object sender, EventArgs e)
         {
-            this.buttonAlbumLeft.Image = new Bitmap(Properties.Resources.icons8_left_48, new Size(20, 20));
-            this.buttonAlbumRight.Image = new Bitmap(Properties.Resources.icons8_right_48, new Size(20, 20));
             foreach (Album album in newAlbums)
             {
                 UCAlbumItem uc = new UCAlbumItem(album);
@@ -67,6 +74,7 @@ namespace KaraokeApp
                 try
                 {
                     UCRecentlyItem uc = new UCRecentlyItem(path);
+                    uc.Tag = path;
                     this.panelRecently.Controls.Add(uc);
                 }
                 catch
@@ -78,30 +86,5 @@ namespace KaraokeApp
             new TouchScroll(panelAlbums);
         }
 
-        private void buttonAlbumLeft_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonAlbumRight_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine(panelAlbumsLocation);
-            if (panelAlbumsLocation + 20 < panelAlbums.HorizontalScroll.Maximum)
-            {
-                panelAlbumsLocation += 20;
-                panelAlbums.AutoScrollPosition = new Point(panelAlbumsLocation, 0);
-            }
-            else
-            {
-                // If scroll position is above 280 set the position to 280 (MAX)
-                panelAlbumsLocation = panelAlbums.HorizontalScroll.Maximum;
-                panelAlbums.AutoScrollPosition = new Point(panelAlbumsLocation, 0);
-            }
-        }
-
-        private void panelAlbums_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

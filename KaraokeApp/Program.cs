@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KaraokeApp.data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,10 @@ namespace KaraokeApp
         [STAThread]
         static void Main()
         {
+            DatabaseHelper.CreateConnection();
+            //DatabaseHelper.Seeder(); #insert test data for App
+            DatabaseHelper.FillDataPool();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
