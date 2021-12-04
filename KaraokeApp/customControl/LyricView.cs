@@ -9,51 +9,77 @@ using System.Windows.Forms;
 
 namespace KaraokeApp.customControl
 {
-    class LyricView : Panel 
+    class LyricView : Panel
     {
-        private List<Lyric> lyricList;
 
+        // Lyric and Kara List for the current song
+        private List<Lyric> lyricList;
+        private List<KaraSetence> sentences;
+
+
+        //private int currentWord = 0;
+        //private int currentCharacter = 0;
+
+        // Timer to use for frame
+        private Timer timer = new Timer();
+
+
+        // Setting for view
+        private int nextSenteceTime = -1;
+        private bool paused = false;
+        private bool karaokeMod = false;
         private int currentLine = 0;
         private int lineSpacing = 70;
-        private bool paused = false;
+
+
+
+
 
 
         //current playing line
-        private Pen currentPen;
-        private Color currentColor = Color.Yellow;
-        private int currentSize = 55;
-        private Font font = new Font("Helvetica", 18, FontStyle.Bold);
-        Brush currentBrush = new SolidBrush(Color.Yellow);
+        private static Color currentColor = Color.Yellow;
+        private int currentSize = 18;
+        private static FontFamily f = new FontFamily("Helvetica");
+        private static Font font = new Font(f, 18, FontStyle.Bold);
+        Brush currentBrush = new SolidBrush(currentColor);
+
+
+
         //other line 
-        private Pen otherPen;
-        private Color otherColor = Color.White;
+        private static Color otherColor = Color.White;
         private int otherSize = 40;
-        Brush otherBrush = new SolidBrush(Color.White);
-        
+        Brush otherBrush = new SolidBrush(otherColor);
+
 
 
         public LyricView()
         {
-                //this.BackColor = Color.FromArgb(25, Color.Transparent);
-                //Set Lyric List
-                lyricList = LyricUtil.ReadLRCFile("./ZO0AZO7E.lrc");
+            //Set Lyric List
+            lyricList = LyricUtil.ReadLRCFile("../../Resources/lyric/ZU6EWUEA.lrc");
+            sentences = LyricUtil.ReadKaraFile("../../Resources/lyric/ZU6EWUEA.txt");
 
-                //Set the current line
-                currentPen = new Pen(currentColor, currentSize);
-                currentPen.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
 
-                //Set the other lines
-                otherPen = new Pen(otherColor, otherSize);
-                otherPen.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
+            // 1 frame every 100ms
+            this.DoubleBuffered = true;
+            timer.Interval = 100;
+            timer.Tick += Timer_Tick;
+            timer.Start();
 
-                this.Paint += new PaintEventHandler(LyricView_Paint);
-            
+
+            // Render method for panel
+            this.Paint += new PaintEventHandler(LyricView_Paint);
+
+
         }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
 
         public void UpdateToCurrentPosition(long ms)
         {
-            for(int i = currentLine; i < lyricList.Count; i++)
+            for (int i = currentLine; i < lyricList.Count; i++)
             {
                 if (lyricList[i].timePoint <= ms)
                     currentLine = i;
@@ -61,12 +87,10 @@ namespace KaraokeApp.customControl
                     break;
             }
         }
-        public void SetLRC(List<Lyric> _lyricList, Pen _currentPen,Pen _otherPen,
-            int _lineSpacing)
+
+        public void SetLRC(List<Lyric> _lyricList, int _lineSpacing)
         {
             this.lyricList = _lyricList;
-            this.currentPen = _currentPen;
-            this.otherPen = _otherPen;
             this.lineSpacing = _lineSpacing;
         }
 
@@ -86,12 +110,130 @@ namespace KaraokeApp.customControl
         {
             Panel pnlLyricView = sender as Panel;
             Graphics grap = e.Graphics;
+            this.BackColor = Color.FromArgb(100, 0, 0, 0);
+            Render(grap);
 
-            if(DataPool.GetCurrentSong() != null)
+
+        }
+
+        private void Render(Graphics grap)
+        {
+            if (DataPool.GetCurrentSong() != null)
             {
-                if (currentLine < lyricList.Count)
+                if (karaokeMod)
+                    LyricMode(grap);
+                else
+                    KaraokeMode(grap);
+
+            }
+        }
+
+
+        private void KaraokeMode(Graphics grap)
+        {
+            if (currentLine < sentences.Count)
+            {
+                if (sentences != null && sentences.Count > 0)
                 {
-                    if (lyricList != null && lyricList.Count > 0)
+                    double currentTime = DataPool.Player.Ctlcontrols.currentPosition * 1000.0;
+                    if (currentLine == 0 &&
+                       lyricList[currentLine].timePoint - 2000 > currentTime)
+                    {
+                        // Get the artist and title 
+                        // Switch to current Song instead of using hard code
+                        string artist = SongUtil.GetArtist("../../Resources/streaming/ZU6EWUEA.mp3");
+                        string title = SongUtil.GetTile("../../Resources/streaming/ZU6EWUEA.mp3");
+
+
+                        SizeF hStringSize = grap.MeasureString(artist, font);
+                        SizeF lStringSize = grap.MeasureString(title, font);
+
+
+                        grap.DrawString(artist, font, otherBrush,
+                             (this.Width - hStringSize.Width) / 2,
+                             this.Height / 2 - lineSpacing);
+
+
+                        grap.DrawString(title, font, otherBrush,
+                          (this.Width - lStringSize.Width) / 2,
+                          this.Height / 2);
+
+                    }
+                    else
+                    {
+                        DrawCurrentLineKara(grap, currentTime, currentLine);
+                        if (currentLine + 1 < sentences.Count)
+                        {
+                            Lyric nextSen = lyricList[currentLine + 1];
+                            SizeF hStringSize = grap.MeasureString(nextSen.lyricString, font);
+                            if (currentLine % 2 == 0)
+                            {
+
+                                grap.DrawString(nextSen.lyricString, font, otherBrush,
+                                    (this.Width - hStringSize.Width) / 2,
+                                     this.Height / 2);
+
+                            }
+                            else
+                            {
+
+                                grap.DrawString(nextSen.lyricString, font, otherBrush,
+                                     (this.Width - hStringSize.Width) / 2,
+                                      this.Height / 2 - lineSpacing);
+                            }
+
+                            nextSenteceTime = (int)lyricList[currentLine + 1].timePoint;
+
+                            if (!paused)
+                            {
+                                if (currentTime >= nextSenteceTime)
+                                    currentLine++;
+                            }
+
+                        }
+                       
+
+                    }
+
+                }
+
+            }
+        }
+
+        private void LyricMode(Graphics grap)
+        {
+            if (currentLine < lyricList.Count)
+            {
+                if (lyricList != null && lyricList.Count > 0)
+                {
+                    double currentTime = DataPool.Player.Ctlcontrols.currentPosition * 1000;
+
+
+                    if (currentLine == 0 &&
+                        lyricList[currentLine].timePoint - 2000 > currentTime)
+                    {
+
+                        // Get the artist and title 
+                        // Switch to current Song instead of using hard code
+                        string artist = SongUtil.GetArtist("../../Resources/streaming/ZU6EWUEA.mp3");
+                        string title = SongUtil.GetTile("../../Resources/streaming/ZU6EWUEA.mp3");
+
+
+                        SizeF hStringSize = grap.MeasureString(artist, font);
+                        SizeF lStringSize = grap.MeasureString(title, font);
+
+
+                        grap.DrawString(artist, font, otherBrush,
+                             (this.Width - hStringSize.Width) / 2,
+                             this.Height / 2 - lineSpacing);
+
+
+                        grap.DrawString(title, font, otherBrush,
+                          (this.Width - lStringSize.Width) / 2,
+                          this.Height / 2);
+
+                    }
+                    else
                     {
                         Lyric lyrc = null;
 
@@ -99,47 +241,100 @@ namespace KaraokeApp.customControl
                         for (int i = currentLine - 1; i >= 0; i--)
                         {
                             lyrc = lyricList[i];
-                            grap.DrawString(lyrc.lyricString, font, otherBrush, 0,
+                            SizeF hStringSize = grap.MeasureString(lyrc.lyricString, font);
+                            grap.DrawString(lyrc.lyricString, font, otherBrush,
+                                (this.Width - hStringSize.Width) / 2,
                                 this.Height / 2 + lineSpacing * (i - currentLine));
 
                         }
 
                         //Current Line
                         lyrc = lyricList[currentLine];
-                        grap.DrawString(lyrc.lyricString, font, currentBrush, 0,
+                        SizeF cStringSize = grap.MeasureString(lyrc.lyricString, font);
+                        grap.DrawString(lyrc.lyricString, font, currentBrush,
+                             (this.Width - cStringSize.Width) / 2,
                                 this.Height / 2);
-
 
 
                         // Next Line
                         for (int i = currentLine + 1; i < lyricList.Count; i++)
                         {
                             lyrc = lyricList[i];
-                            grap.DrawString(lyrc.lyricString, font, otherBrush, 0,
+                            SizeF nStringSize = grap.MeasureString(lyrc.lyricString, font);
+                            grap.DrawString(lyrc.lyricString, font, otherBrush,
+                                (this.Width - nStringSize.Width) / 2,
                                 this.Height / 2 + lineSpacing * (i - currentLine));
 
                         }
 
-                        //Time between two lyric: current and next
-                        int spleepTime = (int)(lyricList[currentLine + 1].timePoint -
-                            lyricList[currentLine].timePoint);
-                        if (!paused)
+                        // Calculate to move on to the next line
+                        if (currentLine + 1 < lyricList.Count)
                         {
-                            currentLine++;
-                            DelayTime(spleepTime);
+                            nextSenteceTime = (int)lyricList[currentLine + 1].timePoint;
+                            if (!paused)
+                            {
+                                if (currentTime >= nextSenteceTime)
+                                    currentLine++;
+                            }
                         }
+
                     }
+
                 }
-
             }
-
         }
 
-       
-        private async void DelayTime(int ms)
+        private void DrawCurrentLineKara(Graphics grap, double currentTime, int line)
         {
-            await Task.Delay(ms);
-            Invalidate();
+            string hightLightString = "";
+            string normalString = "";
+            for (int currentWord = 0; currentWord < sentences[currentLine].words.Count; currentWord++)
+            {
+
+                Word w = sentences[currentLine].words[currentWord];
+                if (currentTime > w.startTime - 200 && currentTime < w.endTime - 200)
+                {
+
+                    hightLightString += w.data + " ";
+                }
+                else if (currentTime > w.endTime - 200)
+                {
+                    hightLightString += w.data + " ";
+                }
+                else if (currentTime < w.startTime - 200)
+                {
+                    normalString += w.data + " ";
+                }
+            }
+            SizeF hStringSize = grap.MeasureString(hightLightString, font);
+            SizeF senWidth = grap.MeasureString(hightLightString + normalString, font);
+
+            // If the current line is odd, it's will display current line below
+            // other side, it's will display above
+            if (currentLine % 2 == 0)
+            {
+
+                grap.DrawString(hightLightString, font, currentBrush,
+                    (this.Width - senWidth.Width) / 2,
+                     this.Height / 2 - lineSpacing);
+
+                grap.DrawString(normalString, font, otherBrush,
+                    (this.Width - senWidth.Width) / 2 + hStringSize.Width - 3,
+                  this.Height / 2 - lineSpacing);
+
+
+            }
+            else
+            {
+                grap.DrawString(hightLightString, font, currentBrush,
+                    (this.Width - senWidth.Width) / 2,
+                   this.Height / 2);
+
+
+                grap.DrawString(normalString, font, otherBrush,
+                   (this.Width - senWidth.Width) / 2 + hStringSize.Width - 3,
+                    this.Height / 2);
+            }
         }
     }
 }

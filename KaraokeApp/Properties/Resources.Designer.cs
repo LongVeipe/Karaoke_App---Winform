@@ -409,5 +409,15 @@ namespace KaraokeApp.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wallpaperbetter_com_1920765x1080 {
+            get {
+                object obj = ResourceManager.GetObject("wallpaperbetter.com_1920765x1080", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

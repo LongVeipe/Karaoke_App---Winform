@@ -158,3 +158,15 @@ C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\obj\Debug\Ka
 C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\obj\Debug\KaraokeApp.csproj.CopyComplete
 C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\obj\Debug\KaraokeApp.exe
 C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\obj\Debug\KaraokeApp.pdb
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\bin\Debug\System.Text.Json.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\bin\Debug\System.ValueTuple.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\bin\Debug\System.Text.Json.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\bin\Debug\System.ValueTuple.xml
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\huutr\OneDrive\Máy tính\Karaoke_App---Winform\KaraokeApp\bin\Debug\Newtonsoft.Json.xml

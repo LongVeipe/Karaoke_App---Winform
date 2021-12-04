@@ -30,16 +30,17 @@ namespace KaraokeApp
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lyricViewPanel = new KaraokeApp.customControl.LyricView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.lyricViewPanel = new KaraokeApp.customControl.LyricView();
             this.panel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = global::KaraokeApp.Properties.Resources.wallpaperbetter_com_1920765x1080;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.lyricViewPanel);
             this.panel1.Controls.Add(this.guna2Panel1);
@@ -48,15 +49,6 @@ namespace KaraokeApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(849, 611);
             this.panel1.TabIndex = 0;
-            // 
-            // lyricViewPanel
-            // 
-            this.lyricViewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lyricViewPanel.Location = new System.Drawing.Point(55, 46);
-            this.lyricViewPanel.Name = "lyricViewPanel";
-            this.lyricViewPanel.Size = new System.Drawing.Size(742, 490);
-            this.lyricViewPanel.TabIndex = 1;
             // 
             // guna2Panel1
             // 
@@ -114,6 +106,16 @@ namespace KaraokeApp
             this.guna2Button1.Size = new System.Drawing.Size(144, 37);
             this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Text = "Karaoke";
+            // 
+            // lyricViewPanel
+            // 
+            this.lyricViewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lyricViewPanel.BackColor = System.Drawing.Color.Transparent;
+            this.lyricViewPanel.Location = new System.Drawing.Point(55, 46);
+            this.lyricViewPanel.Name = "lyricViewPanel";
+            this.lyricViewPanel.Size = new System.Drawing.Size(742, 490);
+            this.lyricViewPanel.TabIndex = 1;
             // 
             // FormPlayer
             // 

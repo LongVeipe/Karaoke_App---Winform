@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Runtime.Serialization;
+using System.Drawing;
+using System.IO;
 
 namespace KaraokeApp.data
 {
@@ -32,6 +34,14 @@ namespace KaraokeApp.data
         [DataMember]
         [BsonElement("lyricLink")]
         public string lyricLink { get; set; }
+
+        [BsonIgnore]
+        public string[] artists { get; set; }
+        [BsonIgnore]
+        public string title { get; set; }
+        [BsonIgnore]
+        public Bitmap art { get; set; } 
+
 
         public Song(string _name = "", string _streamLink = "")
         {
@@ -66,6 +76,80 @@ namespace KaraokeApp.data
         public string GetBeatLink()
         {
             return this.beatLink;
+        }
+
+        public string GetArtist()
+        {
+           if(artists == null)
+           {
+                this.artists[0] = SongUtil.GetArtist(this.lyricLink);
+           }
+            return artists[0];
+        }
+
+
+        public string GetTitle()
+        {
+            if(title == null)
+            {
+                this.title = SongUtil.GetTile(this.lyricLink);
+            }
+            return this.title;
+        }
+
+
+        public Bitmap GetArt()
+        {
+            if(art == null)
+            {
+                this.art = SongUtil.GetArt(this.lyricLink);
+            }
+            return art;
+        }
+    }
+
+
+    class SongUtil
+    {
+        public static string GetArtist(string filePath)
+        {
+            string artist = "Unknown";
+            TagLib.File file = TagLib.File.Create(filePath);
+            string[] artists = file.Tag.Artists;
+            artist = artists.Length > 0 ? artists.FirstOrDefault() : "Unknown";
+            return artist;
+        }
+
+
+        public static string GetTile(string filePath)
+        {
+            string title = "Unknown";
+            TagLib.File file = TagLib.File.Create(filePath);
+            title = file.Tag.Title != null ? file.Tag.Title : "Unknown";
+            return title;
+        }
+
+
+
+        public static Bitmap GetArt(string filePath)
+        {
+            Bitmap art = null;
+            var mStream = new MemoryStream();
+            TagLib.File file = TagLib.File.Create(filePath);
+            var firstPicture = file.Tag.Pictures.FirstOrDefault();
+            if (firstPicture != null)
+            {
+                byte[] pData = firstPicture.Data.Data;
+                mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+                Bitmap bm = new Bitmap(mStream, false);
+                mStream.Dispose();
+                return bm;
+            }
+            else
+            {
+                // set "no cover" image
+                return null;
+            }
         }
     }
 }

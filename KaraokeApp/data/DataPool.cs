@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AxWMPLib;
 
 namespace KaraokeApp.data
 {
@@ -12,6 +13,7 @@ namespace KaraokeApp.data
         private static Song currentSong;
         private static List<Song> recentlyPlayedList;
         private static List<Album> albumList;
+        public static AxWindowsMediaPlayer Player;
 
 
         public static void UpdateCurrentSong(Song _song)

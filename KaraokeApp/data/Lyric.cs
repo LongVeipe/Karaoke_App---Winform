@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace KaraokeApp.data
 {
@@ -22,12 +24,42 @@ namespace KaraokeApp.data
 
     }
     
-
-    class LyricUtil
+    class Word
     {
+        public string data { get; set; }
+        public long startTime { get; set; }
+        public long endTime { get; set; }
+
+        public Word(string _karaString, long _startTime, long _endTime)
+        {
+            this.data = _karaString;
+            this.startTime = _startTime;
+            this.endTime = _endTime;
+        }   
+    }
+
+
+
+    class KaraSetence
+    {
+        public List<Word> words;
+
+        public KaraSetence(List<Word> _karaList)
+        {
+            this.words = _karaList;
+        }
+        public KaraSetence()
+        {
+            words = new List<Word>();
+        }
+    }
+    
+
+      class LyricUtil
+      {
         
         private static List<Lyric> lyricList;
-                
+        private static List<KaraSetence> karaSetences;
         public static List<Lyric> ReadLRCFile(string filePath)
         {
 
@@ -47,6 +79,41 @@ namespace KaraokeApp.data
             return lyricList;
         }
         
+
+        public static List<KaraSetence> ReadKaraFile(string filePath)
+        {
+            karaSetences = new List<KaraSetence>();
+            if(File.Exists(filePath))
+            {
+                using(StreamReader file = new StreamReader(filePath))
+                {
+                    string karas = File.ReadAllText(filePath);
+
+                    // Due to Json Object don't have key value
+                    Newtonsoft.Json.Linq.JArray karaS = JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JArray>(karas);
+
+                    for(int sentenceIndex = 0; sentenceIndex < karaS.Count; sentenceIndex++)
+                    {
+                        KaraSetence sentence = new KaraSetence();
+
+                        // Words in sentences 
+                        Newtonsoft.Json.Linq.JArray wordList =(Newtonsoft.Json.Linq.JArray)karaS[sentenceIndex]["words"];
+                        for(int wordIndex = 0; wordIndex < wordList.Count; wordIndex++)
+                        {
+                            Word wordToken = JsonConvert.DeserializeObject<Word>(wordList[wordIndex]
+                                .ToString());
+
+                            sentence.words.Add(wordToken);
+                        }
+
+                        karaSetences.Add(sentence);
+                    }
+
+                }
+            }
+
+            return karaSetences;
+        }
 
         public static string AnalyzeLRC(string _line)
         {
