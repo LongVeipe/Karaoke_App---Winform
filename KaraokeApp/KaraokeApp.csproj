@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3F3CD60E-26D8-48B2-95B1-3ACC7CB2F072}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>KaraokeApp</RootNamespace>
     <AssemblyName>KaraokeApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -233,6 +233,7 @@
     <Compile Include="FormPlayer.Designer.cs">
       <DependentUpon>FormPlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="userControl\UCRecentlyItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -272,16 +273,7 @@
     <EmbeddedResource Include="FormPlayer.resx">
       <DependentUpon>FormPlayer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx" />
     <EmbeddedResource Include="userControl\UCAlbumItem.resx">
       <DependentUpon>UCAlbumItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +296,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Resources\Inter-VariableFont_slnt,wght.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -331,7 +324,29 @@
     <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
-    <None Include="Resources\wallpaperbetter.com_1920765x1080.jpg" />
+    <Content Include="Resources\Background_Karaoke\1.jpg" />
+    <Content Include="Resources\Background_Karaoke\10.jpg" />
+    <Content Include="Resources\Background_Karaoke\11.jpg" />
+    <Content Include="Resources\Background_Karaoke\12.jpg" />
+    <Content Include="Resources\Background_Karaoke\13.jpg" />
+    <Content Include="Resources\Background_Karaoke\14.jpg" />
+    <Content Include="Resources\Background_Karaoke\15.jpg" />
+    <Content Include="Resources\Background_Karaoke\16.jpg" />
+    <Content Include="Resources\Background_Karaoke\17.jpg" />
+    <Content Include="Resources\Background_Karaoke\18.jpg" />
+    <Content Include="Resources\Background_Karaoke\19.jpg" />
+    <Content Include="Resources\Background_Karaoke\2.jpg" />
+    <Content Include="Resources\Background_Karaoke\20.jpg" />
+    <Content Include="Resources\Background_Karaoke\21.jpg" />
+    <Content Include="Resources\Background_Karaoke\22.jpg" />
+    <Content Include="Resources\Background_Karaoke\23.jpg" />
+    <Content Include="Resources\Background_Karaoke\3.jpg" />
+    <Content Include="Resources\Background_Karaoke\4.jpg" />
+    <Content Include="Resources\Background_Karaoke\5.jpg" />
+    <Content Include="Resources\Background_Karaoke\6.jpg" />
+    <Content Include="Resources\Background_Karaoke\7.jpg" />
+    <Content Include="Resources\Background_Karaoke\8.jpg" />
+    <Content Include="Resources\Background_Karaoke\9.jpg" />
     <None Include="imgs\icons\icons8_micro_16.png" />
     <None Include="imgs\icons\microw_48px.png" />
     <None Include="imgs\icons\micro_48px.png" />

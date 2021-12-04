@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -110,7 +111,7 @@ namespace KaraokeApp.customControl
         {
             Panel pnlLyricView = sender as Panel;
             Graphics grap = e.Graphics;
-            this.BackColor = Color.FromArgb(100, 0, 0, 0);
+            //this.BackColor = Color.FromArgb(100, 0, 0, 0);
             Render(grap);
 
 
@@ -120,12 +121,25 @@ namespace KaraokeApp.customControl
         {
             if (DataPool.GetCurrentSong() != null)
             {
-                if (karaokeMod)
+                if (!karaokeMod)
                     LyricMode(grap);
                 else
                     KaraokeMode(grap);
 
             }
+        }
+
+
+        public void SwitchToKaraokeMode()
+        {
+            karaokeMod = true;
+            
+        }
+
+        public void SwitchToLyricMode()
+        {
+            karaokeMod = false;
+           
         }
 
 

@@ -29,83 +29,25 @@ namespace KaraokeApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.backgroundPanel = new System.Windows.Forms.Panel();
             this.lyricViewPanel = new KaraokeApp.customControl.LyricView();
-            this.panel1.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
+            this.backgroundButtonPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnLyric = new Guna.UI2.WinForms.Guna2Button();
+            this.btnKaraoke = new Guna.UI2.WinForms.Guna2Button();
+            this.backgroundPanel.SuspendLayout();
+            this.backgroundButtonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // backgroundPanel
             // 
-            this.panel1.BackgroundImage = global::KaraokeApp.Properties.Resources.wallpaperbetter_com_1920765x1080;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.lyricViewPanel);
-            this.panel1.Controls.Add(this.guna2Panel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(849, 611);
-            this.panel1.TabIndex = 0;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(70)))), ((int)(((byte)(87)))));
-            this.guna2Panel1.BorderRadius = 10;
-            this.guna2Panel1.Controls.Add(this.guna2Button2);
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
-            this.guna2Panel1.Location = new System.Drawing.Point(279, 563);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(304, 45);
-            this.guna2Panel1.TabIndex = 0;
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BorderRadius = 5;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.DisabledState.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(86)))), ((int)(((byte)(101)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(157, 3);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(144, 37);
-            this.guna2Button2.TabIndex = 2;
-            this.guna2Button2.Text = "Lyric";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.DisabledState.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(86)))), ((int)(((byte)(101)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(3, 3);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(144, 37);
-            this.guna2Button1.TabIndex = 1;
-            this.guna2Button1.Text = "Karaoke";
+            this.backgroundPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.backgroundPanel.Controls.Add(this.lyricViewPanel);
+            this.backgroundPanel.Controls.Add(this.backgroundButtonPanel);
+            this.backgroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.backgroundPanel.Location = new System.Drawing.Point(0, 0);
+            this.backgroundPanel.Name = "backgroundPanel";
+            this.backgroundPanel.Size = new System.Drawing.Size(849, 611);
+            this.backgroundPanel.TabIndex = 0;
             // 
             // lyricViewPanel
             // 
@@ -117,28 +59,87 @@ namespace KaraokeApp
             this.lyricViewPanel.Size = new System.Drawing.Size(742, 490);
             this.lyricViewPanel.TabIndex = 1;
             // 
+            // backgroundButtonPanel
+            // 
+            this.backgroundButtonPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.backgroundButtonPanel.BackColor = System.Drawing.Color.Transparent;
+            this.backgroundButtonPanel.BorderRadius = 10;
+            this.backgroundButtonPanel.Controls.Add(this.btnLyric);
+            this.backgroundButtonPanel.Controls.Add(this.btnKaraoke);
+            this.backgroundButtonPanel.Location = new System.Drawing.Point(279, 563);
+            this.backgroundButtonPanel.Name = "backgroundButtonPanel";
+            this.backgroundButtonPanel.ShadowDecoration.Parent = this.backgroundButtonPanel;
+            this.backgroundButtonPanel.Size = new System.Drawing.Size(304, 45);
+            this.backgroundButtonPanel.TabIndex = 0;
+            // 
+            // btnLyric
+            // 
+            this.btnLyric.BorderRadius = 5;
+            this.btnLyric.CheckedState.Parent = this.btnLyric;
+            this.btnLyric.CustomImages.Parent = this.btnLyric;
+            this.btnLyric.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLyric.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLyric.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLyric.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLyric.DisabledState.Parent = this.btnLyric;
+            this.btnLyric.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(86)))), ((int)(((byte)(101)))));
+            this.btnLyric.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLyric.ForeColor = System.Drawing.Color.White;
+            this.btnLyric.HoverState.Parent = this.btnLyric;
+            this.btnLyric.Location = new System.Drawing.Point(157, 3);
+            this.btnLyric.Name = "btnLyric";
+            this.btnLyric.ShadowDecoration.Parent = this.btnLyric;
+            this.btnLyric.Size = new System.Drawing.Size(144, 37);
+            this.btnLyric.TabIndex = 2;
+            this.btnLyric.Text = "Lyric";
+            this.btnLyric.Click += new System.EventHandler(this.btnLyric_Click);
+            // 
+            // btnKaraoke
+            // 
+            this.btnKaraoke.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnKaraoke.BorderRadius = 5;
+            this.btnKaraoke.CheckedState.Parent = this.btnKaraoke;
+            this.btnKaraoke.CustomImages.Parent = this.btnKaraoke;
+            this.btnKaraoke.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnKaraoke.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnKaraoke.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnKaraoke.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnKaraoke.DisabledState.Parent = this.btnKaraoke;
+            this.btnKaraoke.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(86)))), ((int)(((byte)(101)))));
+            this.btnKaraoke.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKaraoke.ForeColor = System.Drawing.Color.White;
+            this.btnKaraoke.HoverState.Parent = this.btnKaraoke;
+            this.btnKaraoke.Location = new System.Drawing.Point(3, 3);
+            this.btnKaraoke.Name = "btnKaraoke";
+            this.btnKaraoke.ShadowDecoration.Parent = this.btnKaraoke;
+            this.btnKaraoke.Size = new System.Drawing.Size(144, 37);
+            this.btnKaraoke.TabIndex = 1;
+            this.btnKaraoke.Text = "Karaoke";
+            this.btnKaraoke.Click += new System.EventHandler(this.btnKaraoke_Click);
+            // 
             // FormPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(849, 611);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.backgroundPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPlayer";
             this.Text = "FormPlayer";
-            this.panel1.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
+            this.backgroundPanel.ResumeLayout(false);
+            this.backgroundButtonPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.Panel backgroundPanel;
+        private Guna.UI2.WinForms.Guna2Panel backgroundButtonPanel;
+        private Guna.UI2.WinForms.Guna2Button btnLyric;
+        private Guna.UI2.WinForms.Guna2Button btnKaraoke;
         private customControl.LyricView lyricViewPanel;
     }
 }
