@@ -26,9 +26,24 @@ namespace KaraokeApp
         private static readonly MMDeviceEnumerator Enumerator = new MMDeviceEnumerator();
         private static readonly HttpClient Http = new HttpClient() { Timeout = TimeSpan.FromSeconds(3) };
 		private static readonly string DeviceId = Guid.NewGuid().ToString();
+		protected override CreateParams CreateParams
+		{
+			get
+			{
+				CreateParams handlerParam = base.CreateParams;
+				handlerParam.ExStyle |= 0x02000000;
+				return handlerParam;
+			}
+		}
 		public FormSearch()
         {
             InitializeComponent();
+			pnlShazamResult.AutoScroll = false;
+
+			pnlShazamResult.VerticalScroll.Maximum = 0;
+			pnlShazamResult.VerticalScroll.Visible = false;
+
+			pnlShazamResult.AutoScroll = true;
 		}
 
 		private async void btnRecord_Click(object sender, EventArgs e)
@@ -54,6 +69,7 @@ namespace KaraokeApp
 					UCSongItem uc = new UCSongItem();
 					await uc.SetPropertiesAsync(match);
 					this.pnlShazamResult.Controls.Add(uc);
+					this.pnlShazamResult.Controls.SetChildIndex(uc, 0);
 				}
 				else
 					MessageBox.Show("No Song Matched");

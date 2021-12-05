@@ -46,7 +46,7 @@
             this.guna2Panel1.Controls.Add(this.panelAlbums);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(1153, 287);
@@ -56,7 +56,7 @@
             // 
             this.panelAlbums.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAlbums.Location = new System.Drawing.Point(0, 0);
-            this.panelAlbums.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelAlbums.Margin = new System.Windows.Forms.Padding(4);
             this.panelAlbums.Name = "panelAlbums";
             this.panelAlbums.Size = new System.Drawing.Size(1153, 287);
             this.panelAlbums.TabIndex = 2;
@@ -81,7 +81,7 @@
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.Controls.Add(this.panelRecently);
             this.guna2Panel2.Location = new System.Drawing.Point(40, 385);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(523, 400);
@@ -93,7 +93,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelRecently.BackColor = System.Drawing.Color.Transparent;
             this.panelRecently.Location = new System.Drawing.Point(0, 0);
-            this.panelRecently.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelRecently.Margin = new System.Windows.Forms.Padding(4);
             this.panelRecently.Name = "panelRecently";
             this.panelRecently.Size = new System.Drawing.Size(523, 400);
             this.panelRecently.TabIndex = 0;
@@ -105,7 +105,7 @@
             this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel3.Controls.Add(this.panelLovely);
             this.guna2Panel3.Location = new System.Drawing.Point(620, 385);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
             this.guna2Panel3.Size = new System.Drawing.Size(517, 400);
@@ -117,7 +117,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelLovely.BackColor = System.Drawing.Color.Transparent;
             this.panelLovely.Location = new System.Drawing.Point(4, 0);
-            this.panelLovely.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLovely.Margin = new System.Windows.Forms.Padding(4);
             this.panelLovely.Name = "panelLovely";
             this.panelLovely.Size = new System.Drawing.Size(513, 396);
             this.panelLovely.TabIndex = 1;
@@ -146,7 +146,7 @@
             this.Controls.Add(this.labelScreenName);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormHome";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormHome_Load);

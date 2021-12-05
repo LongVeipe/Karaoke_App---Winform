@@ -46,11 +46,11 @@ namespace KaraokeApp
             this.guna2Panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Panel1.ForeColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Padding = new System.Windows.Forms.Padding(12, 0, 12, 13);
+            this.guna2Panel1.Padding = new System.Windows.Forms.Padding(16, 0, 16, 16);
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(608, 622);
+            this.guna2Panel1.Size = new System.Drawing.Size(811, 766);
             this.guna2Panel1.TabIndex = 0;
             // 
             // pnlShazamResult
@@ -59,10 +59,13 @@ namespace KaraokeApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlShazamResult.BackColor = System.Drawing.Color.Transparent;
-            this.pnlShazamResult.Location = new System.Drawing.Point(32, 50);
+            this.pnlShazamResult.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pnlShazamResult.Location = new System.Drawing.Point(43, 62);
+            this.pnlShazamResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlShazamResult.Name = "pnlShazamResult";
-            this.pnlShazamResult.Size = new System.Drawing.Size(544, 540);
+            this.pnlShazamResult.Size = new System.Drawing.Size(725, 665);
             this.pnlShazamResult.TabIndex = 2;
+            this.pnlShazamResult.WrapContents = false;
             // 
             // btnRecord
             // 
@@ -82,12 +85,12 @@ namespace KaraokeApp
             this.btnRecord.HoverState.Parent = this.btnRecord;
             this.btnRecord.Image = ((System.Drawing.Image)(resources.GetObject("btnRecord.Image")));
             this.btnRecord.ImageSize = new System.Drawing.Size(16, 16);
-            this.btnRecord.Location = new System.Drawing.Point(548, 2);
-            this.btnRecord.Margin = new System.Windows.Forms.Padding(3, 3, 32, 3);
+            this.btnRecord.Location = new System.Drawing.Point(731, 2);
+            this.btnRecord.Margin = new System.Windows.Forms.Padding(4, 4, 43, 4);
             this.btnRecord.Name = "btnRecord";
             this.btnRecord.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnRecord.ShadowDecoration.Parent = this.btnRecord;
-            this.btnRecord.Size = new System.Drawing.Size(28, 28);
+            this.btnRecord.Size = new System.Drawing.Size(37, 34);
             this.btnRecord.TabIndex = 1;
             this.btnRecord.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
@@ -115,25 +118,25 @@ namespace KaraokeApp
             this.tbxSearch.IconLeftSize = new System.Drawing.Size(28, 28);
             this.tbxSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("tbxSearch.IconRight")));
             this.tbxSearch.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.tbxSearch.Location = new System.Drawing.Point(32, 0);
+            this.tbxSearch.Location = new System.Drawing.Point(43, 0);
             this.tbxSearch.Margin = new System.Windows.Forms.Padding(0);
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.PasswordChar = '\0';
             this.tbxSearch.PlaceholderText = "";
             this.tbxSearch.SelectedText = "";
             this.tbxSearch.ShadowDecoration.Parent = this.tbxSearch;
-            this.tbxSearch.Size = new System.Drawing.Size(504, 32);
+            this.tbxSearch.Size = new System.Drawing.Size(672, 39);
             this.tbxSearch.TabIndex = 0;
             // 
             // FormSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(608, 622);
+            this.ClientSize = new System.Drawing.Size(811, 766);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormSearch";
             this.Text = "FormSearch";
             this.guna2Panel1.ResumeLayout(false);
