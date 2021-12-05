@@ -137,7 +137,7 @@
             this.labelScreenName.ForeColor = System.Drawing.Color.White;
             this.labelScreenName.Location = new System.Drawing.Point(25, 26);
             this.labelScreenName.Name = "labelScreenName";
-            this.labelScreenName.Size = new System.Drawing.Size(75, 26);
+            this.labelScreenName.Size = new System.Drawing.Size(90, 31);
             this.labelScreenName.TabIndex = 0;
             this.labelScreenName.Text = "Home";
             // 
@@ -177,7 +177,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(22, 467);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 26);
+            this.label2.Size = new System.Drawing.Size(169, 31);
             this.label2.TabIndex = 10;
             this.label2.Text = "Your Queue";
             // 

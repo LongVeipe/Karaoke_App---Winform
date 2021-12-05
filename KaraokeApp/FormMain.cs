@@ -63,6 +63,15 @@ namespace KaraokeApp
             currentBtn.Checked = true;
 
             labelScreenName.Text = currentBtn.Tag.ToString();
+            switch(currentBtn.Tag.ToString())
+            {
+                case "Search":
+                    OpenChildForm(new FormSearch());
+                    break;
+                case "Home":
+                    OpenChildForm(new FormHome());
+                    break;
+            }
         }
 
         //drag form

@@ -163,16 +163,6 @@ namespace KaraokeApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_heart_48 {
-            get {
-                object obj = ResourceManager.GetObject("icons8_heart_48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_heart_48__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8_heart_48__1_", resourceCulture);
@@ -416,6 +406,46 @@ namespace KaraokeApp.Properties {
         internal static System.Drawing.Bitmap wallpaperbetter_com_1920765x1080 {
             get {
                 object obj = ResourceManager.GetObject("wallpaperbetter.com_1920765x1080", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap microphone_24px {
+            get {
+                object obj = ResourceManager.GetObject("microphone_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_40px {
+            get {
+                object obj = ResourceManager.GetObject("search_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shazam_48px {
+            get {
+                object obj = ResourceManager.GetObject("shazam_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap YouTube_60px {
+            get {
+                object obj = ResourceManager.GetObject("YouTube_60px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
