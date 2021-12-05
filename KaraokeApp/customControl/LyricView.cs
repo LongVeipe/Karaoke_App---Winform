@@ -13,6 +13,12 @@ namespace KaraokeApp.customControl
     class LyricView : Panel
     {
 
+        private const string LYRIC_PATH = "../../Resources/lyric/";
+        private const string KARA_PATH = "../../Resources/lyric/";
+        private const string STREAM_PATH = "../../Resources/streaming/";
+
+
+
         // Lyric and Kara List for the current song
         private List<Lyric> lyricList;
         private List<KaraSetence> sentences;
@@ -55,11 +61,17 @@ namespace KaraokeApp.customControl
 
         public LyricView()
         {
-            //Set Lyric List
-            lyricList = LyricUtil.ReadLRCFile("../../Resources/lyric/ZU6EWUEA.lrc");
-            sentences = LyricUtil.ReadKaraFile("../../Resources/lyric/ZU6EWUEA.txt");
 
-
+            if(DataPool.GetCurrentSong() != null)
+            {
+                string currentSongName = DataPool.GetCurrentSong().GetName();
+                //Set Lyric List
+                lyricList = LyricUtil.ReadLRCFile(LYRIC_PATH + currentSongName
+                    + ".lrc");
+                sentences = LyricUtil.ReadKaraFile(KARA_PATH + currentSongName
+                    + ".txt");
+            }
+          
             // 1 frame every 100ms
             this.DoubleBuffered = true;
             timer.Interval = 100;
@@ -78,15 +90,27 @@ namespace KaraokeApp.customControl
             Invalidate();
         }
 
-        public void UpdateToCurrentPosition(long ms)
+        public void UpdateToCurrentPosition(double ms)
         {
-            for (int i = currentLine; i < lyricList.Count; i++)
+
+            if(ms == 0)
             {
-                if (lyricList[i].timePoint <= ms)
-                    currentLine = i;
-                else
-                    break;
+                currentLine = 0;
+
             }
+            else
+            {
+                for (int i = 0; i < lyricList.Count; i++)
+                {
+                    if (lyricList[i].timePoint <= ms)
+                        currentLine = i;
+                    else
+                        break;
+                }
+
+            }
+           
+
         }
 
         public void SetLRC(List<Lyric> _lyricList, int _lineSpacing)
@@ -151,12 +175,13 @@ namespace KaraokeApp.customControl
                 {
                     double currentTime = DataPool.Player.Ctlcontrols.currentPosition * 1000.0;
                     if (currentLine == 0 &&
-                       lyricList[currentLine].timePoint - 2000 > currentTime)
+                       lyricList[currentLine].timePoint - currentTime > 2000)
                     {
+                        string currentSongName = DataPool.GetCurrentSong().GetName();
                         // Get the artist and title 
                         // Switch to current Song instead of using hard code
-                        string artist = SongUtil.GetArtist("../../Resources/streaming/ZU6EWUEA.mp3");
-                        string title = SongUtil.GetTile("../../Resources/streaming/ZU6EWUEA.mp3");
+                        string artist = SongUtil.GetArtist(STREAM_PATH +  currentSongName + ".mp3");
+                        string title = SongUtil.GetTile(STREAM_PATH + currentSongName +".mp3");
 
 
                         SizeF hStringSize = grap.MeasureString(artist, font);
@@ -224,13 +249,14 @@ namespace KaraokeApp.customControl
 
 
                     if (currentLine == 0 &&
-                        lyricList[currentLine].timePoint - 2000 > currentTime)
+                        lyricList[currentLine].timePoint - currentTime > 2000)
                     {
 
+                        string currentSongName = DataPool.GetCurrentSong().GetName();
                         // Get the artist and title 
                         // Switch to current Song instead of using hard code
-                        string artist = SongUtil.GetArtist("../../Resources/streaming/ZU6EWUEA.mp3");
-                        string title = SongUtil.GetTile("../../Resources/streaming/ZU6EWUEA.mp3");
+                        string artist = SongUtil.GetArtist(STREAM_PATH + currentSongName + ".mp3");
+                        string title = SongUtil.GetTile(STREAM_PATH + currentSongName + ".mp3");
 
 
                         SizeF hStringSize = grap.MeasureString(artist, font);

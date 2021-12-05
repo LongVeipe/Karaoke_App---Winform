@@ -14,13 +14,17 @@ namespace KaraokeApp
 {
     public partial class FormPlayer : Form
     {
-        // Timer to use for frame
+        // Use for zoom animation
+        //private int scale = 0;
         private const int MAXIMUMSCALE = 50;
         private Timer timer = new Timer();
         private List<Bitmap> backgroundList;
         private int currentIndex = 0;
+
+
+        private const string BEAT_PATH = "../../Resources/beat/";
+        private const string BACKGROUND_PATH = "../../Resources/Background_Karaoke/";
         private bool karaokeMode = false;
-        //private int scale = 0;
         public FormPlayer()
         {
             InitializeComponent();
@@ -30,7 +34,7 @@ namespace KaraokeApp
             this.DoubleBuffered = true;
             timer.Interval = 10000;
             timer.Tick += Timer_Tick;
-            timer.Start();
+            //timer.Start();
 
             //backgroundPanel.Paint += new PaintEventHandler(BackGround_Pait);
         }
@@ -50,8 +54,8 @@ namespace KaraokeApp
         private void AddBackgroundImage()
         {
             backgroundList = new List<Bitmap>();
-            string[] filePaths = Directory.GetFiles(@"../../Resources/Background_Karaoke"
-                                    , "*.jpg");
+            string[] filePaths = Directory.GetFiles(BACKGROUND_PATH, 
+                "*.jpg");
             foreach (string index in filePaths)
             {
                 backgroundList.Add(new Bitmap(index));
@@ -80,7 +84,7 @@ namespace KaraokeApp
             }
         }
 
-        public void UpdateLyric(long ms)
+        public void UpdateLyric(double ms)
         {
             if(DataPool.GetCurrentSong() != null)
                 lyricViewPanel.UpdateToCurrentPosition(ms);
@@ -91,7 +95,7 @@ namespace KaraokeApp
             lyricViewPanel.PauseLyric();
         }
 
-        public void ContinueLyric(long ms)
+        public void ContinueLyric(double ms)
         {
             lyricViewPanel.UpdateToCurrentPosition(ms);
             lyricViewPanel.ContinueLyric();
@@ -99,17 +103,60 @@ namespace KaraokeApp
 
         private void btnKaraoke_Click(object sender, EventArgs e)
         {
-            karaokeMode = true;
-            backgroundPanel.BackgroundImage = backgroundList[0];
-            timer.Start();
-            lyricViewPanel.SwitchToKaraokeMode();
+            if(DataPool.GetCurrentSong() != null)
+            {
+                string currentSongName = DataPool.GetCurrentSong().GetName();
+                OpenBeatFile(BEAT_PATH + currentSongName + ".m4a");
+                karaokeMode = true;
+                backgroundPanel.BackgroundImage = backgroundList[0];
+                timer.Start();
+                btnKaraoke.Enabled = false;
+                btnLyric.Enabled = true;
+                lyricViewPanel.SwitchToKaraokeMode();
+            }
         }
 
         private void btnLyric_Click(object sender, EventArgs e)
         {
-            karaokeMode = false;
-            timer.Stop();
-            lyricViewPanel.SwitchToLyricMode();
+
+            if(DataPool.GetCurrentSong() != null)
+            {
+                karaokeMode = false;
+                btnKaraoke.Enabled = true;
+                btnLyric.Enabled = false;
+                timer.Stop();
+                OpenStreamFile(DataPool.GetCurrentSong().GetStreamLink());
+                lyricViewPanel.SwitchToLyricMode();
+                
+            }
+           
+        }
+
+
+        private void OpenBeatFile(string filePath)
+        {
+            if(File.Exists(filePath))
+            {
+                string absolutePath = Path.GetFullPath(filePath);
+                DataPool.Player.URL = absolutePath;
+                DataPool.Player.Ctlcontrols.play();
+                lyricViewPanel.UpdateToCurrentPosition(0);
+            }
+            else
+            {
+                MessageBox.Show("Bài hát không hỗ trợ Kara!");
+            }
+        }
+
+        private void OpenStreamFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                string absolutePath = Path.GetFullPath(filePath);
+                DataPool.Player.URL = absolutePath;
+                DataPool.Player.Ctlcontrols.play();
+                lyricViewPanel.UpdateToCurrentPosition(0);
+            }
         }
     }
 }
