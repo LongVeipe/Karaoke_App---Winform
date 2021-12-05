@@ -213,6 +213,16 @@ namespace KaraokeApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_micro_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_micro_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_notification_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8_notification_48", resourceCulture);
@@ -366,6 +376,36 @@ namespace KaraokeApp.Properties {
         internal static System.Drawing.Bitmap icons8_skip_to_start_48__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8_skip_to_start_48__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap micro_48px {
+            get {
+                object obj = ResourceManager.GetObject("micro_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap microw_48px {
+            get {
+                object obj = ResourceManager.GetObject("microw_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wallpaperbetter_com_1920765x1080 {
+            get {
+                object obj = ResourceManager.GetObject("wallpaperbetter.com_1920765x1080", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

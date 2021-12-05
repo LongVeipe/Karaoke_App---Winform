@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.buttonLyric = new Guna.UI2.WinForms.Guna2CircleButton();
             this.buttonSettings = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pictureBoxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.buttonPlayList = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -81,6 +82,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
+            this.guna2Panel1.Controls.Add(this.buttonLyric);
             this.guna2Panel1.Controls.Add(this.buttonSettings);
             this.guna2Panel1.Controls.Add(this.pictureBoxAvatar);
             this.guna2Panel1.Controls.Add(this.buttonPlayList);
@@ -93,6 +95,35 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(73, 700);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // buttonLyric
+            // 
+            this.buttonLyric.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonLyric.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
+            this.buttonLyric.BorderThickness = 1;
+            this.buttonLyric.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
+            this.buttonLyric.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
+            this.buttonLyric.CheckedState.Image = global::KaraokeApp.Properties.Resources.micro_48px;
+            this.buttonLyric.CheckedState.Parent = this.buttonLyric;
+            this.buttonLyric.CustomImages.Parent = this.buttonLyric;
+            this.buttonLyric.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonLyric.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonLyric.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonLyric.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonLyric.DisabledState.Parent = this.buttonLyric;
+            this.buttonLyric.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
+            this.buttonLyric.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonLyric.ForeColor = System.Drawing.Color.White;
+            this.buttonLyric.HoverState.Parent = this.buttonLyric;
+            this.buttonLyric.Image = global::KaraokeApp.Properties.Resources.microw_48px;
+            this.buttonLyric.Location = new System.Drawing.Point(16, 312);
+            this.buttonLyric.Name = "buttonLyric";
+            this.buttonLyric.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.buttonLyric.ShadowDecoration.Parent = this.buttonLyric;
+            this.buttonLyric.Size = new System.Drawing.Size(40, 40);
+            this.buttonLyric.TabIndex = 6;
+            this.buttonLyric.Tag = "Lyric";
+            this.buttonLyric.Click += new System.EventHandler(this.buttonLyric_Click);
             // 
             // buttonSettings
             // 
@@ -157,7 +188,7 @@
             this.buttonPlayList.ForeColor = System.Drawing.Color.White;
             this.buttonPlayList.HoverState.Parent = this.buttonPlayList;
             this.buttonPlayList.Image = ((System.Drawing.Image)(resources.GetObject("buttonPlayList.Image")));
-            this.buttonPlayList.Location = new System.Drawing.Point(16, 278);
+            this.buttonPlayList.Location = new System.Drawing.Point(16, 264);
             this.buttonPlayList.Name = "buttonPlayList";
             this.buttonPlayList.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.buttonPlayList.ShadowDecoration.Parent = this.buttonPlayList;
@@ -317,7 +348,7 @@
             this.labelScreenName.ForeColor = System.Drawing.Color.White;
             this.labelScreenName.Location = new System.Drawing.Point(25, 26);
             this.labelScreenName.Name = "labelScreenName";
-            this.labelScreenName.Size = new System.Drawing.Size(90, 31);
+            this.labelScreenName.Size = new System.Drawing.Size(75, 26);
             this.labelScreenName.TabIndex = 0;
             this.labelScreenName.Text = "Home";
             // 
@@ -357,7 +388,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(22, 467);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 31);
+            this.label2.Size = new System.Drawing.Size(140, 26);
             this.label2.TabIndex = 10;
             this.label2.Text = "Your Queue";
             // 
@@ -607,7 +638,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(22, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 31);
+            this.label1.Size = new System.Drawing.Size(145, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Now Playing";
             // 
@@ -637,6 +668,7 @@
             this.MinimumSize = new System.Drawing.Size(339, 440);
             this.Name = "FormMain";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
@@ -688,6 +720,7 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Panel panelChildForm;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pictureBoxAvatar;
+        private Guna.UI2.WinForms.Guna2CircleButton buttonLyric;
         private Guna.UI2.WinForms.Guna2CircleButton buttonSettings;
     }
 }
