@@ -71,6 +71,9 @@ namespace KaraokeApp
                 case "Home":
                     OpenChildForm(new FormHome());
                     break;
+                case "Settings":
+                    OpenChildForm(new FormSettings());
+                    break;
             }
         }
 
@@ -182,6 +185,11 @@ namespace KaraokeApp
             formPlayer.UpdateLyric(trackBar.Value);
             
         }
+        private void buttonSettings_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+        }
+
         private void panelTop_MouseDown(object sender, MouseEventArgs e)
         {
             //DragForm(sender, e);

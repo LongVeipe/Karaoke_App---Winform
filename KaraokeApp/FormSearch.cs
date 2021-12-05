@@ -55,15 +55,20 @@ namespace KaraokeApp
 
 			try
 			{
-				var tmp = Enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active).Select(device => {
-					return new Device(device.ID, device.FriendlyName);
-				}).ToList();
+				Device dvc = FormSettings.selectedDevice;
+				if(dvc == null)
+                {
+					dvc = Enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active).Select(device => {
+						return new Device(device.ID, device.FriendlyName);
+					}).ToList().FirstOrDefault();
+
+				}
 
 				var cancel = new CancellationTokenSource();
 
                 Task.Delay(15000).ContinueWith((_) => { cancel.Cancel(); });
 
-                var match = await Task.Run(() => IdentifyAsync(tmp[0].DeviceId, cancel.Token));
+                var match = await Task.Run(() => IdentifyAsync(dvc.DeviceId, cancel.Token));
 				if (match != null)
 				{
 					UCSongItem uc = new UCSongItem();

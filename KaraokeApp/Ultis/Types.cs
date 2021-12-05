@@ -25,6 +25,10 @@ namespace Shazam {
 			this.DeviceId = id;
 			this.DeviceName = name;
         }
+		public override string ToString()
+		{
+			return DeviceName;
+		}
 
 	}
 
