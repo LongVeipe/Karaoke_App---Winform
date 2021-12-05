@@ -35,7 +35,7 @@ namespace KaraokeApp
         {
             if (currentChildForm != null)
             {
-                this.currentChildForm.Close();
+                this.currentChildForm.();
                 this.currentChildForm.Dispose();
             }
 
@@ -67,6 +67,9 @@ namespace KaraokeApp
                     break;
                 case "Home":
                     OpenChildForm(new FormHome());
+                    break;
+                case "Settings":
+                    OpenChildForm(new FormSettings());
                     break;
             }
         }
@@ -162,6 +165,11 @@ namespace KaraokeApp
         }
 
         private void buttonPlayList_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+        }
+
+        private void buttonSettings_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
         }
