@@ -25,6 +25,13 @@ namespace KaraokeApp
         public FormHome()
         {
             InitializeComponent();
+            panelAlbums.AutoScroll = false;
+
+            panelAlbums.HorizontalScroll.Maximum = 0;
+            panelAlbums.HorizontalScroll.Visible = false;
+
+            panelAlbums.AutoScroll = true;
+
 
             newAlbums = Albums.getInstant().GetAlbums();
             recentlyMusics = RecentlyMusics.getInstant().GetAll();
