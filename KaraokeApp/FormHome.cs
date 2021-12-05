@@ -1,15 +1,8 @@
 ﻿using KaraokeApp.customControl;
 using KaraokeApp.data;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KaraokeApp
@@ -32,6 +25,13 @@ namespace KaraokeApp
         public FormHome()
         {
             InitializeComponent();
+            panelAlbums.AutoScroll = false;
+
+            panelAlbums.HorizontalScroll.Maximum = 0;
+            panelAlbums.HorizontalScroll.Visible = false;
+
+            panelAlbums.AutoScroll = true;
+
 
             newAlbums = Albums.getInstant().GetAlbums();
             recentlyMusics = RecentlyMusics.getInstant().GetAll();
