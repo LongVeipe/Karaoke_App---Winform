@@ -84,6 +84,10 @@ namespace KaraokeApp
             }
         }
 
+        public void ChangeSong()
+        {
+            this.lyricViewPanel.UpdateLyricList();
+        }
         public void UpdateLyric(double ms)
         {
             if(DataPool.GetCurrentSong() != null)
@@ -109,10 +113,8 @@ namespace KaraokeApp
                 OpenBeatFile(BEAT_PATH + currentSongName + ".m4a");
                 karaokeMode = true;
                 backgroundPanel.BackgroundImage = backgroundList[0];
-                timer.Start();
                 btnKaraoke.Enabled = false;
                 btnLyric.Enabled = true;
-                lyricViewPanel.SwitchToKaraokeMode();
             }
         }
 
@@ -141,6 +143,8 @@ namespace KaraokeApp
                 DataPool.Player.URL = absolutePath;
                 DataPool.Player.Ctlcontrols.play();
                 lyricViewPanel.UpdateToCurrentPosition(0);
+                lyricViewPanel.SwitchToKaraokeMode();
+                timer.Start();
             }
             else
             {

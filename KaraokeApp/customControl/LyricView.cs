@@ -112,6 +112,19 @@ namespace KaraokeApp.customControl
            
 
         }
+        public void UpdateLyricList()
+        {
+            if (DataPool.GetCurrentSong() != null)
+            {
+                currentLine = 0;
+                string currentSongName = DataPool.GetCurrentSong().GetName();
+                //Set Lyric List
+                lyricList = LyricUtil.ReadLRCFile(LYRIC_PATH + currentSongName
+                    + ".lrc");
+                sentences = LyricUtil.ReadKaraFile(KARA_PATH + currentSongName
+                    + ".txt");
+            }
+        }
 
         public void SetLRC(List<Lyric> _lyricList, int _lineSpacing)
         {
