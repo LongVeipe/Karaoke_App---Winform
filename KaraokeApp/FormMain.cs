@@ -271,6 +271,5 @@ namespace KaraokeApp
                 RepeatMusic();
         }
 
-       
     }
 }
