@@ -61,6 +61,7 @@ namespace KaraokeApp
             }
             currentMusic = uc;
             ((FormMain)(this.Parent.Parent.Parent)).PlayMusic(uc.Tag.ToString());
+        
         }
         private void FormHome_Load(object sender, EventArgs e)
         {

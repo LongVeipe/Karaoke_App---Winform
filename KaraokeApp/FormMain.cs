@@ -98,6 +98,10 @@ namespace KaraokeApp
                 ShowPlayingInfo(newPath);
                 player.URL = newPath;
             }
+            string fileName = Path.GetFileNameWithoutExtension(newPath);
+            // Update Current Song
+            Song newSong = new Song(fileName, newPath);
+            DataPool.UpdateCurrentSong(newSong);
             player.Ctlcontrols.play();
             //buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             buttonPlay.Image = Properties.Resources.icons8_pause_button_48;
@@ -202,10 +206,7 @@ namespace KaraokeApp
                 PlayMusic(ofd.FileName);
                 RecentlyMusics.getInstant().Add(ofd.FileName);
 
-                string fileName = Path.GetFileNameWithoutExtension(ofd.FileName);
-                // Update Current Song
-                Song newSong = new Song(fileName, ofd.FileName);
-                DataPool.UpdateCurrentSong(newSong);
+               
 
 
                 if(currentChildForm is FormPlayer)
