@@ -136,6 +136,8 @@ namespace KaraokeApp.data
 
                     
                     Lyric mLRC = new Lyric(strLineRemaining, mPointTime);
+                    if (strLineRemaining == "")
+                        return "";
                     lyricList.Add(mLRC);
                     return strLineRemaining;
                 }

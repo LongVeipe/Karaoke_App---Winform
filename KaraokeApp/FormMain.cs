@@ -30,7 +30,6 @@ namespace KaraokeApp
 
             OpenChildForm(new FormHome());
             DataPool.Player = this.player;
-            //LyricUtil.ReadLRCFile("./ZO0AZO7E.lrc");
         }
 
 
@@ -203,8 +202,9 @@ namespace KaraokeApp
                 PlayMusic(ofd.FileName);
                 RecentlyMusics.getInstant().Add(ofd.FileName);
 
+                string fileName = Path.GetFileNameWithoutExtension(ofd.FileName);
                 // Update Current Song
-                Song newSong = new Song(labelPlayingTitle.Text, ofd.FileName);
+                Song newSong = new Song(fileName, ofd.FileName);
                 DataPool.UpdateCurrentSong(newSong);
             }
         }
