@@ -206,6 +206,12 @@ namespace KaraokeApp
                 // Update Current Song
                 Song newSong = new Song(fileName, ofd.FileName);
                 DataPool.UpdateCurrentSong(newSong);
+
+
+                if(currentChildForm is FormPlayer)
+                {
+                    ((FormPlayer)currentChildForm).ChangeSong();
+                }
             }
         }
 
