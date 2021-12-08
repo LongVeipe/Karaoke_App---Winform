@@ -226,7 +226,9 @@
     </Compile>
     <Compile Include="data\DatabaseHelper.cs" />
     <Compile Include="data\DataPool.cs" />
+    <Compile Include="data\LovelyMusics.cs" />
     <Compile Include="data\Lyric.cs" />
+    <Compile Include="data\Queue.cs" />
     <Compile Include="data\RecentlyMusics.cs" />
     <Compile Include="FormFavorite.cs">
       <SubType>Form</SubType>
@@ -265,6 +267,18 @@
     <Compile Include="Shazam\Signature.cs" />
     <Compile Include="Ultis\Types.cs" />
     <Compile Include="Ultis\Utils.cs" />
+    <Compile Include="userControl\UCQueueItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UCQueueItem.Designer.cs">
+      <DependentUpon>UCQueueItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControl\UCLovelyItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UCLovelyItem.Designer.cs">
+      <DependentUpon>UCLovelyItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControl\UCRecentlyItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -324,6 +338,12 @@
     <EmbeddedResource Include="userControl\UCAlbumItem.resx">
       <DependentUpon>UCAlbumItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UCQueueItem.resx">
+      <DependentUpon>UCQueueItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UCLovelyItem.resx">
+      <DependentUpon>UCLovelyItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userControl\UCRecentlyItem.resx">
       <DependentUpon>UCRecentlyItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +395,7 @@
     <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
+    <None Include="imgs\icons\icons8-heart-48-red.png" />
     <Content Include="Resources\Background_Karaoke\1.jpg" />
     <Content Include="Resources\Background_Karaoke\10.jpg" />
     <Content Include="Resources\Background_Karaoke\11.jpg" />

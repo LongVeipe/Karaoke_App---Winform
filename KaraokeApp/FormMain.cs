@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using NAudio.Wave;
 using System.IO;
 using KaraokeApp.data;
+using KaraokeApp.userControl;
 
 namespace KaraokeApp
 {
@@ -108,6 +109,15 @@ namespace KaraokeApp
 
         }
 
+        public void RemoveLovelyInQueue(string path)
+        {
+            foreach(Control item in panelQueue.Controls)
+            {
+                UCQueueItem uc = (UCQueueItem)item;
+                uc.UnCheckedLovely();
+            }
+        }
+
         void PauseMusic()
         {
             player.Ctlcontrols.pause();
@@ -155,6 +165,19 @@ namespace KaraokeApp
             labelPlayingArtist.Text = artist;
             pictureBoxPlayingArtwork.Image = GetMp3Artwork(file);
         }
+
+        void LoadQueue(string[] fileNames)
+        {
+            foreach (string fileName in fileNames)
+            {
+                Queue.getInstant().Add(fileName);
+                UCQueueItem uc = new UCQueueItem(fileName);
+                uc.Tag = fileName;
+                uc.Name = fileName;
+                uc.Dock = DockStyle.Top;
+                panelQueue.Controls.Add(uc);
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             ActivateButton(this.buttonHome);
@@ -201,14 +224,12 @@ namespace KaraokeApp
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Multiselect = true;
             if(ofd.ShowDialog() == DialogResult.OK)
             {
+                LoadQueue(ofd.FileNames);
                 PlayMusic(ofd.FileName);
                 RecentlyMusics.getInstant().Add(ofd.FileName);
-
-               
-
-
                 if(currentChildForm is FormPlayer)
                 {
                     ((FormPlayer)currentChildForm).ChangeSong();
@@ -271,6 +292,5 @@ namespace KaraokeApp
                 RepeatMusic();
         }
 
-       
     }
 }
