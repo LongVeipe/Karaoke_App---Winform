@@ -73,6 +73,9 @@ namespace KaraokeApp
                 case "Settings":
                     OpenChildForm(new FormSettings());
                     break;
+                case "List":
+                    OpenChildForm(new FormList());
+                    break;
             }
         }
 
@@ -106,6 +109,20 @@ namespace KaraokeApp
             //buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             buttonPlay.Image = Properties.Resources.icons8_pause_button_48;
 
+        }
+
+
+        public void PlayingKaraoke()
+        {
+            Song _currentSong = DataPool.GetCurrentSong();
+            string absoluteBeatPath = Path.GetFullPath(_currentSong.GetBeatLink());
+            if (absoluteBeatPath == player.URL)
+                return;
+            else if (absoluteBeatPath != "")
+            {
+                ShowPlayingInfo(_currentSong.GetStreamLink());
+                player.URL = absoluteBeatPath;
+            }
         }
 
         void PauseMusic()

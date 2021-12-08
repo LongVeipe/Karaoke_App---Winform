@@ -12,7 +12,7 @@ using System.IO;
 
 namespace KaraokeApp.data
 {
-    class Song
+    public class Song
     {
 
         [BsonId]
@@ -34,6 +34,11 @@ namespace KaraokeApp.data
         [DataMember]
         [BsonElement("lyricLink")]
         public string lyricLink { get; set; }
+
+
+        [DataMember]
+        [BsonElement("isFavourite")]
+        public bool isFavourite { get; set; }
 
         [BsonIgnore]
         public string[] artists { get; set; }
@@ -92,7 +97,7 @@ namespace KaraokeApp.data
         {
             if(title == null)
             {
-                this.title = SongUtil.GetTile(this.lyricLink);
+                this.title = SongUtil.GetTile(this.streamLink);
             }
             return this.title;
         }
