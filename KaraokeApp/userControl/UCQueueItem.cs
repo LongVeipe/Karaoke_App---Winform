@@ -54,9 +54,9 @@ namespace KaraokeApp.userControl
         private void buttonLovely_Click(object sender, EventArgs e)
         {
             if (buttonLovely.Checked)
-                LovelyMusics.getInstant().Remove(music);
+                LovelyMusics.getInstance().Remove(music);
             else
-                LovelyMusics.getInstant().Add(music);
+                LovelyMusics.getInstance().Add(music);
 
 
             buttonLovely.Checked = !buttonLovely.Checked;

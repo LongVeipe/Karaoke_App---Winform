@@ -31,13 +31,13 @@ namespace KaraokeApp.data
     class Albums
     {
 
-        private static Albums __instant;
+        private static Albums __instance;
 
-        public static Albums getInstant()
+        public static Albums getInstance()
         {
-            if (__instant == null)
-                __instant = new Albums();
-            return __instant;
+            if (__instance == null)
+                __instance = new Albums();
+            return __instance;
         }
 
         private ObservableCollection<Album> albums;
@@ -45,15 +45,15 @@ namespace KaraokeApp.data
         public Albums()
         {
             this.albums = new ObservableCollection<Album>();
-            InitData();
+            //InitData();
         }
 
-        private void InitData()
+        public void AddData(List<Album> albs)
         {
-            this.albums.Add(new Album("Album 1", "Artist 1"));
-            this.albums.Add(new Album("Album 2", "Artist 2"));
-            this.albums.Add(new Album("Album 3", "Artist 3"));
+            foreach(Album a in albs)
+                this.albums.Add(a);
         }
+
         public ObservableCollection<Album> GetAlbums()
         {
             return this.albums;

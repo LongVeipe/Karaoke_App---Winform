@@ -35,6 +35,14 @@ namespace KaraokeApp
 				return handlerParam;
 			}
 		}
+
+		public static FormSearch __instance;
+		public static FormSearch getInstance()
+		{
+			if (__instance == null)
+				__instance = new FormSearch();
+			return __instance;
+		}
 		public FormSearch()
         {
             InitializeComponent();

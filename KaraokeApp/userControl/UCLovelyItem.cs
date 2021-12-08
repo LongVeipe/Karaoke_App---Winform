@@ -82,7 +82,7 @@ namespace KaraokeApp
 
         private void buttonLovely_Click(object sender, EventArgs e)
         {
-            LovelyMusics.getInstant().Remove(musicPath);
+            LovelyMusics.getInstance().Remove(musicPath);
             this.Dispose();
         }
     }
