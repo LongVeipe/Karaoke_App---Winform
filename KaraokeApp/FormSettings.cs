@@ -15,11 +15,11 @@ namespace KaraokeApp
     public partial class FormSettings : Form
     {
         private static readonly MMDeviceEnumerator Enumerator = new MMDeviceEnumerator();
-        public static Device selectedDevice { get; set; }
         public FormSettings()
         {
             InitializeComponent();
-            var devices = Enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active).Select(device => {
+            int index = 0;
+            var devices = Enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active).Select((device, i) => {
                 string deviceType;
                 switch (device.DataFlow)
                 {
@@ -33,16 +33,20 @@ namespace KaraokeApp
                         deviceType = "UNK - ";
                         break;
                 }
+                if(!String.IsNullOrEmpty(Properties.Settings.Default.DeviceId)
+                && device.ID == Properties.Settings.Default.DeviceId)
+                {
+                    index = i;
+                }
                 return new Device(device.ID, deviceType + device.FriendlyName);
             }).ToArray();
             cbxDevice.Items.AddRange(devices);
-            cbxDevice.SelectedIndex = 0;
-            selectedDevice = (Device)cbxDevice.SelectedItem;
+            cbxDevice.SelectedIndex = index;
         }
 
         private void cbxDevice_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectedDevice = (Device)cbxDevice.SelectedItem;
+            Properties.Settings.Default.DeviceId = ((Device)cbxDevice.SelectedItem).DeviceId;
         }
     }
 }
