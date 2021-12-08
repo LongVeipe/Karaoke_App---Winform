@@ -11,6 +11,8 @@ namespace KaraokeApp
     {
         private ObservableCollection<Album> newAlbums;
         private ObservableCollection<string> recentlyMusics;
+        private ObservableCollection<string> lovelyMusics;
+
         private UCRecentlyItem currentMusic;
 
         protected override CreateParams CreateParams
@@ -36,6 +38,9 @@ namespace KaraokeApp
             newAlbums = Albums.getInstant().GetAlbums();
             recentlyMusics = RecentlyMusics.getInstant().GetAll();
             recentlyMusics.CollectionChanged += RecentlyMusicsChange;
+
+            lovelyMusics = LovelyMusics.getInstant().GetAll();
+            lovelyMusics.CollectionChanged += LovelyMusicsChange;
         }
 
         void RecentlyMusicsChange(object sender, NotifyCollectionChangedEventArgs e)
@@ -48,6 +53,26 @@ namespace KaraokeApp
                     uc.Tag = path;
                     this.panelRecently.Controls.Add(uc);
                     this.panelRecently.Controls.SetChildIndex(uc, 0);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        void LovelyMusicsChange(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            switch (e.Action)
+            {
+                case NotifyCollectionChangedAction.Add:
+                    string newItem = e.NewItems[0].ToString();
+                    UCLovelyItem uc = new UCLovelyItem(newItem);
+                    uc.Tag = newItem;
+                    this.panelLovely.Controls.Add(uc);
+                    this.panelLovely.Controls.SetChildIndex(uc, 0);
+                    break;
+                case NotifyCollectionChangedAction.Remove:
+                    string oldItem = e.OldItems[0].ToString();
+                    //Console.WriteLine(this.Parent.Location.X);
                     break;
                 default:
                     break;

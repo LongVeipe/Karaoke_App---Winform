@@ -173,6 +173,16 @@ namespace KaraokeApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_heart_48_red {
+            get {
+                object obj = ResourceManager.GetObject("icons8_heart_48_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_home_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8_home_48", resourceCulture);
@@ -206,16 +216,6 @@ namespace KaraokeApp.Properties {
         internal static System.Drawing.Bitmap icons8_left_48__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8_left_48__1_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_micro_16 {
-            get {
-                object obj = ResourceManager.GetObject("icons8_micro_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -381,6 +381,16 @@ namespace KaraokeApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Inter_VariableFont_slnt_wght {
+            get {
+                object obj = ResourceManager.GetObject("Inter_VariableFont_slnt_wght", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap micro_48px {
@@ -393,29 +403,19 @@ namespace KaraokeApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap microw_48px {
-            get {
-                object obj = ResourceManager.GetObject("microw_48px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap wallpaperbetter_com_1920765x1080 {
-            get {
-                object obj = ResourceManager.GetObject("wallpaperbetter.com_1920765x1080", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap microphone_24px {
             get {
                 object obj = ResourceManager.GetObject("microphone_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap microw_48px {
+            get {
+                object obj = ResourceManager.GetObject("microw_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
