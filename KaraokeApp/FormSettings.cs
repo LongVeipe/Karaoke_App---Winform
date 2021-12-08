@@ -14,6 +14,13 @@ namespace KaraokeApp
 {
     public partial class FormSettings : Form
     {
+        public static FormSettings __instance;
+        public static FormSettings getInstance()
+        {
+            if (__instance == null)
+                __instance = new FormSettings();
+            return __instance;
+        }
         private static readonly MMDeviceEnumerator Enumerator = new MMDeviceEnumerator();
         public FormSettings()
         {

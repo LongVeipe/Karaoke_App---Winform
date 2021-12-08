@@ -47,7 +47,6 @@
             this.labelScreenName = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelPlaying = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelQueue = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
@@ -62,10 +61,11 @@
             this.labelPlayingTitle = new System.Windows.Forms.Label();
             this.pictureBoxPlayingArtwork = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelTopPlaying = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnSelectSongs = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.timerMusic = new System.Windows.Forms.Timer(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.panelQueue = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
@@ -171,7 +171,7 @@
             this.buttonSettings.Size = new System.Drawing.Size(40, 40);
             this.buttonSettings.TabIndex = 5;
             this.buttonSettings.Tag = "Settings";
-            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
+            this.buttonSettings.Click += new System.EventHandler(this.ActivateButton);
             // 
             // pictureBoxAvatar
             // 
@@ -214,7 +214,7 @@
             this.buttonPlayList.Size = new System.Drawing.Size(40, 40);
             this.buttonPlayList.TabIndex = 3;
             this.buttonPlayList.Tag = "Play List";
-            this.buttonPlayList.Click += new System.EventHandler(this.buttonPlayList_Click);
+            this.buttonPlayList.Click += new System.EventHandler(this.ActivateButton);
             // 
             // buttonFavorite
             // 
@@ -243,7 +243,7 @@
             this.buttonFavorite.Size = new System.Drawing.Size(40, 40);
             this.buttonFavorite.TabIndex = 2;
             this.buttonFavorite.Tag = "Favorite";
-            this.buttonFavorite.Click += new System.EventHandler(this.buttonFavorite_Click);
+            this.buttonFavorite.Click += new System.EventHandler(this.ActivateButton);
             // 
             // buttonSearch
             // 
@@ -272,7 +272,7 @@
             this.buttonSearch.Size = new System.Drawing.Size(40, 40);
             this.buttonSearch.TabIndex = 1;
             this.buttonSearch.Tag = "Search";
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.buttonSearch.Click += new System.EventHandler(this.ActivateButton);
             // 
             // buttonHome
             // 
@@ -302,7 +302,7 @@
             this.buttonHome.Size = new System.Drawing.Size(40, 40);
             this.buttonHome.TabIndex = 0;
             this.buttonHome.Tag = "Home";
-            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            this.buttonHome.Click += new System.EventHandler(this.ActivateButton);
             // 
             // guna2Panel2
             // 
@@ -400,18 +400,6 @@
             this.panelPlaying.ShadowDecoration.Parent = this.panelPlaying;
             this.panelPlaying.Size = new System.Drawing.Size(319, 700);
             this.panelPlaying.TabIndex = 0;
-            // 
-            // panelQueue
-            // 
-            this.panelQueue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelQueue.AutoScroll = true;
-            this.panelQueue.Location = new System.Drawing.Point(8, 496);
-            this.panelQueue.Name = "panelQueue";
-            this.panelQueue.ShadowDecoration.Parent = this.panelQueue;
-            this.panelQueue.Size = new System.Drawing.Size(301, 192);
-            this.panelQueue.TabIndex = 11;
             // 
             // label2
             // 
@@ -633,7 +621,7 @@
             // 
             // panelTopPlaying
             // 
-            this.panelTopPlaying.Controls.Add(this.guna2ImageButton1);
+            this.panelTopPlaying.Controls.Add(this.btnSelectSongs);
             this.panelTopPlaying.Controls.Add(this.label1);
             this.panelTopPlaying.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopPlaying.Location = new System.Drawing.Point(0, 0);
@@ -642,26 +630,26 @@
             this.panelTopPlaying.Size = new System.Drawing.Size(319, 78);
             this.panelTopPlaying.TabIndex = 2;
             // 
-            // guna2ImageButton1
+            // btnSelectSongs
             // 
-            this.guna2ImageButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.HoverState.ImageRotate = 360F;
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
-            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(267, 26);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.ShadowDecoration.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(26, 26);
-            this.guna2ImageButton1.TabIndex = 1;
-            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            this.btnSelectSongs.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSelectSongs.CheckedState.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnSelectSongs.CheckedState.Parent = this.btnSelectSongs;
+            this.btnSelectSongs.HoverState.ImageRotate = 360F;
+            this.btnSelectSongs.HoverState.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnSelectSongs.HoverState.Parent = this.btnSelectSongs;
+            this.btnSelectSongs.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectSongs.Image")));
+            this.btnSelectSongs.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnSelectSongs.ImageRotate = 0F;
+            this.btnSelectSongs.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSelectSongs.Location = new System.Drawing.Point(267, 26);
+            this.btnSelectSongs.Name = "btnSelectSongs";
+            this.btnSelectSongs.PressedState.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnSelectSongs.PressedState.Parent = this.btnSelectSongs;
+            this.btnSelectSongs.ShadowDecoration.Parent = this.btnSelectSongs;
+            this.btnSelectSongs.Size = new System.Drawing.Size(26, 26);
+            this.btnSelectSongs.TabIndex = 1;
+            this.btnSelectSongs.Click += new System.EventHandler(this.btnSelectSongs_Click);
             // 
             // label1
             // 
@@ -684,6 +672,18 @@
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl1.TargetControl = this.panelTop;
             this.guna2DragControl1.TransparentWhileDrag = false;
+            // 
+            // panelQueue
+            // 
+            this.panelQueue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelQueue.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.panelQueue.Location = new System.Drawing.Point(13, 502);
+            this.panelQueue.Name = "panelQueue";
+            this.panelQueue.Size = new System.Drawing.Size(301, 192);
+            this.panelQueue.TabIndex = 11;
+            this.panelQueue.WrapContents = false;
             // 
             // FormMain
             // 
@@ -732,7 +732,7 @@
         private System.Windows.Forms.Label labelScreenName;
         private Guna.UI2.WinForms.Guna2Panel panelPlaying;
         private Guna.UI2.WinForms.Guna2Panel panelTopPlaying;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private Guna.UI2.WinForms.Guna2ImageButton btnSelectSongs;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelPlayingArtist;
         private System.Windows.Forms.Label labelPlayingTitle;
@@ -756,7 +756,7 @@
         private Guna.UI2.WinForms.Guna2CircleButton buttonLyric;
         private Guna.UI2.WinForms.Guna2CircleButton buttonSettings;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2Panel panelQueue;
+        private System.Windows.Forms.FlowLayoutPanel panelQueue;
     }
 }
 

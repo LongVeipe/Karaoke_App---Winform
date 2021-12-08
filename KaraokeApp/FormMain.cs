@@ -13,6 +13,7 @@ using NAudio.Wave;
 using System.IO;
 using KaraokeApp.data;
 using KaraokeApp.userControl;
+using System.Diagnostics;
 
 namespace KaraokeApp
 {
@@ -23,14 +24,34 @@ namespace KaraokeApp
 
         private Guna2CircleButton currentBtn;
         private Form currentChildForm;
-        
 
+        //drag form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        void DragForm(object sender, EventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         public FormMain()
         {
             InitializeComponent();
 
-            OpenChildForm(new FormHome());
+            OpenChildForm(FormHome.getInstance());
             DataPool.Player = this.player;
+
+            panelQueue.AutoScroll = false;
+
+            panelQueue.VerticalScroll.Maximum = 0;
+            panelQueue.VerticalScroll.Visible = false;
+            panelQueue.HorizontalScroll.Maximum = 0;
+            panelQueue.HorizontalScroll.Visible = false;
+
+            panelQueue.AutoScroll = true;
         }
 
 
@@ -38,21 +59,21 @@ namespace KaraokeApp
         {
             if (currentChildForm != null)
             {
-                this.currentChildForm.Close();
-                this.currentChildForm.Dispose();
+                this.currentChildForm.Hide();
             }
 
             currentChildForm = childForm;
             currentChildForm.TopLevel = false;
             childForm.Dock = DockStyle.Fill;
-            panelChildForm.Controls.Add(childForm);
+            if(panelChildForm.Controls.IndexOf(childForm) < 0)
+                panelChildForm.Controls.Add(childForm);
             //childForm.Parent = this;
             //panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }
 
-        private void ActivateButton(object sender)
+        private void ActivateButton(object sender, EventArgs e)
         {
             if (sender == null)
                 return;
@@ -66,28 +87,15 @@ namespace KaraokeApp
             switch(currentBtn.Tag.ToString())
             {
                 case "Search":
-                    OpenChildForm(new FormSearch());
+                    OpenChildForm(FormSearch.getInstance());
                     break;
                 case "Home":
-                    OpenChildForm(new FormHome());
+                    OpenChildForm(FormHome.getInstance());
                     break;
                 case "Settings":
-                    OpenChildForm(new FormSettings());
+                    OpenChildForm(FormSettings.getInstance());
                     break;
             }
-        }
-
-        //drag form
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        void DragForm(object sender, EventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         public void PlayMusic(string newPath="")
@@ -148,7 +156,7 @@ namespace KaraokeApp
             }
             else
             {
-                // set "no cover" image
+                // TODO: set "no cover" image
                 return null;
             }
         }
@@ -157,7 +165,7 @@ namespace KaraokeApp
             string artist = "Unknown", title = "Unknown";
 
             TagLib.File file = TagLib.File.Create(path);
-            string[] artists = file.Tag.Artists;
+            string[] artists = file.Tag.Performers;
             artist = artists.Length > 0 ? artists.FirstOrDefault() : "Unknown";
             title = file.Tag.Title != null? file.Tag.Title: "Unknown";
 
@@ -170,50 +178,27 @@ namespace KaraokeApp
         {
             foreach (string fileName in fileNames)
             {
-                Queue.getInstant().Add(fileName);
+                Queue.getInstance().Add(fileName);
                 UCQueueItem uc = new UCQueueItem(fileName);
                 uc.Tag = fileName;
                 uc.Name = fileName;
-                uc.Dock = DockStyle.Top;
+                //uc.Dock = DockStyle.Top;
                 panelQueue.Controls.Add(uc);
             }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            ActivateButton(this.buttonHome);
-        }
-        private void buttonHome_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-        }
-
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-        }
-
-        private void buttonFavorite_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-        }
-
-        private void buttonPlayList_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
+            ActivateButton(this.buttonHome, e);
         }
 
         private void buttonLyric_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            ActivateButton(sender, e);
             FormPlayer formPlayer = new FormPlayer();
 
             OpenChildForm(formPlayer);
             formPlayer.UpdateLyric(trackBar.Value);
             
-        }
-        private void buttonSettings_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
         }
 
         private void panelTop_MouseDown(object sender, MouseEventArgs e)
@@ -221,7 +206,7 @@ namespace KaraokeApp
             //DragForm(sender, e);
         }
 
-        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        private void btnSelectSongs_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Multiselect = true;
@@ -229,12 +214,21 @@ namespace KaraokeApp
             {
                 LoadQueue(ofd.FileNames);
                 PlayMusic(ofd.FileName);
-                RecentlyMusics.getInstant().Add(ofd.FileName);
+                RecentlyMusics.getInstance().Add(ofd.FileName);
                 if(currentChildForm is FormPlayer)
                 {
                     ((FormPlayer)currentChildForm).ChangeSong();
                 }
             }
+
+            List<Album> albs = new List<Album>();
+            foreach(string fp in ofd.FileNames)
+            {
+                TagLib.File file = TagLib.File.Create(fp);
+                albs.Add(new Album(file.Tag.Album, string.Join(", ", file.Tag.AlbumArtists)));
+            }
+            Albums.getInstance().AddData(albs);
+            FormHome.getInstance().LoadAlbums();
         }
 
         private void timerMusic_Tick(object sender, EventArgs e)

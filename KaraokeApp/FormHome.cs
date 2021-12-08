@@ -12,8 +12,15 @@ namespace KaraokeApp
         private ObservableCollection<Album> newAlbums;
         private ObservableCollection<string> recentlyMusics;
         private ObservableCollection<string> lovelyMusics;
-
         private UCRecentlyItem currentMusic;
+
+        public static FormHome __instance;
+        public static FormHome getInstance()
+        {
+            if (__instance == null)
+                __instance = new FormHome();
+            return __instance;
+        }
 
         protected override CreateParams CreateParams
         {
@@ -27,22 +34,31 @@ namespace KaraokeApp
         public FormHome()
         {
             InitializeComponent();
+
+            newAlbums = Albums.getInstance().GetAlbums();
+            recentlyMusics = RecentlyMusics.getInstance().GetAll();
+            recentlyMusics.CollectionChanged += RecentlyMusicsChange;
+
+            lovelyMusics = LovelyMusics.getInstance().GetAll();
+            lovelyMusics.CollectionChanged += LovelyMusicsChange;
+        }
+        public void LoadAlbums()
+        {
+            this.panelAlbums.Controls.Clear();
+
+            foreach (Album album in newAlbums)
+            {
+                UCAlbumItem uc = new UCAlbumItem(album);
+                this.panelAlbums.Controls.Add(uc);
+            }
+
             panelAlbums.AutoScroll = false;
 
             panelAlbums.HorizontalScroll.Maximum = 0;
             panelAlbums.HorizontalScroll.Visible = false;
 
             panelAlbums.AutoScroll = true;
-
-
-            newAlbums = Albums.getInstant().GetAlbums();
-            recentlyMusics = RecentlyMusics.getInstant().GetAll();
-            recentlyMusics.CollectionChanged += RecentlyMusicsChange;
-
-            lovelyMusics = LovelyMusics.getInstant().GetAll();
-            lovelyMusics.CollectionChanged += LovelyMusicsChange;
         }
-
         void RecentlyMusicsChange(object sender, NotifyCollectionChangedEventArgs e)
         {
             switch(e.Action)
@@ -90,11 +106,7 @@ namespace KaraokeApp
         }
         private void FormHome_Load(object sender, EventArgs e)
         {
-            foreach (Album album in newAlbums)
-            {
-                UCAlbumItem uc = new UCAlbumItem(album);
-                this.panelAlbums.Controls.Add(uc);
-            }
+            LoadAlbums();
             foreach (string path in recentlyMusics)
             {
                 try
