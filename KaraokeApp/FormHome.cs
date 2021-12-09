@@ -49,6 +49,8 @@ namespace KaraokeApp
             foreach (Album album in newAlbums)
             {
                 UCAlbumItem uc = new UCAlbumItem(album);
+                PictureBox ptb = (PictureBox)uc.Controls.Find("pictureBoxBgr", true)[0];
+                ptb.Image = album.GetCover();
                 this.panelAlbums.Controls.Add(uc);
             }
 

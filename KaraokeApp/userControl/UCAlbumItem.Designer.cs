@@ -44,19 +44,21 @@
             this.guna2Panel1.Controls.Add(this.labelArtist);
             this.guna2Panel1.Controls.Add(this.pictureBoxBgr);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(20, 10);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 12);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(280, 186);
+            this.guna2Panel1.Size = new System.Drawing.Size(273, 230);
             this.guna2Panel1.TabIndex = 1;
             // 
             // labelTitle
             // 
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(27, 87);
+            this.labelTitle.Location = new System.Drawing.Point(11, 110);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(226, 89);
+            this.labelTitle.Size = new System.Drawing.Size(246, 110);
             this.labelTitle.TabIndex = 2;
             this.labelTitle.Text = "Mercury: Act1";
             // 
@@ -66,9 +68,10 @@
             this.labelArtist.BackColor = System.Drawing.Color.Transparent;
             this.labelArtist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelArtist.ForeColor = System.Drawing.Color.White;
-            this.labelArtist.Location = new System.Drawing.Point(30, 50);
+            this.labelArtist.Location = new System.Drawing.Point(15, 65);
+            this.labelArtist.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelArtist.Name = "labelArtist";
-            this.labelArtist.Size = new System.Drawing.Size(101, 17);
+            this.labelArtist.Size = new System.Drawing.Size(121, 20);
             this.labelArtist.TabIndex = 1;
             this.labelArtist.Text = "New Album by ";
             // 
@@ -79,22 +82,24 @@
             this.pictureBoxBgr.Image = global::KaraokeApp.Properties.Resources.fullClrBgr1;
             this.pictureBoxBgr.ImageRotate = 0F;
             this.pictureBoxBgr.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxBgr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxBgr.Name = "pictureBoxBgr";
             this.pictureBoxBgr.ShadowDecoration.Parent = this.pictureBoxBgr;
-            this.pictureBoxBgr.Size = new System.Drawing.Size(280, 186);
+            this.pictureBoxBgr.Size = new System.Drawing.Size(273, 230);
             this.pictureBoxBgr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBgr.TabIndex = 3;
             this.pictureBoxBgr.TabStop = false;
             // 
             // UCAlbumItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.guna2Panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UCAlbumItem";
-            this.Padding = new System.Windows.Forms.Padding(20, 10, 0, 10);
-            this.Size = new System.Drawing.Size(300, 206);
+            this.Padding = new System.Windows.Forms.Padding(0, 12, 27, 12);
+            this.Size = new System.Drawing.Size(300, 254);
             this.Load += new System.EventHandler(this.AlbumItem_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();

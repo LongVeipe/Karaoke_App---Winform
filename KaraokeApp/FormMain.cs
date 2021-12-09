@@ -225,7 +225,7 @@ namespace KaraokeApp
             foreach(string fp in ofd.FileNames)
             {
                 TagLib.File file = TagLib.File.Create(fp);
-                albs.Add(new Album(file.Tag.Album, string.Join(", ", file.Tag.AlbumArtists)));
+                albs.Add(new Album(file.Tag.Album, string.Join(", ", file.Tag.AlbumArtists), GetMp3Artwork(file)));
             }
             Albums.getInstance().AddData(albs);
             FormHome.getInstance().LoadAlbums();
