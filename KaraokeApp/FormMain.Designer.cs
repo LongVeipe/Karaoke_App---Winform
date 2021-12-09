@@ -37,7 +37,6 @@
             this.buttonSettings = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pictureBoxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.buttonPlayList = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.buttonFavorite = new Guna.UI2.WinForms.Guna2CircleButton();
             this.buttonSearch = new Guna.UI2.WinForms.Guna2CircleButton();
             this.buttonHome = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -47,6 +46,7 @@
             this.labelScreenName = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelPlaying = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelQueue = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
@@ -65,7 +65,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timerMusic = new System.Windows.Forms.Timer(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.panelQueue = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
@@ -90,7 +89,6 @@
             this.guna2Panel1.Controls.Add(this.buttonSettings);
             this.guna2Panel1.Controls.Add(this.pictureBoxAvatar);
             this.guna2Panel1.Controls.Add(this.buttonPlayList);
-            this.guna2Panel1.Controls.Add(this.buttonFavorite);
             this.guna2Panel1.Controls.Add(this.buttonSearch);
             this.guna2Panel1.Controls.Add(this.buttonHome);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -135,7 +133,7 @@
             this.buttonLyric.ForeColor = System.Drawing.Color.White;
             this.buttonLyric.HoverState.Parent = this.buttonLyric;
             this.buttonLyric.Image = global::KaraokeApp.Properties.Resources.microw_48px;
-            this.buttonLyric.Location = new System.Drawing.Point(16, 312);
+            this.buttonLyric.Location = new System.Drawing.Point(16, 292);
             this.buttonLyric.Name = "buttonLyric";
             this.buttonLyric.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.buttonLyric.ShadowDecoration.Parent = this.buttonLyric;
@@ -194,7 +192,7 @@
             this.buttonPlayList.BorderThickness = 1;
             this.buttonPlayList.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
             this.buttonPlayList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
-            this.buttonPlayList.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.buttonPlayList.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.buttonPlayList.CheckedState.Parent = this.buttonPlayList;
             this.buttonPlayList.CustomImages.Parent = this.buttonPlayList;
             this.buttonPlayList.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -207,7 +205,7 @@
             this.buttonPlayList.ForeColor = System.Drawing.Color.White;
             this.buttonPlayList.HoverState.Parent = this.buttonPlayList;
             this.buttonPlayList.Image = ((System.Drawing.Image)(resources.GetObject("buttonPlayList.Image")));
-            this.buttonPlayList.Location = new System.Drawing.Point(16, 264);
+            this.buttonPlayList.Location = new System.Drawing.Point(16, 228);
             this.buttonPlayList.Name = "buttonPlayList";
             this.buttonPlayList.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.buttonPlayList.ShadowDecoration.Parent = this.buttonPlayList;
@@ -216,35 +214,6 @@
             this.buttonPlayList.Tag = "Play List";
             this.buttonPlayList.Click += new System.EventHandler(this.ActivateButton);
             // 
-            // buttonFavorite
-            // 
-            this.buttonFavorite.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonFavorite.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.buttonFavorite.BorderThickness = 1;
-            this.buttonFavorite.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
-            this.buttonFavorite.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
-            this.buttonFavorite.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.buttonFavorite.CheckedState.Parent = this.buttonFavorite;
-            this.buttonFavorite.CustomImages.Parent = this.buttonFavorite;
-            this.buttonFavorite.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonFavorite.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonFavorite.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonFavorite.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonFavorite.DisabledState.Parent = this.buttonFavorite;
-            this.buttonFavorite.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.buttonFavorite.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonFavorite.ForeColor = System.Drawing.Color.White;
-            this.buttonFavorite.HoverState.Parent = this.buttonFavorite;
-            this.buttonFavorite.Image = ((System.Drawing.Image)(resources.GetObject("buttonFavorite.Image")));
-            this.buttonFavorite.Location = new System.Drawing.Point(16, 218);
-            this.buttonFavorite.Name = "buttonFavorite";
-            this.buttonFavorite.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.buttonFavorite.ShadowDecoration.Parent = this.buttonFavorite;
-            this.buttonFavorite.Size = new System.Drawing.Size(40, 40);
-            this.buttonFavorite.TabIndex = 2;
-            this.buttonFavorite.Tag = "Favorite";
-            this.buttonFavorite.Click += new System.EventHandler(this.ActivateButton);
-            // 
             // buttonSearch
             // 
             this.buttonSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -252,7 +221,7 @@
             this.buttonSearch.BorderThickness = 1;
             this.buttonSearch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
             this.buttonSearch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
-            this.buttonSearch.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.buttonSearch.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.buttonSearch.CheckedState.Parent = this.buttonSearch;
             this.buttonSearch.CustomImages.Parent = this.buttonSearch;
             this.buttonSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -265,7 +234,7 @@
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
             this.buttonSearch.HoverState.Parent = this.buttonSearch;
             this.buttonSearch.Image = ((System.Drawing.Image)(resources.GetObject("buttonSearch.Image")));
-            this.buttonSearch.Location = new System.Drawing.Point(16, 158);
+            this.buttonSearch.Location = new System.Drawing.Point(16, 164);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.buttonSearch.ShadowDecoration.Parent = this.buttonSearch;
@@ -282,7 +251,7 @@
             this.buttonHome.Checked = true;
             this.buttonHome.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
             this.buttonHome.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
-            this.buttonHome.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.buttonHome.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.buttonHome.CheckedState.Parent = this.buttonHome;
             this.buttonHome.CustomImages.Parent = this.buttonHome;
             this.buttonHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -295,7 +264,7 @@
             this.buttonHome.ForeColor = System.Drawing.Color.White;
             this.buttonHome.HoverState.Parent = this.buttonHome;
             this.buttonHome.Image = ((System.Drawing.Image)(resources.GetObject("buttonHome.Image")));
-            this.buttonHome.Location = new System.Drawing.Point(16, 98);
+            this.buttonHome.Location = new System.Drawing.Point(16, 100);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.buttonHome.ShadowDecoration.Parent = this.buttonHome;
@@ -367,7 +336,7 @@
             this.labelScreenName.ForeColor = System.Drawing.Color.White;
             this.labelScreenName.Location = new System.Drawing.Point(25, 26);
             this.labelScreenName.Name = "labelScreenName";
-            this.labelScreenName.Size = new System.Drawing.Size(75, 26);
+            this.labelScreenName.Size = new System.Drawing.Size(90, 31);
             this.labelScreenName.TabIndex = 0;
             this.labelScreenName.Text = "Home";
             // 
@@ -401,6 +370,18 @@
             this.panelPlaying.Size = new System.Drawing.Size(319, 700);
             this.panelPlaying.TabIndex = 0;
             // 
+            // panelQueue
+            // 
+            this.panelQueue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelQueue.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.panelQueue.Location = new System.Drawing.Point(13, 502);
+            this.panelQueue.Name = "panelQueue";
+            this.panelQueue.Size = new System.Drawing.Size(301, 192);
+            this.panelQueue.TabIndex = 11;
+            this.panelQueue.WrapContents = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -408,7 +389,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(22, 467);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 26);
+            this.label2.Size = new System.Drawing.Size(169, 31);
             this.label2.TabIndex = 10;
             this.label2.Text = "Your Queue";
             // 
@@ -440,7 +421,7 @@
             // buttonRepeat
             // 
             this.buttonRepeat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonRepeat.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.buttonRepeat.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.buttonRepeat.CheckedState.Parent = this.buttonRepeat;
             this.buttonRepeat.CustomImages.Parent = this.buttonRepeat;
             this.buttonRepeat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -511,7 +492,7 @@
             // buttonPlay
             // 
             this.buttonPlay.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonPlay.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.buttonPlay.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.buttonPlay.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.buttonPlay.CheckedState.Parent = this.buttonPlay;
             this.buttonPlay.HoverState.ImageSize = new System.Drawing.Size(40, 40);
@@ -658,7 +639,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(22, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 26);
+            this.label1.Size = new System.Drawing.Size(176, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Now Playing";
             // 
@@ -672,18 +653,6 @@
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl1.TargetControl = this.panelTop;
             this.guna2DragControl1.TransparentWhileDrag = false;
-            // 
-            // panelQueue
-            // 
-            this.panelQueue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelQueue.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.panelQueue.Location = new System.Drawing.Point(13, 502);
-            this.panelQueue.Name = "panelQueue";
-            this.panelQueue.Size = new System.Drawing.Size(301, 192);
-            this.panelQueue.TabIndex = 11;
-            this.panelQueue.WrapContents = false;
             // 
             // FormMain
             // 
@@ -726,7 +695,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2CircleButton buttonHome;
         private Guna.UI2.WinForms.Guna2CircleButton buttonPlayList;
-        private Guna.UI2.WinForms.Guna2CircleButton buttonFavorite;
         private Guna.UI2.WinForms.Guna2CircleButton buttonSearch;
         private Guna.UI2.WinForms.Guna2Panel panelTop;
         private System.Windows.Forms.Label labelScreenName;

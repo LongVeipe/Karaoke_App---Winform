@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +12,12 @@ namespace KaraokeApp.data
     {
         private string artist;
         private string title;
-
-        public Album(string title = "", string artist = "")
+        private Bitmap cover;
+        public Album(string title = "", string artist = "", Bitmap cover = null)
         {
             this.title = title;
             this.artist = artist;
+            this.cover = cover;
         }
 
         public string GetTitle()
@@ -26,6 +28,11 @@ namespace KaraokeApp.data
         public string GetArtist()
         {
             return this.artist;
+        }
+
+        public Bitmap GetCover()
+        {
+            return this.cover;
         }
     }
     class Albums
