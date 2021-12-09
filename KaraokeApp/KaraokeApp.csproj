@@ -228,6 +228,7 @@
     <Compile Include="data\DataPool.cs" />
     <Compile Include="data\Lyric.cs" />
     <Compile Include="data\RecentlyMusics.cs" />
+    <Compile Include="data\Recorder.cs" />
     <Compile Include="FormFavorite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,7 +248,10 @@
     <Compile Include="FormPlayer.Designer.cs">
       <DependentUpon>FormPlayer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="FormSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -393,6 +397,10 @@
     <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
+    <None Include="imgs\icons\record_48px.png" />
+    <None Include="imgs\icons\square_52px.png" />
+    <None Include="imgs\icons\rectangle_32px.png" />
+    <None Include="imgs\icons\pause_50px.png" />
     <Content Include="Resources\Background_Karaoke\1.jpg" />
     <Content Include="Resources\Background_Karaoke\10.jpg" />
     <Content Include="Resources\Background_Karaoke\11.jpg" />
