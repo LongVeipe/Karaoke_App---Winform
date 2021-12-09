@@ -9,13 +9,13 @@ namespace KaraokeApp.data
 {
     class Queue
     {
-        private static Queue __instant;
+        private static Queue __instance;
 
-        public static Queue getInstant()
+        public static Queue getInstance()
         {
-            if (__instant == null)
-                __instant = new Queue();
-            return __instant;
+            if (__instance == null)
+                __instance = new Queue();
+            return __instance;
         }
 
         private ObservableCollection<string> queue;

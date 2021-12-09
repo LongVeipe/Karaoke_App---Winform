@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +12,12 @@ namespace KaraokeApp.data
     {
         private string artist;
         private string title;
-
-        public Album(string title = "", string artist = "")
+        private Bitmap cover;
+        public Album(string title = "", string artist = "", Bitmap cover = null)
         {
             this.title = title;
             this.artist = artist;
+            this.cover = cover;
         }
 
         public string GetTitle()
@@ -27,17 +29,22 @@ namespace KaraokeApp.data
         {
             return this.artist;
         }
+
+        public Bitmap GetCover()
+        {
+            return this.cover;
+        }
     }
     class Albums
     {
 
-        private static Albums __instant;
+        private static Albums __instance;
 
-        public static Albums getInstant()
+        public static Albums getInstance()
         {
-            if (__instant == null)
-                __instant = new Albums();
-            return __instant;
+            if (__instance == null)
+                __instance = new Albums();
+            return __instance;
         }
 
         private ObservableCollection<Album> albums;
@@ -45,15 +52,15 @@ namespace KaraokeApp.data
         public Albums()
         {
             this.albums = new ObservableCollection<Album>();
-            InitData();
+            //InitData();
         }
 
-        private void InitData()
+        public void AddData(List<Album> albs)
         {
-            this.albums.Add(new Album("Album 1", "Artist 1"));
-            this.albums.Add(new Album("Album 2", "Artist 2"));
-            this.albums.Add(new Album("Album 3", "Artist 3"));
+            foreach(Album a in albs)
+                this.albums.Add(a);
         }
+
         public ObservableCollection<Album> GetAlbums()
         {
             return this.albums;

@@ -38,9 +38,10 @@ namespace KaraokeApp
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(32, 16);
+            this.label1.Location = new System.Drawing.Point(24, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 25);
+            this.label1.Size = new System.Drawing.Size(113, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Record Device";
             // 
@@ -58,22 +59,24 @@ namespace KaraokeApp
             this.cbxDevice.HoverState.Parent = this.cbxDevice;
             this.cbxDevice.ItemHeight = 30;
             this.cbxDevice.ItemsAppearance.Parent = this.cbxDevice;
-            this.cbxDevice.Location = new System.Drawing.Point(187, 12);
+            this.cbxDevice.Location = new System.Drawing.Point(140, 10);
+            this.cbxDevice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxDevice.Name = "cbxDevice";
             this.cbxDevice.ShadowDecoration.Parent = this.cbxDevice;
-            this.cbxDevice.Size = new System.Drawing.Size(560, 36);
+            this.cbxDevice.Size = new System.Drawing.Size(421, 36);
             this.cbxDevice.TabIndex = 1;
             this.cbxDevice.SelectedIndexChanged += new System.EventHandler(this.cbxDevice_SelectedIndexChanged);
             // 
             // FormSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(811, 766);
+            this.ClientSize = new System.Drawing.Size(608, 622);
             this.Controls.Add(this.cbxDevice);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormSettings";
             this.Text = "FormSettings";
             this.ResumeLayout(false);

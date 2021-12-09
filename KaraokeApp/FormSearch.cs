@@ -35,6 +35,14 @@ namespace KaraokeApp
 				return handlerParam;
 			}
 		}
+
+		public static FormSearch __instance;
+		public static FormSearch getInstance()
+		{
+			if (__instance == null)
+				__instance = new FormSearch();
+			return __instance;
+		}
 		public FormSearch()
         {
             InitializeComponent();
@@ -55,20 +63,16 @@ namespace KaraokeApp
 
 			try
 			{
-				Device dvc = FormSettings.selectedDevice;
-				if(dvc == null)
-                {
-					dvc = Enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active).Select(device => {
-						return new Device(device.ID, device.FriendlyName);
-					}).ToList().FirstOrDefault();
+				string deviceID = Properties.Settings.Default.DeviceId;
+				if (String.IsNullOrEmpty(deviceID))
+					deviceID = Enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active).FirstOrDefault().ID;
 
-				}
 
 				var cancel = new CancellationTokenSource();
 
                 Task.Delay(15000).ContinueWith((_) => { cancel.Cancel(); });
 
-                var match = await Task.Run(() => IdentifyAsync(dvc.DeviceId, cancel.Token));
+                var match = await Task.Run(() => IdentifyAsync(deviceID, cancel.Token));
 				if (match != null)
 				{
 					UCSongItem uc = new UCSongItem();

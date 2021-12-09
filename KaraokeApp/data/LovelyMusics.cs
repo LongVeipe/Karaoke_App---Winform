@@ -9,13 +9,13 @@ namespace KaraokeApp.data
 {
     class LovelyMusics
     {
-        private static LovelyMusics __instant;
+        private static LovelyMusics __instance;
 
-        public static LovelyMusics getInstant()
+        public static LovelyMusics getInstance()
         {
-            if (__instant == null)
-                __instant = new LovelyMusics();
-            return __instant;
+            if (__instance == null)
+                __instance = new LovelyMusics();
+            return __instance;
         }
 
         private ObservableCollection<string> lovelyMusics;
