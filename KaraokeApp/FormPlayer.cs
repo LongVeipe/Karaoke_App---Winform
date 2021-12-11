@@ -227,7 +227,7 @@ namespace KaraokeApp
                     string title = DataPool.GetCurrentSong().GetTitle();
                     int recordID = DataPool.GetNumberRecord();
                     _record = new Recorder(RECORD_PATH, 
-                        title + recordID.ToString() + ".wav", 0);
+                        title +"_record" +  recordID.ToString() + ".wav", 0);
                     _record.StartRecording();
                     double currentTime = DataPool.Player.Ctlcontrols.currentPosition;
                     _record.SetStartPosition(TimeSpan.FromSeconds(currentTime));

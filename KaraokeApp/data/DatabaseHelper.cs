@@ -48,6 +48,7 @@ namespace KaraokeApp.data
         public static void SaveRecord(Record _record)
         {
             recordCollection.InsertOne(_record);
+            DataPool.InsertRecord(_record);
 
         }
 

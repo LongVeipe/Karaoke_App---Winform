@@ -30,9 +30,9 @@ namespace KaraokeApp
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbType = new System.Windows.Forms.ComboBox();
             this.flowPNLListSong = new System.Windows.Forms.FlowLayoutPanel();
             this.txtSeach = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,21 +46,6 @@ namespace KaraokeApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(608, 622);
             this.panel1.TabIndex = 0;
-            // 
-            // cbType
-            // 
-            this.cbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbType.FormattingEnabled = true;
-            this.cbType.Items.AddRange(new object[] {
-            "Both (Except Record)",
-            "Song",
-            "Karaoke",
-            "Record"});
-            this.cbType.Location = new System.Drawing.Point(455, 7);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(121, 21);
-            this.cbType.TabIndex = 2;
-            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // flowPNLListSong
             // 
@@ -91,19 +76,47 @@ namespace KaraokeApp
             this.txtSeach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSeach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSeach.FocusedState.Parent = this.txtSeach;
-            this.txtSeach.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSeach.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSeach.HoverState.Parent = this.txtSeach;
             this.txtSeach.IconRight = global::KaraokeApp.Properties.Resources.search_40px;
-            this.txtSeach.Location = new System.Drawing.Point(32, 0);
+            this.txtSeach.Location = new System.Drawing.Point(32, 3);
             this.txtSeach.Name = "txtSeach";
             this.txtSeach.PasswordChar = '\0';
             this.txtSeach.PlaceholderText = "";
             this.txtSeach.SelectedText = "";
             this.txtSeach.ShadowDecoration.Parent = this.txtSeach;
-            this.txtSeach.Size = new System.Drawing.Size(400, 32);
+            this.txtSeach.Size = new System.Drawing.Size(288, 36);
             this.txtSeach.TabIndex = 0;
             this.txtSeach.TextChanged += new System.EventHandler(this.txtSeach_TextChanged);
+            // 
+            // cbType
+            // 
+            this.cbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbType.BackColor = System.Drawing.Color.Transparent;
+            this.cbType.BorderRadius = 5;
+            this.cbType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbType.FocusedState.Parent = this.cbType;
+            this.cbType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbType.HoverState.Parent = this.cbType;
+            this.cbType.ItemHeight = 30;
+            this.cbType.Items.AddRange(new object[] {
+            "Both (Except Record)",
+            "Song",
+            "Karaoke",
+            "Record"});
+            this.cbType.ItemsAppearance.Parent = this.cbType;
+            this.cbType.Location = new System.Drawing.Point(326, 3);
+            this.cbType.Name = "cbType";
+            this.cbType.ShadowDecoration.Parent = this.cbType;
+            this.cbType.Size = new System.Drawing.Size(250, 36);
+            this.cbType.TabIndex = 3;
+            this.cbType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.txtSeach_TextChanged);
             // 
             // FormList
             // 
@@ -126,6 +139,6 @@ namespace KaraokeApp
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2TextBox txtSeach;
         private System.Windows.Forms.FlowLayoutPanel flowPNLListSong;
-        private System.Windows.Forms.ComboBox cbType;
+        private Guna.UI2.WinForms.Guna2ComboBox cbType;
     }
 }

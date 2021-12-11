@@ -413,6 +413,16 @@ namespace KaraokeApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pause_26px {
+            get {
+                object obj = ResourceManager.GetObject("pause_26px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pause_50px {
             get {
                 object obj = ResourceManager.GetObject("pause_50px", resourceCulture);
