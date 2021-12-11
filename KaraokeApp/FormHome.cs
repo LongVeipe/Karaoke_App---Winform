@@ -41,6 +41,22 @@ namespace KaraokeApp
 
             lovelyMusics = LovelyMusics.getInstance().GetAll();
             lovelyMusics.CollectionChanged += LovelyMusicsChange;
+
+            panelLovely.AutoScroll = false;
+
+            panelLovely.VerticalScroll.Maximum = 0;
+            panelLovely.VerticalScroll.Visible = false;
+
+            panelLovely.AutoScroll = true;
+
+
+            panelRecently.AutoScroll = false;
+
+            panelRecently.VerticalScroll.Maximum = 0;
+            panelRecently.VerticalScroll.Visible = false;
+
+            panelRecently.AutoScroll = true;
+
         }
         public void LoadAlbums()
         {
