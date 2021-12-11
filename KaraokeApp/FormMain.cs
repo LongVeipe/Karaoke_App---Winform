@@ -22,7 +22,7 @@ namespace KaraokeApp
 
         private Guna2CircleButton currentBtn;
         private Form currentChildForm;
-        
+
 
         public FormMain()
         {
@@ -56,13 +56,13 @@ namespace KaraokeApp
             if (sender == null)
                 return;
 
-            if(currentBtn != null)
+            if (currentBtn != null)
                 currentBtn.Checked = false;
             currentBtn = (Guna2CircleButton)sender;
             currentBtn.Checked = true;
 
             labelScreenName.Text = currentBtn.Tag.ToString();
-            switch(currentBtn.Tag.ToString())
+            switch (currentBtn.Tag.ToString())
             {
                 case "Search":
                     OpenChildForm(new FormSearch());
@@ -92,7 +92,26 @@ namespace KaraokeApp
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        public void PlayMusic(string newPath="")
+        public void PlayMusic(string newPath = "")
+        {
+            if (newPath == player.URL)
+                return;
+            else if (newPath != "")
+            {
+                ShowPlayingInfo(newPath);
+                player.URL = newPath;
+                string fileName = Path.GetFileNameWithoutExtension(newPath);
+                // Update Current Song
+                Song newSong = new Song(fileName, newPath);
+                DataPool.UpdateCurrentSong(newSong);
+            }
+
+            player.Ctlcontrols.play();
+            //buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            buttonPlay.Image = Properties.Resources.icons8_pause_button_48;
+
+        }
+        public void PlayMusicInDB(string newPath = "")
         {
             if (newPath == player.URL)
                 return;
@@ -101,14 +120,9 @@ namespace KaraokeApp
                 ShowPlayingInfo(newPath);
                 player.URL = newPath;
             }
-            string fileName = Path.GetFileNameWithoutExtension(newPath);
-            // Update Current Song
-            Song newSong = new Song(fileName, newPath);
-            DataPool.UpdateCurrentSong(newSong);
             player.Ctlcontrols.play();
             //buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             buttonPlay.Image = Properties.Resources.icons8_pause_button_48;
-
         }
 
 
@@ -123,14 +137,23 @@ namespace KaraokeApp
                 ShowPlayingInfo(_currentSong.GetStreamLink());
                 player.URL = absoluteBeatPath;
             }
-        }
+            buttonPlay.Image = Properties.Resources.icons8_pause_button_48;
 
-        void PauseMusic()
+            DialogResult result = MessageBox.Show("Bạn có muốn chuyển qua Karaoke Mode ?",
+                "Xác nhận", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                buttonLyric.PerformClick();
+            }
+        }
+        
+
+        public void PauseMusic()
         {
             player.Ctlcontrols.pause();
             //buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("buttonPlay.Image")));
             buttonPlay.Image = Properties.Resources.icons8_circled_play_48;
-            if(currentChildForm is FormPlayer)
+            if (currentChildForm is FormPlayer)
             {
                 ((FormPlayer)currentChildForm).PauseLyric();
             }
@@ -166,7 +189,7 @@ namespace KaraokeApp
             TagLib.File file = TagLib.File.Create(path);
             string[] artists = file.Tag.Artists;
             artist = artists.Length > 0 ? artists.FirstOrDefault() : "Unknown";
-            title = file.Tag.Title != null? file.Tag.Title: "Unknown";
+            title = file.Tag.Title != null ? file.Tag.Title : "Unknown";
 
             labelPlayingTitle.Text = title;
             labelPlayingArtist.Text = artist;
@@ -203,7 +226,7 @@ namespace KaraokeApp
 
             OpenChildForm(formPlayer);
             formPlayer.UpdateLyric(trackBar.Value);
-            
+
         }
         private void buttonSettings_Click(object sender, EventArgs e)
         {
@@ -218,15 +241,15 @@ namespace KaraokeApp
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            if(ofd.ShowDialog() == DialogResult.OK)
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
                 PlayMusic(ofd.FileName);
                 RecentlyMusics.getInstant().Add(ofd.FileName);
 
-               
 
 
-                if(currentChildForm is FormPlayer)
+
+                if (currentChildForm is FormPlayer)
                 {
                     ((FormPlayer)currentChildForm).ChangeSong();
                 }
@@ -251,7 +274,7 @@ namespace KaraokeApp
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            if(player.Ctlcontrols.currentItem != null)
+            if (player.Ctlcontrols.currentItem != null)
             {
                 if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
@@ -261,7 +284,7 @@ namespace KaraokeApp
                 else if (player.playState == WMPLib.WMPPlayState.wmppsPaused)
                 {
                     PlayMusic();
-                    if(currentChildForm is FormPlayer)
+                    if (currentChildForm is FormPlayer)
                     {
                         ((FormPlayer)currentChildForm).ContinueLyric(trackBar.Value);
                     }
@@ -274,9 +297,9 @@ namespace KaraokeApp
             if (player.Ctlcontrols.currentItem == null)
                 trackBar.Value = 0;
             player.Ctlcontrols.currentPosition = trackBar.Value;
-            
 
-            if(currentChildForm is FormPlayer)
+
+            if (currentChildForm is FormPlayer)
             {
                 ((FormPlayer)currentChildForm).UpdateLyric(trackBar.Value * 1000);
             }

@@ -30,15 +30,15 @@ namespace KaraokeApp
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbType = new System.Windows.Forms.ComboBox();
             this.flowPNLListSong = new System.Windows.Forms.FlowLayoutPanel();
             this.txtSeach = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbType);
             this.panel1.Controls.Add(this.flowPNLListSong);
             this.panel1.Controls.Add(this.txtSeach);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -46,6 +46,21 @@ namespace KaraokeApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(608, 622);
             this.panel1.TabIndex = 0;
+            // 
+            // cbType
+            // 
+            this.cbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Items.AddRange(new object[] {
+            "Both (Except Record)",
+            "Song",
+            "Karaoke",
+            "Record"});
+            this.cbType.Location = new System.Drawing.Point(455, 7);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(121, 21);
+            this.cbType.TabIndex = 2;
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // flowPNLListSong
             // 
@@ -88,18 +103,7 @@ namespace KaraokeApp
             this.txtSeach.ShadowDecoration.Parent = this.txtSeach;
             this.txtSeach.Size = new System.Drawing.Size(400, 32);
             this.txtSeach.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Both",
-            "Song",
-            "Karaoke"});
-            this.comboBox1.Location = new System.Drawing.Point(455, 7);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
+            this.txtSeach.TextChanged += new System.EventHandler(this.txtSeach_TextChanged);
             // 
             // FormList
             // 
@@ -122,6 +126,6 @@ namespace KaraokeApp
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2TextBox txtSeach;
         private System.Windows.Forms.FlowLayoutPanel flowPNLListSong;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbType;
     }
 }

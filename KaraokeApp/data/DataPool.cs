@@ -12,7 +12,7 @@ namespace KaraokeApp.data
         private static List<Song> songList;
         private static Song currentSong;
         private static List<Song> recentlyPlayedList;
-        private static List<Album> albumList;
+        private static List<Record> recordList;
         public static AxWindowsMediaPlayer Player;
 
 
@@ -31,6 +31,19 @@ namespace KaraokeApp.data
             songList = _songList;
         }
 
+        public static void UpdateRecordList(List<Record> _recordList)
+        {
+            recordList = _recordList;
+        }
+        public static int GetNumberRecord()
+        {
+            return recordList.Count;
+        }
+        public static void  InsertRecord(Record _record)
+        {
+            recordList.Add(_record);
+
+        }
         public static List<Song> GetSongList()
         {
             return songList;
@@ -44,6 +57,12 @@ namespace KaraokeApp.data
         public static List<Song> GetRecentlyPlayedList()
         {
             return recentlyPlayedList;
+        }
+
+
+        public static List<Record> GetRecordList()
+        {
+            return recordList;
         }
     }
 }

@@ -25,6 +25,8 @@ namespace KaraokeApp
 
         private const string BEAT_PATH = "../../Resources/beat/";
         private const string BACKGROUND_PATH = "../../Resources/Background_Karaoke/";
+        private const string RECORD_PATH = "../../Resources/record/";
+
         private bool karaokeMode = false;
         public FormPlayer()
         {
@@ -36,7 +38,8 @@ namespace KaraokeApp
             timer.Interval = 10000;
             timer.Tick += Timer_Tick;
             pnlRecord.Visible = false;
-            //timer.Start();
+            SetMode();
+
 
             //backgroundPanel.Paint += new PaintEventHandler(BackGround_Pait);
         }
@@ -72,7 +75,7 @@ namespace KaraokeApp
                     currentIndex = 0;
                 backgroundPanel.BackgroundImage = backgroundList[currentIndex];
 
-
+                //Animation
                 /*   scale+=10;
                    if(scale > MAXIMUMSCALE)
                    {
@@ -120,6 +123,43 @@ namespace KaraokeApp
                 pnlRecord.Visible = true;
             }
         }
+        public void SetKaraokeMode()
+        {
+            if (DataPool.GetCurrentSong() != null)
+            {
+                karaokeMode = true;
+                backgroundPanel.BackgroundImage = backgroundList[0];
+                btnKaraoke.Enabled = false;
+                btnLyric.Enabled = true;
+                pnlRecord.Visible = true;
+            }
+        }
+
+        public void SetLyricMode()
+        {
+            if (DataPool.GetCurrentSong() != null)
+            {
+                karaokeMode = false;
+                btnKaraoke.Enabled = true;
+                btnLyric.Enabled = false;
+                timer.Stop();
+                lyricViewPanel.SwitchToLyricMode();
+                pnlRecord.Visible = false;
+            }
+        }
+        
+        public void SetMode()
+        {
+            string currentURL = DataPool.Player.URL;
+            if(currentURL.Contains(".m4a"))
+            {
+                SetKaraokeMode();
+            }
+            else if(currentURL.Contains(".mp3"))
+            {
+                SetLyricMode();
+            }
+        }
 
         private void btnLyric_Click(object sender, EventArgs e)
         {
@@ -134,7 +174,6 @@ namespace KaraokeApp
                 lyricViewPanel.SwitchToLyricMode();
                 pnlRecord.Visible = false;
             }
-
         }
 
 
@@ -175,6 +214,7 @@ namespace KaraokeApp
                 if(_record.isPaused == false)
                 {
                     _record.PauseRecording();
+                    ((FormMain)(this.Parent.Parent.Parent)).PauseMusic();
                 }
 
             }
@@ -183,23 +223,48 @@ namespace KaraokeApp
                 btnRecord.Checked = true;
                 if (_record == null)
                 {
-                    _record = new Recorder("../../Resources/record/", "1.wav", 0);
+                    /// 0 == The first input device driver in your desktop
+                    string title = DataPool.GetCurrentSong().GetTitle();
+                    int recordID = DataPool.GetNumberRecord();
+                    _record = new Recorder(RECORD_PATH, 
+                        title + recordID.ToString() + ".wav", 0);
                     _record.StartRecording();
+                    double currentTime = DataPool.Player.Ctlcontrols.currentPosition;
+                    _record.SetStartPosition(TimeSpan.FromSeconds(currentTime));
                 }
                 else if (_record.isPaused == true)
                 {
                     _record.ResumeRecording();
-                
+                    ((FormMain)(this.Parent.Parent.Parent)).PlayMusic();
                 }   
             }
         }
 
         private void btnStopRecording_Click(object sender, EventArgs e)
         {
-            if(btnRecord.Checked)
+            if(btnRecord.Checked && _record != null)
             {
                 btnRecord.Checked = false;
-                _record.RecordEnd();
+
+                try
+                {
+                    // Done Record and begin to mix file1
+                    _record.RecordEnd();
+                    double currentTime = DataPool.Player.
+                        Ctlcontrols.currentPosition;
+                    _record.SetEndPosition(TimeSpan.FromSeconds(currentTime));
+                    _record.MixingAudio(DataPool.GetCurrentSong().GetBeatLink());
+                }
+                catch
+                {
+
+                }
+                finally
+                {
+                    _record.DeleteMicFile();
+                    _record = null;
+                    MessageBox.Show("Thu âm thành công!");
+                }
             }
 
         }

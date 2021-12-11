@@ -1,4 +1,6 @@
-﻿using NAudio.Wave;
+﻿
+using NAudio.Wave;
+using NAudio.Wave.SampleProviders;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,10 +14,21 @@ namespace KaraokeApp.data
     {
         WaveIn sourceStream;
         WaveFileWriter waveWriter;
+
+
         readonly string FilePath;
         readonly string FileName;
+
+
+
+        private string micFile;
         readonly int InputDeviceIndex;
+
+
+
         public bool isPaused;
+        private TimeSpan startPosition;
+        private TimeSpan endPosition;
 
 
         public Recorder(string filePath, string fileName, int deviceID)
@@ -23,6 +36,7 @@ namespace KaraokeApp.data
             this.FileName = fileName;
             this.FilePath = filePath;
             this.InputDeviceIndex = deviceID;
+            this.micFile = FilePath + "mic" + FileName;
         }
 
 
@@ -43,7 +57,7 @@ namespace KaraokeApp.data
                 Directory.CreateDirectory(FilePath);
             }
             isPaused = false;
-            waveWriter = new WaveFileWriter(FilePath + FileName, sourceStream.WaveFormat);
+            waveWriter = new WaveFileWriter(micFile, sourceStream.WaveFormat);
             sourceStream.StartRecording();
         }
 
@@ -90,6 +104,62 @@ namespace KaraokeApp.data
                 sourceStream.DataAvailable += SourceStreamDataAvailable;
                 isPaused = false;
             }
+        }
+    
+        private IWaveProvider CutAudio(WaveStream wave)
+        {
+            ISampleProvider sourceProvider = wave.ToSampleProvider();
+
+            // Take audio from startPosition to endPosition
+            OffsetSampleProvider start = new OffsetSampleProvider(sourceProvider)
+            {
+                SkipOver = startPosition,
+                Take = (endPosition - startPosition)
+            };
+
+            return (start.ToWaveProvider());
+        }
+
+
+        public void MixingAudio(string pathFile)
+        {
+            AudioFileReader reader = new AudioFileReader(pathFile);
+            
+
+            // File Mic and File cutted beat
+            IWaveProvider wave = CutAudio(reader);
+            IWaveProvider wave1 = new AudioFileReader(micFile);
+
+            var mixer = new MixingWaveProvider32(new[]
+                { wave, wave1});
+
+            var outFormat = new WaveFormat(44100, 16, 1);
+            var resampler = new MediaFoundationResampler(mixer, outFormat);
+
+            // Create and save File in DB
+            WaveFileWriter.CreateWaveFile(FilePath + FileName, resampler);
+            DatabaseHelper.SaveRecord(new Record(FileName,
+                FilePath + FileName));
+        }
+
+
+        public void SetStartPosition(TimeSpan _startPosition)
+        {
+            this.startPosition = _startPosition;
+        }
+
+        public void SetEndPosition(TimeSpan _endPosition)
+        {
+            this.endPosition = _endPosition;
+        }
+
+
+        public void DeleteMicFile()
+        {
+            // Remove Mic File after it's being used
+            System.GC.Collect();
+            System.GC.WaitForPendingFinalizers();
+            File.Delete(micFile);
         }
     }
 }

@@ -38,6 +38,7 @@ namespace KaraokeApp.userControl
             string absolutePath = Path.GetFullPath(songItem.GetStreamLink());
             ((FormList)(this.Parent.Parent.Parent))
                 .PlaySong(this, absolutePath);
+            DataPool.UpdateCurrentSong(songItem);
         }
 
         private void btnPlayKaraoke_Click(object sender, EventArgs e)

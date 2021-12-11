@@ -14,8 +14,10 @@ namespace KaraokeApp.data
         private const string streamingPath = "../../Resources/streaming/";
         private const string lyricPath = "../../Resources/lyric/";
         private const string beatPath = "../../Resources/beat/";
+        private const string recordPath = "../../Resources/record/";
         private static MongoClient client = null;
         private static IMongoCollection<Song> songCollection = null;
+        private static IMongoCollection<Record> recordCollection= null;
 
         public static void CreateConnection()
         {
@@ -26,6 +28,7 @@ namespace KaraokeApp.data
                     client = new MongoClient("mongodb://localhost:27017");
                     IMongoDatabase mDatabase = client.GetDatabase("KaraokeApp");
                     songCollection = mDatabase.GetCollection<Song>("song");
+                    recordCollection = mDatabase.GetCollection<Record>("record");
 
                     System.Console.WriteLine("Connect to MongoDB successfully at port 27017");
                 }
@@ -42,11 +45,22 @@ namespace KaraokeApp.data
             songCollection.InsertOne(song);
         }
 
+        public static void SaveRecord(Record _record)
+        {
+            recordCollection.InsertOne(_record);
+
+        }
+
+
         public static List<Song> GetAllSongInDatabase()
         {
             return songCollection.Find(new BsonDocument()).ToList();
         }
 
+        public static List<Record> GetAllRecordInDatabase()
+        {
+            return recordCollection.Find(new BsonDocument()).ToList();
+        }
         public static void Seeder()
         {
             // Song (Name, StreamingPath, LyricPath, BeatPath)
@@ -78,6 +92,7 @@ namespace KaraokeApp.data
         public static void FillDataPool()
         {
             DataPool.UpdateSongList(GetAllSongInDatabase());
+            DataPool.UpdateRecordList(GetAllRecordInDatabase());
         }
 
     }

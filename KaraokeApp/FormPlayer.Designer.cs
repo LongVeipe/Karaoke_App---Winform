@@ -33,10 +33,10 @@ namespace KaraokeApp
             this.pnlRecord = new System.Windows.Forms.Panel();
             this.btnRecord = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnStopRecording = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.lyricViewPanel = new KaraokeApp.customControl.LyricView();
             this.backgroundButtonPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLyric = new Guna.UI2.WinForms.Guna2Button();
             this.btnKaraoke = new Guna.UI2.WinForms.Guna2Button();
-            this.lyricViewPanel = new KaraokeApp.customControl.LyricView();
             this.backgroundPanel.SuspendLayout();
             this.pnlRecord.SuspendLayout();
             this.backgroundButtonPanel.SuspendLayout();
@@ -114,6 +114,17 @@ namespace KaraokeApp
             this.btnStopRecording.TabIndex = 3;
             this.btnStopRecording.Click += new System.EventHandler(this.btnStopRecording_Click);
             // 
+            // lyricViewPanel
+            // 
+            this.lyricViewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lyricViewPanel.BackColor = System.Drawing.Color.Transparent;
+            this.lyricViewPanel.Location = new System.Drawing.Point(55, 54);
+            this.lyricViewPanel.Name = "lyricViewPanel";
+            this.lyricViewPanel.Size = new System.Drawing.Size(742, 483);
+            this.lyricViewPanel.TabIndex = 1;
+            // 
             // backgroundButtonPanel
             // 
             this.backgroundButtonPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -121,7 +132,8 @@ namespace KaraokeApp
             this.backgroundButtonPanel.BorderRadius = 10;
             this.backgroundButtonPanel.Controls.Add(this.btnLyric);
             this.backgroundButtonPanel.Controls.Add(this.btnKaraoke);
-            this.backgroundButtonPanel.Location = new System.Drawing.Point(268, 2);
+            this.backgroundButtonPanel.Location = new System.Drawing.Point(261, 0);
+            this.backgroundButtonPanel.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
             this.backgroundButtonPanel.Name = "backgroundButtonPanel";
             this.backgroundButtonPanel.ShadowDecoration.Parent = this.backgroundButtonPanel;
             this.backgroundButtonPanel.Size = new System.Drawing.Size(304, 45);
@@ -151,8 +163,6 @@ namespace KaraokeApp
             // 
             // btnKaraoke
             // 
-            this.btnKaraoke.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnKaraoke.BorderRadius = 5;
             this.btnKaraoke.CheckedState.Parent = this.btnKaraoke;
             this.btnKaraoke.CustomImages.Parent = this.btnKaraoke;
@@ -172,16 +182,6 @@ namespace KaraokeApp
             this.btnKaraoke.TabIndex = 1;
             this.btnKaraoke.Text = "Karaoke";
             this.btnKaraoke.Click += new System.EventHandler(this.btnKaraoke_Click);
-            // 
-            // lyricViewPanel
-            // 
-            this.lyricViewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lyricViewPanel.BackColor = System.Drawing.Color.Transparent;
-            this.lyricViewPanel.Location = new System.Drawing.Point(55, 47);
-            this.lyricViewPanel.Name = "lyricViewPanel";
-            this.lyricViewPanel.Size = new System.Drawing.Size(742, 490);
-            this.lyricViewPanel.TabIndex = 1;
             // 
             // FormPlayer
             // 
