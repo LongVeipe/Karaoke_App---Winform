@@ -73,7 +73,7 @@
             this.buttonLovely.ImageOffset = new System.Drawing.Point(0, 0);
             this.buttonLovely.ImageRotate = 0F;
             this.buttonLovely.ImageSize = new System.Drawing.Size(25, 25);
-            this.buttonLovely.Location = new System.Drawing.Point(523, 17);
+            this.buttonLovely.Location = new System.Drawing.Point(345, 11);
             this.buttonLovely.Name = "buttonLovely";
             this.buttonLovely.PressedState.ImageSize = new System.Drawing.Size(23, 23);
             this.buttonLovely.PressedState.Parent = this.buttonLovely;
@@ -95,7 +95,7 @@
             this.buttonPlay.ImageOffset = new System.Drawing.Point(0, 0);
             this.buttonPlay.ImageRotate = 0F;
             this.buttonPlay.ImageSize = new System.Drawing.Size(25, 25);
-            this.buttonPlay.Location = new System.Drawing.Point(479, 17);
+            this.buttonPlay.Location = new System.Drawing.Point(311, 11);
             this.buttonPlay.Name = "buttonPlay";
             this.buttonPlay.PressedState.ImageSize = new System.Drawing.Size(23, 23);
             this.buttonPlay.PressedState.Parent = this.buttonPlay;
@@ -114,7 +114,7 @@
             this.buttonMenu.ImageOffset = new System.Drawing.Point(0, 0);
             this.buttonMenu.ImageRotate = 0F;
             this.buttonMenu.ImageSize = new System.Drawing.Size(21, 21);
-            this.buttonMenu.Location = new System.Drawing.Point(567, 16);
+            this.buttonMenu.Location = new System.Drawing.Point(389, 16);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.PressedState.ImageSize = new System.Drawing.Size(18, 18);
             this.buttonMenu.PressedState.Parent = this.buttonMenu;
@@ -148,7 +148,7 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.pictureBoxArtwork);
             this.Name = "UCQueueItem";
-            this.Size = new System.Drawing.Size(562, 57);
+            this.Size = new System.Drawing.Size(384, 57);
             this.Load += new System.EventHandler(this.UCQueueItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtwork)).EndInit();
             this.ResumeLayout(false);

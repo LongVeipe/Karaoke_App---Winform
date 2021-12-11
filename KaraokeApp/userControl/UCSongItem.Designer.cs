@@ -33,8 +33,8 @@ namespace KaraokeApp.userControl
             this.pnlSong = new Guna.UI2.WinForms.Guna2Panel();
             this.lblSong = new System.Windows.Forms.Label();
             this.pnlMain = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnSz = new Guna.UI2.WinForms.Guna2Button();
-            this.btnYoutube = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSz = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnYoutube = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.ptbSzResult)).BeginInit();
             this.pnlSong.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -49,7 +49,7 @@ namespace KaraokeApp.userControl
             this.ptbSzResult.Margin = new System.Windows.Forms.Padding(0);
             this.ptbSzResult.Name = "ptbSzResult";
             this.ptbSzResult.ShadowDecoration.Parent = this.ptbSzResult;
-            this.ptbSzResult.Size = new System.Drawing.Size(72, 72);
+            this.ptbSzResult.Size = new System.Drawing.Size(48, 48);
             this.ptbSzResult.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbSzResult.TabIndex = 6;
             this.ptbSzResult.TabStop = false;
@@ -59,10 +59,10 @@ namespace KaraokeApp.userControl
             this.pnlSong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSong.Controls.Add(this.lblSong);
-            this.pnlSong.Location = new System.Drawing.Point(75, 0);
+            this.pnlSong.Location = new System.Drawing.Point(51, 0);
             this.pnlSong.Name = "pnlSong";
             this.pnlSong.ShadowDecoration.Parent = this.pnlSong;
-            this.pnlSong.Size = new System.Drawing.Size(207, 72);
+            this.pnlSong.Size = new System.Drawing.Size(167, 48);
             this.pnlSong.TabIndex = 7;
             // 
             // lblSong
@@ -73,7 +73,7 @@ namespace KaraokeApp.userControl
             this.lblSong.ForeColor = System.Drawing.Color.White;
             this.lblSong.Location = new System.Drawing.Point(0, 0);
             this.lblSong.Name = "lblSong";
-            this.lblSong.Size = new System.Drawing.Size(207, 72);
+            this.lblSong.Size = new System.Drawing.Size(167, 48);
             this.lblSong.TabIndex = 0;
             this.lblSong.Text = "label1";
             this.lblSong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -83,25 +83,20 @@ namespace KaraokeApp.userControl
             this.pnlMain.AutoSize = true;
             this.pnlMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlMain.Controls.Add(this.btnSz);
             this.pnlMain.Controls.Add(this.btnYoutube);
+            this.pnlMain.Controls.Add(this.btnSz);
             this.pnlMain.Controls.Add(this.pnlSong);
             this.pnlMain.Controls.Add(this.ptbSzResult);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.ShadowDecoration.Parent = this.pnlMain;
-            this.pnlMain.Size = new System.Drawing.Size(325, 88);
+            this.pnlMain.Size = new System.Drawing.Size(248, 60);
             this.pnlMain.TabIndex = 6;
             // 
             // btnSz
             // 
-            this.btnSz.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSz.BackgroundImage = global::KaraokeApp.Properties.Resources.shazam_48px;
-            this.btnSz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSz.BorderColor = System.Drawing.Color.White;
-            this.btnSz.BorderThickness = 1;
             this.btnSz.CheckedState.Parent = this.btnSz;
             this.btnSz.CustomImages.Parent = this.btnSz;
             this.btnSz.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -110,26 +105,22 @@ namespace KaraokeApp.userControl
             this.btnSz.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSz.DisabledState.Parent = this.btnSz;
             this.btnSz.FillColor = System.Drawing.Color.Transparent;
-            this.btnSz.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSz.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSz.ForeColor = System.Drawing.Color.White;
             this.btnSz.HoverState.Parent = this.btnSz;
-            this.btnSz.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSz.ImageSize = new System.Drawing.Size(48, 48);
-            this.btnSz.Location = new System.Drawing.Point(291, 37);
+            this.btnSz.Image = global::KaraokeApp.Properties.Resources.shazam_48px;
+            this.btnSz.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnSz.Location = new System.Drawing.Point(224, 0);
             this.btnSz.Name = "btnSz";
+            this.btnSz.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnSz.ShadowDecoration.Parent = this.btnSz;
-            this.btnSz.Size = new System.Drawing.Size(32, 32);
-            this.btnSz.TabIndex = 12;
+            this.btnSz.Size = new System.Drawing.Size(24, 24);
+            this.btnSz.TabIndex = 1;
             this.btnSz.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnSz.Click += new System.EventHandler(this.goTo_Click);
             // 
             // btnYoutube
             // 
-            this.btnYoutube.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnYoutube.BackgroundImage = global::KaraokeApp.Properties.Resources.YouTube_60px;
-            this.btnYoutube.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnYoutube.BorderColor = System.Drawing.Color.White;
-            this.btnYoutube.BorderThickness = 1;
             this.btnYoutube.CheckedState.Parent = this.btnYoutube;
             this.btnYoutube.CustomImages.Parent = this.btnYoutube;
             this.btnYoutube.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -138,16 +129,17 @@ namespace KaraokeApp.userControl
             this.btnYoutube.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnYoutube.DisabledState.Parent = this.btnYoutube;
             this.btnYoutube.FillColor = System.Drawing.Color.Transparent;
-            this.btnYoutube.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnYoutube.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnYoutube.ForeColor = System.Drawing.Color.White;
             this.btnYoutube.HoverState.Parent = this.btnYoutube;
-            this.btnYoutube.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnYoutube.ImageSize = new System.Drawing.Size(48, 48);
-            this.btnYoutube.Location = new System.Drawing.Point(291, 0);
+            this.btnYoutube.Image = global::KaraokeApp.Properties.Resources.YouTube_60px;
+            this.btnYoutube.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnYoutube.Location = new System.Drawing.Point(224, 26);
             this.btnYoutube.Name = "btnYoutube";
+            this.btnYoutube.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnYoutube.ShadowDecoration.Parent = this.btnYoutube;
-            this.btnYoutube.Size = new System.Drawing.Size(32, 32);
-            this.btnYoutube.TabIndex = 13;
+            this.btnYoutube.Size = new System.Drawing.Size(24, 24);
+            this.btnYoutube.TabIndex = 8;
             this.btnYoutube.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnYoutube.Click += new System.EventHandler(this.goTo_Click);
             // 
@@ -162,7 +154,7 @@ namespace KaraokeApp.userControl
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCSongItem";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Size = new System.Drawing.Size(325, 88);
+            this.Size = new System.Drawing.Size(248, 60);
             ((System.ComponentModel.ISupportInitialize)(this.ptbSzResult)).EndInit();
             this.pnlSong.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
@@ -177,7 +169,7 @@ namespace KaraokeApp.userControl
         private Guna.UI2.WinForms.Guna2Panel pnlSong;
         private System.Windows.Forms.Label lblSong;
         private Guna.UI2.WinForms.Guna2Panel pnlMain;
-        private Guna.UI2.WinForms.Guna2Button btnSz;
-        private Guna.UI2.WinForms.Guna2Button btnYoutube;
+        private Guna.UI2.WinForms.Guna2CircleButton btnSz;
+        private Guna.UI2.WinForms.Guna2CircleButton btnYoutube;
     }
 }

@@ -63,17 +63,15 @@ namespace KaraokeApp.userControl
         public void UnCheckedLovely()
         {
             this.buttonLovely.Checked = false;
-            Console.WriteLine("1111" + buttonLovely.Checked.ToString());
         }
         private void buttonLovely_Click(object sender, EventArgs e)
         {
-            if (buttonLovely.Checked)
+            buttonLovely.Checked = !buttonLovely.Checked;
+
+            if (!buttonLovely.Checked)
                 LovelyMusics.getInstance().Remove(music);
             else
                 LovelyMusics.getInstance().Add(music);
-
-
-            buttonLovely.Checked = !buttonLovely.Checked;
         }
 
         private void UCQueueItem_Load(object sender, EventArgs e)
