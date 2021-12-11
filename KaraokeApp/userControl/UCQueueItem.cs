@@ -63,6 +63,7 @@ namespace KaraokeApp.userControl
         public void UnCheckedLovely()
         {
             this.buttonLovely.Checked = false;
+            Console.WriteLine("1111" + buttonLovely.Checked.ToString());
         }
         private void buttonLovely_Click(object sender, EventArgs e)
         {
@@ -96,6 +97,11 @@ namespace KaraokeApp.userControl
             }
             labelArtist.Text = artist;
             labelTitle.Text = title;
+        }
+
+        private void buttonLovely_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine(buttonLovely.Checked);
         }
     }
 }

@@ -46,7 +46,6 @@
             this.labelScreenName = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelPlaying = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelQueue = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
@@ -65,6 +64,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timerMusic = new System.Windows.Forms.Timer(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.panelQueue = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
@@ -370,24 +370,12 @@
             this.panelPlaying.Size = new System.Drawing.Size(319, 700);
             this.panelPlaying.TabIndex = 0;
             // 
-            // panelQueue
-            // 
-            this.panelQueue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelQueue.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.panelQueue.Location = new System.Drawing.Point(13, 502);
-            this.panelQueue.Name = "panelQueue";
-            this.panelQueue.Size = new System.Drawing.Size(301, 192);
-            this.panelQueue.TabIndex = 11;
-            this.panelQueue.WrapContents = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(22, 467);
+            this.label2.Location = new System.Drawing.Point(22, 459);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 26);
             this.label2.TabIndex = 10;
@@ -658,6 +646,17 @@
             this.guna2DragControl1.TargetControl = this.panelTop;
             this.guna2DragControl1.TransparentWhileDrag = false;
             // 
+            // panelQueue
+            // 
+            this.panelQueue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelQueue.Location = new System.Drawing.Point(8, 500);
+            this.panelQueue.Name = "panelQueue";
+            this.panelQueue.ShadowDecoration.Parent = this.panelQueue;
+            this.panelQueue.Size = new System.Drawing.Size(301, 188);
+            this.panelQueue.TabIndex = 11;
+            // 
             // FormMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -728,7 +727,7 @@
         private Guna.UI2.WinForms.Guna2CircleButton buttonLyric;
         private Guna.UI2.WinForms.Guna2CircleButton buttonSettings;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private System.Windows.Forms.FlowLayoutPanel panelQueue;
+        private Guna.UI2.WinForms.Guna2Panel panelQueue;
     }
 }
 

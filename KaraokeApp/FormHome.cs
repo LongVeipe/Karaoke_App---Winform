@@ -91,9 +91,22 @@ namespace KaraokeApp
                 case NotifyCollectionChangedAction.Remove:
                     string oldItem = e.OldItems[0].ToString();
                     ((FormMain)(this.Parent.Parent.Parent)).RemoveLovelyInQueue(oldItem);
+                    RemoveUCLovelyItem(oldItem);
                     break;
                 default:
                     break;
+            }
+        }
+
+        void RemoveUCLovelyItem(string path)
+        {
+            foreach (Control item in panelLovely.Controls)
+            {
+                if (item.Tag.ToString() == path)
+                {
+                    UCLovelyItem uc = (UCLovelyItem)item;
+                    uc.Dispose();
+                }
             }
         }
         public void PlayRecently(UCRecentlyItem uc)

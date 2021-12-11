@@ -179,14 +179,17 @@ namespace KaraokeApp
 
         void LoadQueue(string[] fileNames)
         {
+            panelQueue.Controls.Clear();
+                
             foreach (string fileName in fileNames)
             {
                 Queue.getInstance().Add(fileName);
                 UCQueueItem uc = new UCQueueItem(fileName);
                 uc.Tag = fileName;
                 uc.Name = fileName;
-                //uc.Dock = DockStyle.Top;
+                uc.Dock = DockStyle.Top;
                 panelQueue.Controls.Add(uc);
+                panelQueue.Controls.SetChildIndex(uc, 0);
             }
         }
 
