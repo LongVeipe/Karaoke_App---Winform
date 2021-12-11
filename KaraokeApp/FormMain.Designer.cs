@@ -35,14 +35,12 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.buttonLyric = new Guna.UI2.WinForms.Guna2CircleButton();
             this.buttonSettings = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.pictureBoxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.buttonPlayList = new Guna.UI2.WinForms.Guna2CircleButton();
             this.buttonSearch = new Guna.UI2.WinForms.Guna2CircleButton();
             this.buttonHome = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelChildForm = new Guna.UI2.WinForms.Guna2Panel();
             this.panelTop = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.labelScreenName = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelPlaying = new Guna.UI2.WinForms.Guna2Panel();
@@ -67,7 +65,6 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelPlaying.SuspendLayout();
@@ -87,7 +84,6 @@
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2Panel1.Controls.Add(this.buttonLyric);
             this.guna2Panel1.Controls.Add(this.buttonSettings);
-            this.guna2Panel1.Controls.Add(this.pictureBoxAvatar);
             this.guna2Panel1.Controls.Add(this.buttonPlayList);
             this.guna2Panel1.Controls.Add(this.buttonSearch);
             this.guna2Panel1.Controls.Add(this.buttonHome);
@@ -162,7 +158,7 @@
             this.buttonSettings.ForeColor = System.Drawing.Color.White;
             this.buttonSettings.HoverState.Parent = this.buttonSettings;
             this.buttonSettings.Image = global::KaraokeApp.Properties.Resources.icons8_settings_48;
-            this.buttonSettings.Location = new System.Drawing.Point(16, 573);
+            this.buttonSettings.Location = new System.Drawing.Point(16, 648);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.buttonSettings.ShadowDecoration.Parent = this.buttonSettings;
@@ -170,20 +166,6 @@
             this.buttonSettings.TabIndex = 5;
             this.buttonSettings.Tag = "Settings";
             this.buttonSettings.Click += new System.EventHandler(this.ActivateButton);
-            // 
-            // pictureBoxAvatar
-            // 
-            this.pictureBoxAvatar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBoxAvatar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAvatar.Image")));
-            this.pictureBoxAvatar.ImageRotate = 0F;
-            this.pictureBoxAvatar.Location = new System.Drawing.Point(14, 631);
-            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
-            this.pictureBoxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pictureBoxAvatar.ShadowDecoration.Parent = this.pictureBoxAvatar;
-            this.pictureBoxAvatar.Size = new System.Drawing.Size(45, 45);
-            this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxAvatar.TabIndex = 4;
-            this.pictureBoxAvatar.TabStop = false;
             // 
             // buttonPlayList
             // 
@@ -297,7 +279,6 @@
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.guna2CircleButton1);
             this.panelTop.Controls.Add(this.labelScreenName);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
@@ -306,28 +287,6 @@
             this.panelTop.Size = new System.Drawing.Size(909, 78);
             this.panelTop.TabIndex = 1;
             this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
-            // 
-            // guna2CircleButton1
-            // 
-            this.guna2CircleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton1.DisabledState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(46)))), ((int)(((byte)(61)))));
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton1.Image")));
-            this.guna2CircleButton1.Location = new System.Drawing.Point(838, 19);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton1.TabIndex = 1;
             // 
             // labelScreenName
             // 
@@ -672,12 +631,11 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(339, 440);
             this.Name = "FormMain";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
@@ -719,12 +677,10 @@
         private Guna.UI2.WinForms.Guna2CircleButton buttonNext;
         private AxWMPLib.AxWindowsMediaPlayer player;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Panel panelChildForm;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox pictureBoxAvatar;
         private Guna.UI2.WinForms.Guna2CircleButton buttonLyric;
         private Guna.UI2.WinForms.Guna2CircleButton buttonSettings;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
