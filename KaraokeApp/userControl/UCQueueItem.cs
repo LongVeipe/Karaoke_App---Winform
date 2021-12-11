@@ -15,6 +15,7 @@ namespace KaraokeApp.userControl
     public partial class UCQueueItem : UserControl
     {
         private string music;
+        private bool isChecked;
         Dictionary<int, Bitmap> randArtworks;
         public UCQueueItem(string music)
         {
@@ -47,6 +48,18 @@ namespace KaraokeApp.userControl
             }
         }
 
+        public void SetChecked(bool c)
+        {
+            this.isChecked = c;
+            if(c)
+            {
+                this.BackColor = Color.FromArgb(29, 30, 53);
+            }
+            else
+            {
+                this.BackColor = Color.Transparent;
+            }
+        }
         public void UnCheckedLovely()
         {
             this.buttonLovely.Checked = false;

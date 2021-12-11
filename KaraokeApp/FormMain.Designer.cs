@@ -192,7 +192,7 @@
             this.buttonPlayList.BorderThickness = 1;
             this.buttonPlayList.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
             this.buttonPlayList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
-            this.buttonPlayList.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.buttonPlayList.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.buttonPlayList.CheckedState.Parent = this.buttonPlayList;
             this.buttonPlayList.CustomImages.Parent = this.buttonPlayList;
             this.buttonPlayList.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -221,7 +221,7 @@
             this.buttonSearch.BorderThickness = 1;
             this.buttonSearch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
             this.buttonSearch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
-            this.buttonSearch.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.buttonSearch.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.buttonSearch.CheckedState.Parent = this.buttonSearch;
             this.buttonSearch.CustomImages.Parent = this.buttonSearch;
             this.buttonSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -251,7 +251,7 @@
             this.buttonHome.Checked = true;
             this.buttonHome.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
             this.buttonHome.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
-            this.buttonHome.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.buttonHome.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.buttonHome.CheckedState.Parent = this.buttonHome;
             this.buttonHome.CustomImages.Parent = this.buttonHome;
             this.buttonHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -336,7 +336,7 @@
             this.labelScreenName.ForeColor = System.Drawing.Color.White;
             this.labelScreenName.Location = new System.Drawing.Point(25, 26);
             this.labelScreenName.Name = "labelScreenName";
-            this.labelScreenName.Size = new System.Drawing.Size(90, 31);
+            this.labelScreenName.Size = new System.Drawing.Size(75, 26);
             this.labelScreenName.TabIndex = 0;
             this.labelScreenName.Text = "Home";
             // 
@@ -389,7 +389,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(22, 467);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 31);
+            this.label2.Size = new System.Drawing.Size(140, 26);
             this.label2.TabIndex = 10;
             this.label2.Text = "Your Queue";
             // 
@@ -465,6 +465,7 @@
             this.buttonNext.ShadowDecoration.Parent = this.buttonNext;
             this.buttonNext.Size = new System.Drawing.Size(30, 30);
             this.buttonNext.TabIndex = 3;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonBack
             // 
@@ -488,6 +489,7 @@
             this.buttonBack.ShadowDecoration.Parent = this.buttonBack;
             this.buttonBack.Size = new System.Drawing.Size(30, 30);
             this.buttonBack.TabIndex = 2;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonPlay
             // 
@@ -513,6 +515,7 @@
             // buttonShuffle
             // 
             this.buttonShuffle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonShuffle.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.buttonShuffle.CheckedState.Parent = this.buttonShuffle;
             this.buttonShuffle.CustomImages.Parent = this.buttonShuffle;
             this.buttonShuffle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -532,6 +535,7 @@
             this.buttonShuffle.ShadowDecoration.Parent = this.buttonShuffle;
             this.buttonShuffle.Size = new System.Drawing.Size(30, 30);
             this.buttonShuffle.TabIndex = 0;
+            this.buttonShuffle.Click += new System.EventHandler(this.buttonShuffle_Click);
             // 
             // trackBar
             // 
@@ -639,7 +643,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(22, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 31);
+            this.label1.Size = new System.Drawing.Size(145, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Now Playing";
             // 

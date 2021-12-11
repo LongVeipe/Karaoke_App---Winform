@@ -90,7 +90,7 @@ namespace KaraokeApp
                     break;
                 case NotifyCollectionChangedAction.Remove:
                     string oldItem = e.OldItems[0].ToString();
-                    //Console.WriteLine(this.Parent.Location.X);
+                    ((FormMain)(this.Parent.Parent.Parent)).RemoveLovelyInQueue(oldItem);
                     break;
                 default:
                     break;
@@ -126,5 +126,9 @@ namespace KaraokeApp
             new TouchScroll(panelAlbums);
         }
 
+        private void panelLovely_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

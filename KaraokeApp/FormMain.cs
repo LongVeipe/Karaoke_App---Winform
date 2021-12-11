@@ -14,6 +14,7 @@ using System.IO;
 using KaraokeApp.data;
 using KaraokeApp.userControl;
 using System.Diagnostics;
+using System.Collections.ObjectModel;
 
 namespace KaraokeApp
 {
@@ -24,6 +25,7 @@ namespace KaraokeApp
 
         private Guna2CircleButton currentBtn;
         private Form currentChildForm;
+        private QueueItem currentMusic;
 
         //drag form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -112,7 +114,6 @@ namespace KaraokeApp
             Song newSong = new Song(fileName, newPath);
             DataPool.UpdateCurrentSong(newSong);
             player.Ctlcontrols.play();
-            //buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             buttonPlay.Image = Properties.Resources.icons8_pause_button_48;
 
         }
@@ -121,15 +122,17 @@ namespace KaraokeApp
         {
             foreach(Control item in panelQueue.Controls)
             {
-                UCQueueItem uc = (UCQueueItem)item;
-                uc.UnCheckedLovely();
+                if (item.Tag.ToString() == path)
+                {
+                    UCQueueItem uc = (UCQueueItem)item;
+                    uc.UnCheckedLovely();
+                }
             }
         }
 
         void PauseMusic()
         {
             player.Ctlcontrols.pause();
-            //buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("buttonPlay.Image")));
             buttonPlay.Image = Properties.Resources.icons8_circled_play_48;
             if(currentChildForm is FormPlayer)
             {
@@ -185,6 +188,14 @@ namespace KaraokeApp
                 //uc.Dock = DockStyle.Top;
                 panelQueue.Controls.Add(uc);
             }
+        }
+
+        int randomQueue()
+        {
+            ObservableCollection<QueueItem> q = Queue.getInstance().GetAll();
+
+            Random r = new Random();
+            return r.Next(0, q.Count);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -286,5 +297,44 @@ namespace KaraokeApp
                 RepeatMusic();
         }
 
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            ObservableCollection<QueueItem> q = Queue.getInstance().GetAll();
+            if (q.Count == 0)
+                return;
+            string newPath = "";
+            if (this.buttonShuffle.Checked)
+            {
+                newPath = q[randomQueue()].GetMusicPath();
+            }
+            else
+            {
+                int currentMusicId = q.Where(x => x.GetMusicPath() == player.URL).First().getId();
+
+                if (currentMusicId == q.Count - 1)
+                    return;
+                newPath = q[currentMusicId + 1].GetMusicPath();
+            }
+            PlayMusic(newPath);
+            RecentlyMusics.getInstance().Add(newPath);
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            ObservableCollection<QueueItem> q = Queue.getInstance().GetAll();
+            if (q.Count == 0)
+                return;
+            int currentMusicId = q.Where(x => x.GetMusicPath() == player.URL).First().getId();
+
+            if (currentMusicId == 0)
+                return;
+            string newPath = q[currentMusicId -1].GetMusicPath();
+            PlayMusic(newPath);
+        }
+
+        private void buttonShuffle_Click(object sender, EventArgs e)
+        {
+            this.buttonShuffle.Checked = !buttonShuffle.Checked;
+        }
     }
 }
