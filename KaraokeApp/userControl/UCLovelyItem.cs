@@ -81,8 +81,9 @@ namespace KaraokeApp
 
         private void buttonLovely_Click(object sender, EventArgs e)
         {
-            //LovelyMusics.getInstance().Remove(musicPath);
             DataPool.RemoveFromFavouriteList(songItem);
+            songItem.isFavourite = false;
+            DatabaseHelper.UpdateSong(songItem);
         }
 
 
