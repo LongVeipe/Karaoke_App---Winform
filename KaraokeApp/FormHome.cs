@@ -170,7 +170,8 @@ namespace KaraokeApp
         {
             foreach (Control item in panelRecently.Controls)
             {
-                if (((Song)item.Tag).GetStreamLink() == path)
+
+                if (((UCRecentlyItem)item).GetSongItem().GetStreamLink() == path)
                 {
                     UCRecentlyItem uc = (UCRecentlyItem)item;
                     uc.Dispose();
