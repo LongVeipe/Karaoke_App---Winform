@@ -66,6 +66,7 @@ namespace KaraokeApp.userControl
         }
         private void buttonLovely_Click(object sender, EventArgs e)
         {
+            /// It's really wierd !!!
             if (buttonLovely.Checked)
             {
                 songItem.SetUnfavouriteSong();
@@ -75,9 +76,9 @@ namespace KaraokeApp.userControl
             {
                 songItem.SetFavouriteSong();
                 DataPool.InsertToFavouriteList(songItem);
+                buttonLovely.Checked = true;
             }
-
-            buttonLovely.Checked = !buttonLovely.Checked;
+            DatabaseHelper.UpdateSong(songItem);
         }
 
         private void UCQueueItem_Load(object sender, EventArgs e)
