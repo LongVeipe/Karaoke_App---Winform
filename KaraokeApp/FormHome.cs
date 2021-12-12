@@ -131,13 +131,25 @@ namespace KaraokeApp
             }
         }
        
-        void RemoveUCLovelyItem(string path)
+        public void RemoveUCLovelyItem(string path)
         {
             foreach (Control item in panelLovely.Controls)
             {
                 if (item.Tag.ToString() == path)
                 {
                     UCLovelyItem uc = (UCLovelyItem)item;
+                    uc.Dispose();
+                }
+            }
+        }
+
+        public void RemoveUCRecentlyItem(string path)
+        {
+            foreach (Control item in panelRecently.Controls)
+            {
+                if (((Song)item.Tag).GetStreamLink() == path)
+                {
+                    UCRecentlyItem uc = (UCRecentlyItem)item;
                     uc.Dispose();
                 }
             }

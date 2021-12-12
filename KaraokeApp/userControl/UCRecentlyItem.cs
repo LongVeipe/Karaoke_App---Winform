@@ -15,7 +15,6 @@ namespace KaraokeApp
     
     public partial class UCRecentlyItem : UserControl
     {
-        string musicPath;
         private Song songItem;
         Dictionary<int, Bitmap> randArtworks;
         public UCRecentlyItem(Song _song)
@@ -23,6 +22,7 @@ namespace KaraokeApp
             InitializeComponent();
 
             this.songItem = _song;
+            this.Tag = _song.GetStreamLink();
 
             randArtworks = new Dictionary<int, Bitmap>();
             randArtworks.Add(1, Properties.Resources.fullClrBgr1);
@@ -88,7 +88,7 @@ namespace KaraokeApp
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
-
+            ((FormHome)(this.Parent.Parent.Parent.Parent.Parent)).RemoveUCRecentlyItem(songItem.GetStreamLink());
         }
     }
 }
