@@ -30,6 +30,7 @@ namespace KaraokeApp
             flowPNLListSong.HorizontalScroll.Visible = false;
 
             flowPNLListSong.AutoScroll = true;
+            
         }
 
         private void FormList_Load(object sender, EventArgs e)
@@ -37,6 +38,7 @@ namespace KaraokeApp
             songList = DataPool.GetSongList();
             recordList = DataPool.GetRecordList();
             UCSong songItem = null;
+            timerLoading.Start();
             foreach (Song songIndex in songList)
             {
                 songItem = new UCSong(songIndex);
@@ -85,7 +87,9 @@ namespace KaraokeApp
                 {
                     if (recordIndex.name.ToLower().Contains(txtSeach.Text.ToLower()))
                     {
-                        flowPNLListSong.Controls.Add(new UCRecord(recordIndex));
+                        UCRecord recordItem = new UCRecord(recordIndex);
+                        recordItem.Dock = DockStyle.Top;
+                        flowPNLListSong.Controls.Add(recordItem);
                     }
                 }
             }
@@ -94,7 +98,11 @@ namespace KaraokeApp
                 foreach (Song songIndex in songList)
                 {
                     if (songIndex.GetTitle().ToLower().Contains(txtSeach.Text.ToLower()))
-                        flowPNLListSong.Controls.Add(new UCSong(songIndex));
+                    {
+                        UCSong songItem = new UCSong(songIndex);
+                        songItem.Dock = DockStyle.Top;
+                        flowPNLListSong.Controls.Add(songItem);
+                    }
                 }
             }
         }
@@ -102,12 +110,15 @@ namespace KaraokeApp
         private void cbType_SelectedIndexChanged(object sender, EventArgs e)
         {
             flowPNLListSong.Controls.Clear();
+
             switch (cbType.Text)
             {
                 case "Both (Except Record)":
                     foreach (Song songIndex in songList)
                     {
-                        flowPNLListSong.Controls.Add(new UCSong(songIndex));
+                        UCSong songItem = new UCSong(songIndex);
+                        songItem.Dock = DockStyle.Top;
+                        flowPNLListSong.Controls.Add(songItem);
                     }
                     break;
                 case "Song":
@@ -115,7 +126,12 @@ namespace KaraokeApp
                     {
                         if (songIndex.GetBeatLink() == "" ||
                             songIndex.GetBeatLink() == null)
-                            flowPNLListSong.Controls.Add(new UCSong(songIndex));
+                        {
+                            UCSong songItem = new UCSong(songIndex);
+                            songItem.Dock = DockStyle.Top;
+                            flowPNLListSong.Controls.Add(songItem);
+                           
+                        }
                     }
                     break;
                 case "Karaoke":
@@ -123,16 +139,30 @@ namespace KaraokeApp
                     {
                         if (songIndex.GetBeatLink() != "" &&
                             songIndex.GetBeatLink() != null)
-                            flowPNLListSong.Controls.Add(new UCSong(songIndex));
+                        {
+                            UCSong songItem = new UCSong(songIndex);
+                            songItem.Dock = DockStyle.Top;
+                            flowPNLListSong.Controls.Add(songItem);
+                        }
                     }
                     break;
                 case "Record":
                     foreach (Record recordIndex in recordList)
                     {
-                        flowPNLListSong.Controls.Add(new UCRecord(recordIndex));
+                        UCRecord recordItem = new UCRecord(recordIndex);
+                        recordItem.Dock = DockStyle.Top;
+                        flowPNLListSong.Controls.Add(recordItem);
                     }
                     break;
             }
+        }
+
+        private void timerLoading_Tick(object sender, EventArgs e)
+        {
+            timerLoading.Stop();
+            rainSplashLoading.Stop();
+            flowPNLListSong.Visible = true;
+
         }
     }
 }

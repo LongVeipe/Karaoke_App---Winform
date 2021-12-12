@@ -121,11 +121,11 @@
   <data name="icons8_search_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-search-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add_30px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\add_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="micro_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\micro_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_left_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\icons8-left-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\search_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,6 +151,9 @@
   <data name="icons8_circled_play_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-circled-play-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_right_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\icons8-right-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="microw_48px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\microw_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -162,6 +165,9 @@
   </data>
   <data name="icons8_search_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-search-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="puddle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\bgrs\puddle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_end_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-end-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,14 +181,11 @@
   <data name="fullClrBgr2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\bgrs\fullClrBgr2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_left_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\icons8-left-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8_end_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-end-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shazam_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\shazam_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pause_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\pause_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="square_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\square_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +199,8 @@
   <data name="icons8_skip_to_start_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-skip-to-start-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_notification_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\icons8-notification-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shazam_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\shazam_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="microw_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\microw_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,14 +208,17 @@
   <data name="icons8_shuffle_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-shuffle-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_skip_to_start_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\icons8-skip-to-start-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_repeat_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-repeat-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_heart_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-heart-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_right_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\icons8-right-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_left_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\icons8-left-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_home_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-home-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,17 +226,23 @@
   <data name="icons8_playlist_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-playlist-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\bgrs\cloud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fullClrBgr4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\bgrs\fullClrBgr4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="YouTube_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\YouTube_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_notification_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\icons8-notification-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_heart_48_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-heart-48-red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pause_26px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\pause_26px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_repeat_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\icons8-repeat-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-heart-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-heart-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,14 +253,11 @@
   <data name="rectangle_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\rectangle_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_repeat_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\icons8-repeat-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_left_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\icons8-left-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_skip_to_start_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\icons8-skip-to-start-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pause_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\pause_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pause_26px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\pause_26px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_playlist_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-playlist-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,7 +274,7 @@
   <data name="add_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\add_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_30px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\add_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rain_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\bgrs\rain_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

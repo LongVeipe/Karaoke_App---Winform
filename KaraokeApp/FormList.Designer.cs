@@ -29,16 +29,20 @@ namespace KaraokeApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowPNLListSong = new System.Windows.Forms.Panel();
             this.cbType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtSeach = new Guna.UI2.WinForms.Guna2TextBox();
-            this.flowPNLListSong = new System.Windows.Forms.Panel();
+            this.timerLoading = new System.Windows.Forms.Timer(this.components);
+            this.rainSplashLoading = new KaraokeApp.userControl.RainSplash();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.rainSplashLoading);
             this.panel1.Controls.Add(this.flowPNLListSong);
             this.panel1.Controls.Add(this.cbType);
             this.panel1.Controls.Add(this.txtSeach);
@@ -47,6 +51,18 @@ namespace KaraokeApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(608, 622);
             this.panel1.TabIndex = 0;
+            // 
+            // flowPNLListSong
+            // 
+            this.flowPNLListSong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowPNLListSong.BackColor = System.Drawing.Color.Transparent;
+            this.flowPNLListSong.Location = new System.Drawing.Point(32, 50);
+            this.flowPNLListSong.Name = "flowPNLListSong";
+            this.flowPNLListSong.Size = new System.Drawing.Size(544, 540);
+            this.flowPNLListSong.TabIndex = 4;
+            this.flowPNLListSong.Visible = false;
             // 
             // cbType
             // 
@@ -74,7 +90,7 @@ namespace KaraokeApp
             this.cbType.Size = new System.Drawing.Size(250, 36);
             this.cbType.TabIndex = 3;
             this.cbType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cbType.SelectedIndexChanged += new System.EventHandler(this.txtSeach_TextChanged);
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // txtSeach
             // 
@@ -106,16 +122,22 @@ namespace KaraokeApp
             this.txtSeach.TabIndex = 0;
             this.txtSeach.TextChanged += new System.EventHandler(this.txtSeach_TextChanged);
             // 
-            // flowPNLListSong
+            // timerLoading
             // 
-            this.flowPNLListSong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.timerLoading.Interval = 2000;
+            this.timerLoading.Tick += new System.EventHandler(this.timerLoading_Tick);
+            // 
+            // rainSplashLoading
+            // 
+            this.rainSplashLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowPNLListSong.BackColor = System.Drawing.Color.Transparent;
-            this.flowPNLListSong.Location = new System.Drawing.Point(32, 50);
-            this.flowPNLListSong.Name = "flowPNLListSong";
-            this.flowPNLListSong.Size = new System.Drawing.Size(544, 540);
-            this.flowPNLListSong.TabIndex = 4;
+            this.rainSplashLoading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.rainSplashLoading.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rainSplashLoading.Location = new System.Drawing.Point(7, 45);
+            this.rainSplashLoading.Name = "rainSplashLoading";
+            this.rainSplashLoading.Size = new System.Drawing.Size(596, 571);
+            this.rainSplashLoading.TabIndex = 0;
             // 
             // FormList
             // 
@@ -139,5 +161,7 @@ namespace KaraokeApp
         private Guna.UI2.WinForms.Guna2TextBox txtSeach;
         private Guna.UI2.WinForms.Guna2ComboBox cbType;
         private System.Windows.Forms.Panel flowPNLListSong;
+        private userControl.RainSplash rainSplashLoading;
+        private System.Windows.Forms.Timer timerLoading;
     }
 }

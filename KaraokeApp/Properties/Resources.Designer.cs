@@ -83,6 +83,16 @@ namespace KaraokeApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cloud {
+            get {
+                object obj = ResourceManager.GetObject("cloud", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fullClrBgr1 {
             get {
                 object obj = ResourceManager.GetObject("fullClrBgr1", resourceCulture);
@@ -466,6 +476,26 @@ namespace KaraokeApp.Properties {
         internal static System.Drawing.Bitmap pause_50px {
             get {
                 object obj = ResourceManager.GetObject("pause_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap puddle {
+            get {
+                object obj = ResourceManager.GetObject("puddle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rain_L {
+            get {
+                object obj = ResourceManager.GetObject("rain_L", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
