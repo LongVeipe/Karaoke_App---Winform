@@ -141,9 +141,6 @@ namespace KaraokeApp
                 case "Home":
                     OpenChildForm(FormHome.getInstance());
                     break;
-                case "Settings":
-                    OpenChildForm(FormSettings.getInstance());
-                    break;
             }
         }
 

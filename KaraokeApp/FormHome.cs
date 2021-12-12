@@ -63,8 +63,30 @@ namespace KaraokeApp
 
             panelLovely.AutoScroll = panelRecently.AutoScroll = pnlShazamResult.AutoScroll = true;
 
-            UCSongItem uc = new UCSongItem();
-            this.pnlShazamResult.Controls.Add(uc);
+            int index = 0;
+            var devices = Enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active).Select((device, i) => {
+                string deviceType;
+                switch (device.DataFlow)
+                {
+                    case DataFlow.Capture:
+                        deviceType = "IN - ";
+                        break;
+                    case DataFlow.Render:
+                        deviceType = "OUT - ";
+                        break;
+                    default:
+                        deviceType = "UNK - ";
+                        break;
+                }
+                if (!String.IsNullOrEmpty(Properties.Settings.Default.DeviceId)
+                && device.ID == Properties.Settings.Default.DeviceId)
+                {
+                    index = i;
+                }
+                return new Device(device.ID, deviceType + device.FriendlyName);
+            }).ToArray();
+            cbxDevice.Items.AddRange(devices);
+            cbxDevice.SelectedIndex = index;
 
         }
 
@@ -145,7 +167,39 @@ namespace KaraokeApp
 
         private async void btnRecord_Click(object sender, EventArgs e)
         {
+            if (btnRecord.Checked) return;
+            btnRecord.Checked = true;
+            var timer = new System.Timers.Timer(500);
+            timer.Start();
 
+            try
+            {
+                string deviceID = Properties.Settings.Default.DeviceId;
+                if (String.IsNullOrEmpty(deviceID))
+                    deviceID = Enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active).FirstOrDefault().ID;
+
+
+                var cancel = new CancellationTokenSource();
+
+                Task.Delay(15000).ContinueWith((_) => { cancel.Cancel(); });
+
+                var match = await Task.Run(() => IdentifyAsync(deviceID, cancel.Token));
+                if (match != null)
+                {
+                    UCSongItem uc = new UCSongItem();
+                    await uc.SetPropertiesAsync(match);
+                    this.pnlShazamResult.Controls.Add(uc);
+                    this.pnlShazamResult.Controls.SetChildIndex(uc, 0);
+                }
+                else
+                    MessageBox.Show("No Song Matched");
+            }
+            catch
+            {
+                throw;
+            }
+            btnRecord.Checked = false;
+            timer.Stop();
         }
         public static async Task<ShazamMatch> IdentifyAsync(string deviceId, CancellationToken cancel)
         {
@@ -216,6 +270,11 @@ namespace KaraokeApp
                     Cover = data.Track?.Images?.CoverHQ ?? data.Track?.Images?.Cover ?? data.Track.Share.Image
                 };
             }
+        }
+
+        private void cbxDevice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.DeviceId = ((Device)cbxDevice.SelectedItem).DeviceId;
         }
     }
 }
