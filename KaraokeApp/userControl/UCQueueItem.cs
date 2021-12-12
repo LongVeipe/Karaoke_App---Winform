@@ -14,14 +14,14 @@ namespace KaraokeApp.userControl
 {
     public partial class UCQueueItem : UserControl
     {
-        private string music;
+        private Song songItem;
         private bool isChecked;
         Dictionary<int, Bitmap> randArtworks;
-        public UCQueueItem(string music)
+        public UCQueueItem(Song _song)
         {
             InitializeComponent();
 
-            this.music = music;
+            this.songItem = _song;
             randArtworks = new Dictionary<int, Bitmap>();
             randArtworks.Add(1, Properties.Resources.fullClrBgr1);
             randArtworks.Add(2, Properties.Resources.fullClrBgr2);
@@ -66,12 +66,19 @@ namespace KaraokeApp.userControl
         }
         private void buttonLovely_Click(object sender, EventArgs e)
         {
-            buttonLovely.Checked = !buttonLovely.Checked;
-
-            if (!buttonLovely.Checked)
-                LovelyMusics.getInstance().Remove(music);
+            /// It's really wierd !!!
+            if (buttonLovely.Checked)
+            {
+                songItem.SetUnfavouriteSong();
+                DataPool.RemoveFromFavouriteList(songItem);
+            }
             else
-                LovelyMusics.getInstance().Add(music);
+            {
+                songItem.SetFavouriteSong();
+                DataPool.InsertToFavouriteList(songItem);
+                buttonLovely.Checked = true;
+            }
+            DatabaseHelper.UpdateSong(songItem);
         }
 
         private void UCQueueItem_Load(object sender, EventArgs e)
@@ -79,11 +86,9 @@ namespace KaraokeApp.userControl
             string artist = "Unknown", title = "Unknown";
             Bitmap artwork;
 
-            TagLib.File file = TagLib.File.Create(music);
-            string[] artists = file.Tag.Artists;
-            artist = artists.Length > 0 ? artists.FirstOrDefault() : "Unknown";
-            title = file.Tag.Title != null ? file.Tag.Title : "Unknown";
-            artwork = GetMp3Artwork(file);
+            artist = songItem.GetArtist();
+            title = songItem.GetTitle();
+            artwork = songItem.GetArt();
 
             if (artwork != null)
                 this.pictureBoxArtwork.Image = artwork;
@@ -93,6 +98,9 @@ namespace KaraokeApp.userControl
                 if (randArtworks.TryGetValue(randArtworkey, out artwork))
                     this.pictureBoxArtwork.Image = artwork;
             }
+
+            if (songItem.isFavourite)
+                buttonLovely.Checked = true;
             labelArtist.Text = artist;
             labelTitle.Text = title;
         }
@@ -100,6 +108,11 @@ namespace KaraokeApp.userControl
         private void buttonLovely_CheckedChanged(object sender, EventArgs e)
         {
             Console.WriteLine(buttonLovely.Checked);
+        }
+
+        public string GetStreamPath()
+        {
+            return songItem.GetStreamLink();
         }
     }
 }

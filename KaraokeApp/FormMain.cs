@@ -92,7 +92,7 @@ namespace KaraokeApp
         {
             InitializeComponent();
 
-            OpenChildForm(FormHome.getInstance());
+            OpenChildForm(new FormHome(this));
             DataPool.Player = this.player;
 
             panelQueue.AutoScroll = false;
@@ -111,13 +111,14 @@ namespace KaraokeApp
         {
             if (currentChildForm != null)
             {
-                this.currentChildForm.Hide();
+                this.currentChildForm.Close();
+                this.currentChildForm.Dispose();
             }
 
             currentChildForm = childForm;
             currentChildForm.TopLevel = false;
             childForm.Dock = DockStyle.Fill;
-            if(panelChildForm.Controls.IndexOf(childForm) < 0)
+            if (panelChildForm.Controls.IndexOf(childForm) < 0)
                 panelChildForm.Controls.Add(childForm);
             //childForm.Parent = this;
             //panelChildForm.Tag = childForm;
@@ -130,21 +131,60 @@ namespace KaraokeApp
             if (sender == null)
                 return;
 
-            if(currentBtn != null)
+            if (currentBtn != null)
                 currentBtn.Checked = false;
             currentBtn = (Guna2CircleButton)sender;
             currentBtn.Checked = true;
 
             labelScreenName.Text = currentBtn.Tag.ToString();
-            switch(currentBtn.Tag.ToString())
+            switch (currentBtn.Tag.ToString())
             {
                 case "Home":
-                    OpenChildForm(FormHome.getInstance());
+                    OpenChildForm( new FormHome(this));
                     break;
             }
         }
 
-        public void PlayMusic(string newPath="")
+        public void PlayMusic(string newPath = "")
+        {
+            if (newPath == player.URL)
+                return;
+            else if (newPath != "")
+            {
+                ShowPlayingInfo(newPath);
+                player.URL = newPath;
+                string fileName = Path.GetFileNameWithoutExtension(newPath);
+                // Update Current Song
+                Song newSong = new Song(fileName, newPath);
+                DataPool.UpdateCurrentSong(newSong);
+            }
+
+            player.Ctlcontrols.play();
+            //buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            buttonPlay.Image = Properties.Resources.icons8_pause_button_48;
+
+        }
+
+
+        public void PlaySong(Song _song)
+        {
+            if (_song != null)
+            {
+                string absoulutePath = Path.GetFullPath(_song.GetStreamLink());
+                if (absoulutePath == player.URL)
+                    return;
+                else if (absoulutePath != "")
+                {
+                    ShowPlayingInfo(absoulutePath);
+                    player.URL = absoulutePath;
+                    DataPool.UpdateCurrentSong(_song);
+                }
+                player.Ctlcontrols.play();
+                buttonPlay.Image = Properties.Resources.icons8_pause_button_48;
+            }
+
+        }
+        public void PlayMusicInDB(string newPath = "")
         {
             if (newPath == player.URL)
                 return;
@@ -153,32 +193,66 @@ namespace KaraokeApp
                 ShowPlayingInfo(newPath);
                 player.URL = newPath;
             }
-            string fileName = Path.GetFileNameWithoutExtension(newPath);
-            // Update Current Song
-            Song newSong = new Song(fileName, newPath);
-            DataPool.UpdateCurrentSong(newSong);
             player.Ctlcontrols.play();
             buttonPlay.Image = Properties.Resources.icons8_pause_button_48;
-
         }
 
+
+        public void PlayingKaraoke()
+        {
+            Song _currentSong = DataPool.GetCurrentSong();
+            string absoluteBeatPath = Path.GetFullPath(_currentSong.GetBeatLink());
+
+            DataPool.ClearQueue();
+            this.UpdatePanelQueue();
+
+            if (absoluteBeatPath == player.URL)
+                return;
+            else if (absoluteBeatPath != "")
+            {
+                ShowPlayingInfo(_currentSong.GetStreamLink());
+                player.URL = absoluteBeatPath;
+            }
+            buttonPlay.Image = Properties.Resources.icons8_pause_button_48;
+
+            DialogResult result = MessageBox.Show("Bạn có muốn chuyển qua Karaoke Mode ?",
+                "Xác nhận", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                buttonLyric.PerformClick();
+            }
+        }
+
+        public void UpdatePanelQueue()
+        {
+            panelQueue.Controls.Clear();
+            foreach(Song songIndex in DataPool.GetQueue())
+            {
+                UCQueueItem uc = new UCQueueItem(songIndex);
+                uc.Tag = songIndex.GetStreamLink();
+                uc.Name = songIndex.GetTitle();
+                uc.Dock = DockStyle.Top;
+                panelQueue.Controls.Add(uc);
+                panelQueue.Controls.SetChildIndex(uc, 0);
+            }
+        }
         public void RemoveLovelyInQueue(string path)
         {
-            foreach(Control item in panelQueue.Controls)
+            foreach (Control item in panelQueue.Controls)
             {
-                if (item.Tag.ToString() == path)
+                UCQueueItem queueItem = ((UCQueueItem)item);
+                if (queueItem.GetStreamPath() == path)
                 {
-                    UCQueueItem uc = (UCQueueItem)item;
-                    uc.UnCheckedLovely();
+                    queueItem.UnCheckedLovely();
                 }
             }
         }
 
-        void PauseMusic()
+        public void PauseMusic()
         {
             player.Ctlcontrols.pause();
             buttonPlay.Image = Properties.Resources.icons8_circled_play_48;
-            if(currentChildForm is FormPlayer)
+            if (currentChildForm is FormPlayer)
             {
                 ((FormPlayer)currentChildForm).PauseLyric();
             }
@@ -214,7 +288,7 @@ namespace KaraokeApp
             TagLib.File file = TagLib.File.Create(path);
             string[] artists = file.Tag.Performers;
             artist = artists.Length > 0 ? artists.FirstOrDefault() : "Unknown";
-            title = file.Tag.Title != null? file.Tag.Title: "Unknown";
+            title = file.Tag.Title != null ? file.Tag.Title : "Unknown";
 
             labelPlayingTitle.Text = title;
             labelPlayingArtist.Text = artist;
@@ -224,11 +298,19 @@ namespace KaraokeApp
         void LoadQueue(string[] fileNames)
         {
             panelQueue.Controls.Clear();
-                
+            DataPool.ClearQueue();
+
             foreach (string fileName in fileNames)
             {
-                Queue.getInstance().Add(fileName);
-                UCQueueItem uc = new UCQueueItem(fileName);
+                Song queueSong = DataPool.SearchInSongList(fileName);
+                if (queueSong == null)
+                {
+                    string name = Path.GetFileNameWithoutExtension(fileName);
+                    queueSong = new Song(name, fileName);
+                    DatabaseHelper.SaveSong(queueSong);
+                }
+                DataPool.InsertToQueue(queueSong);
+                UCQueueItem uc = new UCQueueItem(queueSong);
                 uc.Tag = fileName;
                 uc.Name = fileName;
                 uc.Dock = DockStyle.Top;
@@ -239,10 +321,8 @@ namespace KaraokeApp
 
         int randomQueue()
         {
-            ObservableCollection<QueueItem> q = Queue.getInstance().GetAll();
-
             Random r = new Random();
-            return r.Next(0, q.Count);
+            return r.Next(0, DataPool.GetQueue().Count);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -259,29 +339,45 @@ namespace KaraokeApp
             
         }
 
+        public void AddQueueItem(Song _songItem)
+        {
+            
+            DataPool.InsertToQueue(_songItem);
+            UCQueueItem queueItem = new UCQueueItem(_songItem);
+            queueItem.Dock = DockStyle.Top;
+            panelQueue.Controls.Add(queueItem);
+
+            if(DataPool.GetQueue().Count == 1)
+            {
+                PlaySong(_songItem);
+                DataPool.InsertToRecentlyPlayedList(_songItem);
+            }
+
+        }
+
         private void btnSelectSongs_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Multiselect = true;
-            if(ofd.ShowDialog() == DialogResult.OK)
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
                 LoadQueue(ofd.FileNames);
-                PlayMusic(ofd.FileName);
-                RecentlyMusics.getInstance().Add(ofd.FileName);
-                if(currentChildForm is FormPlayer)
+                Song _song = DataPool.GetQueue()[0];
+                PlaySong(_song);
+                DataPool.InsertToRecentlyPlayedList(_song);
+
+                if (currentChildForm is FormPlayer)
                 {
                     ((FormPlayer)currentChildForm).ChangeSong();
                 }
             }
 
             List<Album> albs = new List<Album>();
-            foreach(string fp in ofd.FileNames)
+            foreach (string fp in ofd.FileNames)
             {
                 TagLib.File file = TagLib.File.Create(fp);
                 albs.Add(new Album(file.Tag.Album, string.Join(", ", file.Tag.AlbumArtists), GetMp3Artwork(file)));
             }
-            Albums.getInstance().AddData(albs);
-            //FormHome.getInstance().LoadAlbums();
         }
 
         private void timerMusic_Tick(object sender, EventArgs e)
@@ -302,7 +398,7 @@ namespace KaraokeApp
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            if(player.Ctlcontrols.currentItem != null)
+            if (player.Ctlcontrols.currentItem != null)
             {
                 if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
                 {
@@ -312,7 +408,7 @@ namespace KaraokeApp
                 else if (player.playState == WMPLib.WMPPlayState.wmppsPaused)
                 {
                     PlayMusic();
-                    if(currentChildForm is FormPlayer)
+                    if (currentChildForm is FormPlayer)
                     {
                         ((FormPlayer)currentChildForm).ContinueLyric(trackBar.Value);
                     }
@@ -325,9 +421,9 @@ namespace KaraokeApp
             if (player.Ctlcontrols.currentItem == null)
                 trackBar.Value = 0;
             player.Ctlcontrols.currentPosition = trackBar.Value;
-            
 
-            if(currentChildForm is FormPlayer)
+
+            if (currentChildForm is FormPlayer)
             {
                 ((FormPlayer)currentChildForm).UpdateLyric(trackBar.Value * 1000);
             }
@@ -341,37 +437,49 @@ namespace KaraokeApp
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            ObservableCollection<QueueItem> q = Queue.getInstance().GetAll();
-            if (q.Count == 0)
+            List<Song> _queue = DataPool.GetQueue();
+            if (_queue.Count == 0)
                 return;
-            string newPath = "";
+            Song nextSong = null;
             if (this.buttonShuffle.Checked)
             {
-                newPath = q[randomQueue()].GetMusicPath();
+                nextSong = _queue[randomQueue()];
             }
             else
             {
-                int currentMusicId = q.Where(x => x.GetMusicPath() == player.URL).First().getId();
+                int currentMusicId = _queue.IndexOf(DataPool.GetCurrentSong());
 
-                if (currentMusicId == q.Count - 1)
+                if (currentMusicId == _queue.Count - 1)
                     return;
-                newPath = q[currentMusicId + 1].GetMusicPath();
+                nextSong = _queue[currentMusicId + 1];
             }
-            PlayMusic(newPath);
-            RecentlyMusics.getInstance().Add(newPath);
+            PlaySong(nextSong);
+
+
+            if (currentChildForm is FormPlayer)
+            {
+                ((FormPlayer)currentChildForm).ChangeSong();
+            }
+
+            DataPool.InsertToRecentlyPlayedList(nextSong);
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
             ObservableCollection<QueueItem> q = Queue.getInstance().GetAll();
-            if (q.Count == 0)
+            List<Song> _queue = DataPool.GetQueue();
+            if (_queue.Count == 0)
                 return;
-            int currentMusicId = q.Where(x => x.GetMusicPath() == player.URL).First().getId();
+            int currentMusicId = _queue.IndexOf(DataPool.GetCurrentSong());
 
             if (currentMusicId == 0)
                 return;
-            string newPath = q[currentMusicId -1].GetMusicPath();
-            PlayMusic(newPath);
+            Song preSong = _queue[currentMusicId -  1];
+            PlaySong(preSong);
+            if (currentChildForm is FormPlayer)
+            {
+                ((FormPlayer)currentChildForm).ChangeSong();
+            }
         }
 
         private void buttonShuffle_Click(object sender, EventArgs e)

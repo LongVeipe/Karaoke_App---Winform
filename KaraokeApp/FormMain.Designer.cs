@@ -556,7 +556,7 @@
             this.buttonPlayList.ShadowDecoration.Parent = this.buttonPlayList;
             this.buttonPlayList.Size = new System.Drawing.Size(40, 40);
             this.buttonPlayList.TabIndex = 3;
-            this.buttonPlayList.Tag = "Play List";
+            this.buttonPlayList.Tag = "List";
             this.buttonPlayList.Click += new System.EventHandler(this.ActivateButton);
             // 
             // buttonHome

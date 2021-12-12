@@ -116,7 +116,7 @@
             this.buttonPlay.CheckedState.Parent = this.buttonPlay;
             this.buttonPlay.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.buttonPlay.HoverState.Parent = this.buttonPlay;
-            this.buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("buttonPlay.Image")));
+            this.buttonPlay.Image = global::KaraokeApp.Properties.Resources.add_30px;
             this.buttonPlay.ImageOffset = new System.Drawing.Point(0, 0);
             this.buttonPlay.ImageRotate = 0F;
             this.buttonPlay.ImageSize = new System.Drawing.Size(30, 30);

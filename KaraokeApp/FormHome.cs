@@ -20,22 +20,15 @@ namespace KaraokeApp
 {
     public partial class FormHome : Form
     {
-        private ObservableCollection<Album> newAlbums;
-        private ObservableCollection<string> recentlyMusics;
-        private ObservableCollection<string> lovelyMusics;
+        private ObservableCollection<Song> recentlyMusics;
+        private ObservableCollection<Song> lovelyMusics;
         private UCRecentlyItem currentMusic;
         private static readonly MMDeviceEnumerator Enumerator = new MMDeviceEnumerator();
         private static readonly HttpClient Http = new HttpClient() { Timeout = TimeSpan.FromSeconds(3) };
         private static readonly string DeviceId = Guid.NewGuid().ToString();
 
-        public static FormHome __instance;
-        public static FormHome getInstance()
-        {
-            if (__instance == null)
-                __instance = new FormHome();
-            return __instance;
-        }
-
+        private Form parentForm = null;
+       
         protected override CreateParams CreateParams
         {
             get
@@ -45,15 +38,17 @@ namespace KaraokeApp
                 return handlerParam;
             }
         }
-        public FormHome()
+        public FormHome(Form _parentForm)
         {
             InitializeComponent();
 
-            newAlbums = Albums.getInstance().GetAlbums();
-            recentlyMusics = RecentlyMusics.getInstance().GetAll();
+            recentlyMusics = DataPool.GetRecentlyPlayedList();
+            lovelyMusics = DataPool.GetFavouriteList();
+
+            this.parentForm = _parentForm;
+
             recentlyMusics.CollectionChanged += RecentlyMusicsChange;
 
-            lovelyMusics = LovelyMusics.getInstance().GetAll();
             lovelyMusics.CollectionChanged += LovelyMusicsChange;
 
             panelLovely.AutoScroll = panelRecently.AutoScroll = pnlShazamResult.AutoScroll = false;
@@ -90,12 +85,23 @@ namespace KaraokeApp
 
         }
 
+
+
+        public void LoadFavouriteList()
+        {
+            foreach (Song songIndex in lovelyMusics)
+            {
+                    UCLovelyItem uc = new UCLovelyItem(songIndex);
+                    uc.Tag = songIndex.GetStreamLink();
+                    this.panelLovely.Controls.Add(uc);
+            }
+        }
         void RecentlyMusicsChange(object sender, NotifyCollectionChangedEventArgs e)
         {
             switch(e.Action)
             {
                 case NotifyCollectionChangedAction.Add:
-                    string path = e.NewItems[0].ToString();
+                     Song path = ((Song)e.NewItems[0]);
                     UCRecentlyItem uc = new UCRecentlyItem(path);
                     uc.Tag = path;
                     this.panelRecently.Controls.Add(uc);
@@ -111,22 +117,22 @@ namespace KaraokeApp
             switch (e.Action)
             {
                 case NotifyCollectionChangedAction.Add:
-                    string newItem = e.NewItems[0].ToString();
+                    Song newItem = (Song)e.NewItems[0];
                     UCLovelyItem uc = new UCLovelyItem(newItem);
-                    uc.Tag = newItem;
+                    uc.Tag = newItem.GetStreamLink();
                     this.panelLovely.Controls.Add(uc);
                     this.panelLovely.Controls.SetChildIndex(uc, 0);
                     break;
                 case NotifyCollectionChangedAction.Remove:
-                    string oldItem = e.OldItems[0].ToString();
-                    ((FormMain)(this.Parent.Parent.Parent.Parent)).RemoveLovelyInQueue(oldItem);
-                    RemoveUCLovelyItem(oldItem);
+                    Song oldItem = (Song)e.OldItems[0];
+                    ((FormMain)parentForm).RemoveLovelyInQueue(oldItem.GetStreamLink());
+                    RemoveUCLovelyItem(oldItem.GetStreamLink());
                     break;
                 default:
                     break;
             }
         }
-
+       
         void RemoveUCLovelyItem(string path)
         {
             foreach (Control item in panelLovely.Controls)
@@ -145,17 +151,18 @@ namespace KaraokeApp
                 currentMusic.PauseMusic();
             }
             currentMusic = uc;
-            ((FormMain)(this.Parent.Parent.Parent)).PlayMusic(uc.Tag.ToString());
+            ((FormMain)(this.Parent.Parent.Parent)).PlaySong(uc.GetSongItem());
         
         }
         private void FormHome_Load(object sender, EventArgs e)
         {
-            foreach (string path in recentlyMusics)
+            LoadFavouriteList();
+            foreach (Song songIndex in recentlyMusics)
             {
                 try
                 {
-                    UCRecentlyItem uc = new UCRecentlyItem(path);
-                    uc.Tag = path;
+                    UCRecentlyItem uc = new UCRecentlyItem(songIndex);
+                    uc.Tag = songIndex.GetStreamLink();
                     this.panelRecently.Controls.Add(uc);
                 }
                 catch

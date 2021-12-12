@@ -15,9 +15,9 @@ namespace KaraokeApp
         [STAThread]
         static void Main()
         {
-            //DatabaseHelper.CreateConnection();
-            //DatabaseHelper.Seeder(); #insert test data for App
-            //DatabaseHelper.FillDataPool();
+            DatabaseHelper.CreateConnection();
+            //DatabaseHelper.Seeder(); 
+            DatabaseHelper.FillDataPool();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

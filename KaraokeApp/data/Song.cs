@@ -12,7 +12,7 @@ using System.IO;
 
 namespace KaraokeApp.data
 {
-    class Song
+    public class Song
     {
 
         [BsonId]
@@ -35,8 +35,13 @@ namespace KaraokeApp.data
         [BsonElement("lyricLink")]
         public string lyricLink { get; set; }
 
+
+        [DataMember]
+        [BsonElement("isFavourite")]
+        public bool isFavourite { get; set; }
+
         [BsonIgnore]
-        public string[] artists { get; set; }
+        public string artist { get; set; }
         [BsonIgnore]
         public string title { get; set; }
         [BsonIgnore]
@@ -57,6 +62,18 @@ namespace KaraokeApp.data
             this.streamLink = _streamLink;
             this.lyricLink = _lyricLink;
             this.beatLink = _beatLink;
+        }
+
+
+
+        public Song(string _name, string _streamLink,
+           string _lyricLink, string _beatLink, bool _isFavourite)
+        {
+            this.name = _name;
+            this.streamLink = _streamLink;
+            this.lyricLink = _lyricLink;
+            this.beatLink = _beatLink;
+            this.isFavourite = _isFavourite;
         }
 
         public string GetName()
@@ -80,11 +97,11 @@ namespace KaraokeApp.data
 
         public string GetArtist()
         {
-           if(artists == null)
+           if(artist == null)
            {
-                this.artists[0] = SongUtil.GetArtist(this.lyricLink);
+                this.artist = SongUtil.GetArtist(this.streamLink);
            }
-            return artists[0];
+            return artist;
         }
 
 
@@ -92,7 +109,7 @@ namespace KaraokeApp.data
         {
             if(title == null)
             {
-                this.title = SongUtil.GetTile(this.lyricLink);
+                this.title = SongUtil.GetTile(this.streamLink);
             }
             return this.title;
         }
@@ -102,9 +119,18 @@ namespace KaraokeApp.data
         {
             if(art == null)
             {
-                this.art = SongUtil.GetArt(this.lyricLink);
+                this.art = SongUtil.GetArt(this.streamLink);
             }
             return art;
+        }
+
+        public void SetUnfavouriteSong()
+        {
+            this.isFavourite = false;
+        }
+        public void SetFavouriteSong()
+        {
+            this.isFavourite = true;
         }
     }
 
@@ -133,7 +159,6 @@ namespace KaraokeApp.data
 
         public static Bitmap GetArt(string filePath)
         {
-            Bitmap art = null;
             var mStream = new MemoryStream();
             TagLib.File file = TagLib.File.Create(filePath);
             var firstPicture = file.Tag.Pictures.FirstOrDefault();
