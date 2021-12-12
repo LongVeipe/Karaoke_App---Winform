@@ -16,12 +16,13 @@ namespace KaraokeApp
     public partial class UCLovelyItem : UserControl
     {
         string musicPath;
+        private Song songItem;
         Dictionary<int, Bitmap> randArtworks;
-        public UCLovelyItem(string musicPath)
+        public UCLovelyItem(Song _song)
         {
             InitializeComponent();
-            this.musicPath = musicPath;
 
+            songItem = _song;
 
             randArtworks = new Dictionary<int, Bitmap>();
             randArtworks.Add(1, Properties.Resources.fullClrBgr1);
@@ -52,12 +53,9 @@ namespace KaraokeApp
         {
             string artist = "Unknown", title = "Unknown";
             Bitmap artwork;
-
-            TagLib.File file = TagLib.File.Create(musicPath);
-            string[] artists = file.Tag.Artists;
-            artist = artists.Length > 0 ? artists.FirstOrDefault() : "Unknown";
-            title = file.Tag.Title != null ? file.Tag.Title : "Unknown";
-            artwork = GetMp3Artwork(file);
+            artist = songItem.GetArtist();
+            title = songItem.GetTitle();
+            artwork = songItem.GetArt();
 
             if (artwork != null)
                 this.pictureBoxArtwork.Image = artwork;
@@ -77,12 +75,16 @@ namespace KaraokeApp
         }
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            buttonPlay.Visible = false;
+            ((FormMain)this.Parent.Parent.Parent.Parent.Parent.Parent).AddQueueItem(songItem);
         }
 
         private void buttonLovely_Click(object sender, EventArgs e)
         {
-            LovelyMusics.getInstance().Remove(musicPath);
+            //LovelyMusics.getInstance().Remove(musicPath);
+            DataPool.RemoveFromFavouriteList(songItem);
         }
+
+
+        
     }
 }

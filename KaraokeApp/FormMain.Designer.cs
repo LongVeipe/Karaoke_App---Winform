@@ -44,6 +44,7 @@
             this.labelScreenName = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelPlaying = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelQueue = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
@@ -62,7 +63,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timerMusic = new System.Windows.Forms.Timer(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.panelQueue = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -128,7 +128,7 @@
             this.buttonLyric.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonLyric.ForeColor = System.Drawing.Color.White;
             this.buttonLyric.HoverState.Parent = this.buttonLyric;
-            this.buttonLyric.Image = global::KaraokeApp.Properties.Resources.microw_48px;
+            this.buttonLyric.Image = global::KaraokeApp.Properties.Resources.microw_48px1;
             this.buttonLyric.Location = new System.Drawing.Point(16, 292);
             this.buttonLyric.Name = "buttonLyric";
             this.buttonLyric.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -158,7 +158,7 @@
             this.buttonSettings.ForeColor = System.Drawing.Color.White;
             this.buttonSettings.HoverState.Parent = this.buttonSettings;
             this.buttonSettings.Image = global::KaraokeApp.Properties.Resources.icons8_settings_48;
-            this.buttonSettings.Location = new System.Drawing.Point(16, 648);
+            this.buttonSettings.Location = new System.Drawing.Point(16, 573);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.buttonSettings.ShadowDecoration.Parent = this.buttonSettings;
@@ -193,7 +193,7 @@
             this.buttonPlayList.ShadowDecoration.Parent = this.buttonPlayList;
             this.buttonPlayList.Size = new System.Drawing.Size(40, 40);
             this.buttonPlayList.TabIndex = 3;
-            this.buttonPlayList.Tag = "Play List";
+            this.buttonPlayList.Tag = "List";
             this.buttonPlayList.Click += new System.EventHandler(this.ActivateButton);
             // 
             // buttonSearch
@@ -216,7 +216,7 @@
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
             this.buttonSearch.HoverState.Parent = this.buttonSearch;
             this.buttonSearch.Image = ((System.Drawing.Image)(resources.GetObject("buttonSearch.Image")));
-            this.buttonSearch.Location = new System.Drawing.Point(16, 164);
+            this.buttonSearch.Location = new System.Drawing.Point(16, 158);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.buttonSearch.ShadowDecoration.Parent = this.buttonSearch;
@@ -233,7 +233,7 @@
             this.buttonHome.Checked = true;
             this.buttonHome.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
             this.buttonHome.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
-            this.buttonHome.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.buttonHome.CheckedState.Image = global::KaraokeApp.Properties.Resources.icons8_home_48;
             this.buttonHome.CheckedState.Parent = this.buttonHome;
             this.buttonHome.CustomImages.Parent = this.buttonHome;
             this.buttonHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -245,8 +245,8 @@
             this.buttonHome.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonHome.ForeColor = System.Drawing.Color.White;
             this.buttonHome.HoverState.Parent = this.buttonHome;
-            this.buttonHome.Image = ((System.Drawing.Image)(resources.GetObject("buttonHome.Image")));
-            this.buttonHome.Location = new System.Drawing.Point(16, 100);
+            this.buttonHome.Image = global::KaraokeApp.Properties.Resources.icons8_home_48__1_;
+            this.buttonHome.Location = new System.Drawing.Point(16, 98);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.buttonHome.ShadowDecoration.Parent = this.buttonHome;
@@ -329,6 +329,17 @@
             this.panelPlaying.Size = new System.Drawing.Size(319, 700);
             this.panelPlaying.TabIndex = 0;
             // 
+            // panelQueue
+            // 
+            this.panelQueue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelQueue.Location = new System.Drawing.Point(8, 500);
+            this.panelQueue.Name = "panelQueue";
+            this.panelQueue.ShadowDecoration.Parent = this.panelQueue;
+            this.panelQueue.Size = new System.Drawing.Size(301, 188);
+            this.panelQueue.TabIndex = 11;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -368,7 +379,7 @@
             // buttonRepeat
             // 
             this.buttonRepeat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonRepeat.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.buttonRepeat.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.buttonRepeat.CheckedState.Parent = this.buttonRepeat;
             this.buttonRepeat.CustomImages.Parent = this.buttonRepeat;
             this.buttonRepeat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -441,7 +452,7 @@
             // buttonPlay
             // 
             this.buttonPlay.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonPlay.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.buttonPlay.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.buttonPlay.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.buttonPlay.CheckedState.Parent = this.buttonPlay;
             this.buttonPlay.HoverState.ImageSize = new System.Drawing.Size(40, 40);
@@ -462,7 +473,7 @@
             // buttonShuffle
             // 
             this.buttonShuffle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonShuffle.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.buttonShuffle.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.buttonShuffle.CheckedState.Parent = this.buttonShuffle;
             this.buttonShuffle.CustomImages.Parent = this.buttonShuffle;
             this.buttonShuffle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -604,17 +615,6 @@
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl1.TargetControl = this.panelTop;
             this.guna2DragControl1.TransparentWhileDrag = false;
-            // 
-            // panelQueue
-            // 
-            this.panelQueue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelQueue.Location = new System.Drawing.Point(8, 500);
-            this.panelQueue.Name = "panelQueue";
-            this.panelQueue.ShadowDecoration.Parent = this.panelQueue;
-            this.panelQueue.Size = new System.Drawing.Size(301, 188);
-            this.panelQueue.TabIndex = 11;
             // 
             // FormMain
             // 

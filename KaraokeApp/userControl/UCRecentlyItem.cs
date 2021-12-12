@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using KaraokeApp.data;
 
 namespace KaraokeApp
 {
@@ -15,12 +16,13 @@ namespace KaraokeApp
     public partial class UCRecentlyItem : UserControl
     {
         string musicPath;
+        private Song songItem;
         Dictionary<int, Bitmap> randArtworks;
-        public UCRecentlyItem(string musicPath)
+        public UCRecentlyItem(Song _song)
         {
             InitializeComponent();
-            this.musicPath = musicPath;
 
+            this.songItem = _song;
 
             randArtworks = new Dictionary<int, Bitmap>();
             randArtworks.Add(1, Properties.Resources.fullClrBgr1);
@@ -52,11 +54,9 @@ namespace KaraokeApp
             string artist = "Unknown", title = "Unknown";
             Bitmap artwork;
 
-            TagLib.File file = TagLib.File.Create(musicPath);
-            string[] artists = file.Tag.Artists;
-            artist = artists.Length > 0 ? artists.FirstOrDefault() : "Unknown";
-            title = file.Tag.Title != null ? file.Tag.Title : "Unknown";
-            artwork = GetMp3Artwork(file);
+            artist = songItem.GetArtist();
+            title = songItem.GetTitle();
+            artwork = songItem.GetArt();
 
             if (artwork != null)
                 this.pictureBoxArtwork.Image = artwork;
@@ -79,6 +79,11 @@ namespace KaraokeApp
             buttonPlay.Visible = false;
 
             ((FormHome)(this.Parent.Parent.Parent)).PlayRecently(this);
+        }
+        
+        public Song GetSongItem()
+        {
+            return songItem;
         }
 
     }
