@@ -78,7 +78,7 @@ namespace KaraokeApp
         {
             buttonPlay.Visible = false;
 
-            ((FormHome)(this.Parent.Parent.Parent)).PlayRecently(this);
+            ((FormHome)(this.Parent.Parent.Parent.Parent.Parent)).PlayRecently(this);
         }
         
         public Song GetSongItem()
@@ -86,5 +86,9 @@ namespace KaraokeApp
             return songItem;
         }
 
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -114,5 +114,10 @@ namespace KaraokeApp.userControl
         {
             return songItem.GetStreamLink();
         }
+
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

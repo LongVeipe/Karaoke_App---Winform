@@ -18,6 +18,15 @@ namespace KaraokeApp
         private UCRecord currentRecordActivedItem;
         private List<Song> songList;
         private List<Record> recordList;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handlerParam = base.CreateParams;
+                handlerParam.ExStyle |= 0x02000000;
+                return handlerParam;
+            }
+        }
         public FormList()
         {
             InitializeComponent();
@@ -133,6 +142,12 @@ namespace KaraokeApp
                     }
                     break;
             }
+        }
+
+        public void SwitchMode(bool isDark)
+        {
+            this.BackColor = isDark ? FormMain.clrBackgroundDark : FormMain.clrBackgroundLight;
+            pnlListBorder.BorderColor = pnlListContent.BackColor = isDark ? FormMain.clrCardDark : FormMain.clrCardLight;
         }
     }
 }

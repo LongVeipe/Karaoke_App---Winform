@@ -254,7 +254,10 @@
     <Compile Include="FormPlayer.Designer.cs">
       <DependentUpon>FormPlayer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -416,6 +419,12 @@
     <None Include="imgs\icons\pause_50px.png" />
     <None Include="imgs\icons\pause_26px.png" />
     <None Include="imgs\icons\add_30px.png" />
+    <None Include="imgs\icons\england_96px.png" />
+    <None Include="imgs\icons\vietnam_96px.png" />
+    <None Include="imgs\icons\dark.png" />
+    <None Include="imgs\icons\dark1.png" />
+    <None Include="imgs\icons\light.png" />
+    <None Include="imgs\icons\Close_52px.png" />
     <Content Include="Resources\Background_Karaoke\1.jpg" />
     <Content Include="Resources\Background_Karaoke\10.jpg" />
     <Content Include="Resources\Background_Karaoke\11.jpg" />

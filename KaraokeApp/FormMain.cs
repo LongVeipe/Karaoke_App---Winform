@@ -23,6 +23,8 @@ namespace KaraokeApp
 
         private Guna2CircleButton currentBtn;
         private Form currentChildForm;
+
+        #region CustomForm
         protected override void WndProc(ref Message m)
         {
             const UInt32 WM_NCHITTEST = 0x0084;
@@ -87,7 +89,17 @@ namespace KaraokeApp
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+        #endregion
 
+        public static Color clrBackgroundDark = Color.FromArgb(22, 23, 40);
+        public static Color clrPanelDark = Color.FromArgb(35, 38, 62);
+        public static Color clrCardDark = Color.FromArgb(39, 40, 71);
+        public static Color clrBackgroundLight = Color.Azure;
+        public static Color clrPanelLight = Color.SeaGreen;
+        public static Color clrCardLight = Color.MediumSeaGreen;
+
+        public bool isDark = true;
+        public bool isEnglish = true;
         public FormMain()
         {
             InitializeComponent();
@@ -118,10 +130,11 @@ namespace KaraokeApp
             currentChildForm = childForm;
             currentChildForm.TopLevel = false;
             childForm.Dock = DockStyle.Fill;
+            SwitchMode();
+            SwitchLanguage();
+
             if (panelChildForm.Controls.IndexOf(childForm) < 0)
                 panelChildForm.Controls.Add(childForm);
-            //childForm.Parent = this;
-            //panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }
@@ -142,7 +155,16 @@ namespace KaraokeApp
                 case "Home":
                     OpenChildForm( new FormHome(this));
                     break;
+                case "List":
+                    OpenChildForm(new FormList());
+                    break;
+                case "Lyric":
+                    FormPlayer formPlayer = new FormPlayer();
+                    OpenChildForm(formPlayer);
+                    formPlayer.UpdateLyric(trackBar.Value);
+                    break;
             }
+
         }
 
         public void PlayMusic(string newPath = "")
@@ -329,16 +351,6 @@ namespace KaraokeApp
             ActivateButton(this.buttonHome, e);
         }
 
-        private void buttonLyric_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, e);
-            FormPlayer formPlayer = new FormPlayer();
-
-            OpenChildForm(formPlayer);
-            formPlayer.UpdateLyric(trackBar.Value);
-            
-        }
-
         public void AddQueueItem(Song _songItem)
         {
             
@@ -485,6 +497,85 @@ namespace KaraokeApp
         private void buttonShuffle_Click(object sender, EventArgs e)
         {
             this.buttonShuffle.Checked = !buttonShuffle.Checked;
+        }
+
+        private void btnDark_Click(object sender, EventArgs e)
+        {
+            
+            this.BackColor =  btnDark.Checked ? clrBackgroundDark : clrBackgroundLight;
+            this.labelScreenName.ForeColor = !btnDark.Checked ? clrBackgroundDark : clrBackgroundLight;
+            this.pnlNav.BackColor = this.panelPlaying.BackColor = btnDark.Checked ? clrPanelDark : clrPanelLight;
+
+            isDark = btnDark.Checked;
+
+            btnDark.Checked = !btnDark.Checked;
+            SwitchMode();
+
+        }
+
+        public void SwitchMode()
+        {
+            switch (labelScreenName.Text)
+            {
+                case "Home":
+                    ((FormHome)this.currentChildForm).SwitchMode(isDark);
+                    break;
+                case "List":
+                    ((FormList)this.currentChildForm).SwitchMode(isDark);
+                    break;
+                case "Lyric":
+                    ((FormPlayer)this.currentChildForm).SwitchMode(isDark);
+                    break;
+            }
+        }
+
+        public void SwitchLanguage()
+        {
+            if (!isEnglish)
+            {
+                lblPlaying.Text = "Đang Phát";
+                lblQueue.Text = "Danh Sách";
+                switch (labelScreenName.Text)
+                {
+                    case "Home":
+                        labelScreenName.Text = "Trang Chủ";
+                        ((FormHome)this.currentChildForm).SwitchLanguage(false);
+                        break;
+                    case "List":
+                        labelScreenName.Text = "Danh Sách";
+                        break;
+                    case "Lyric":
+                        labelScreenName.Text = "Lời Nhạc";
+                        ((FormPlayer)this.currentChildForm).SwitchLanguage(false);
+                        break;
+                }
+            }
+            else
+            {
+                lblPlaying.Text = "Playing";
+                lblQueue.Text = "Queue";
+                switch (labelScreenName.Text)
+                {
+                    case "Trang Chủ":
+                        labelScreenName.Text = "Home";
+                        ((FormHome)this.currentChildForm).SwitchLanguage(true);
+                        break;
+                    case "Danh Sách":
+                        labelScreenName.Text = "List";
+                        break;
+                    case "Lời Nhạc":
+                        labelScreenName.Text = "Lyric";
+                        ((FormPlayer)this.currentChildForm).SwitchLanguage(true);
+                        break;
+                }
+            }
+        }
+
+        private void btnLanguage_Click(object sender, EventArgs e)
+        {
+            isEnglish = btnLanguage.Checked;
+            SwitchLanguage();
+            btnLanguage.Checked = !btnLanguage.Checked;
         }
     }
 }

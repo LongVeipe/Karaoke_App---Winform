@@ -29,24 +29,37 @@ namespace KaraokeApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlListContent = new System.Windows.Forms.Panel();
+            this.flowPNLListSong = new System.Windows.Forms.Panel();
             this.cbType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtSeach = new Guna.UI2.WinForms.Guna2TextBox();
-            this.flowPNLListSong = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.pnlListBorder = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlListContent.SuspendLayout();
+            this.pnlListBorder.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlListContent
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.flowPNLListSong);
-            this.panel1.Controls.Add(this.cbType);
-            this.panel1.Controls.Add(this.txtSeach);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(608, 622);
-            this.panel1.TabIndex = 0;
+            this.pnlListContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(71)))));
+            this.pnlListContent.Controls.Add(this.flowPNLListSong);
+            this.pnlListContent.Controls.Add(this.cbType);
+            this.pnlListContent.Controls.Add(this.txtSeach);
+            this.pnlListContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlListContent.Location = new System.Drawing.Point(5, 5);
+            this.pnlListContent.Name = "pnlListContent";
+            this.pnlListContent.Size = new System.Drawing.Size(598, 612);
+            this.pnlListContent.TabIndex = 0;
+            // 
+            // flowPNLListSong
+            // 
+            this.flowPNLListSong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowPNLListSong.BackColor = System.Drawing.Color.Transparent;
+            this.flowPNLListSong.Location = new System.Drawing.Point(32, 63);
+            this.flowPNLListSong.Name = "flowPNLListSong";
+            this.flowPNLListSong.Size = new System.Drawing.Size(534, 530);
+            this.flowPNLListSong.TabIndex = 4;
             // 
             // cbType
             // 
@@ -68,7 +81,7 @@ namespace KaraokeApp
             "Karaoke",
             "Record"});
             this.cbType.ItemsAppearance.Parent = this.cbType;
-            this.cbType.Location = new System.Drawing.Point(326, 3);
+            this.cbType.Location = new System.Drawing.Point(316, 16);
             this.cbType.Name = "cbType";
             this.cbType.ShadowDecoration.Parent = this.cbType;
             this.cbType.Size = new System.Drawing.Size(250, 36);
@@ -82,7 +95,7 @@ namespace KaraokeApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSeach.BorderColor = System.Drawing.Color.Black;
             this.txtSeach.BorderRadius = 5;
-            this.txtSeach.BorderThickness = 2;
+            this.txtSeach.BorderThickness = 0;
             this.txtSeach.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSeach.DefaultText = "";
             this.txtSeach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -96,26 +109,30 @@ namespace KaraokeApp
             this.txtSeach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSeach.HoverState.Parent = this.txtSeach;
             this.txtSeach.IconRight = global::KaraokeApp.Properties.Resources.search_40px;
-            this.txtSeach.Location = new System.Drawing.Point(32, 3);
+            this.txtSeach.Location = new System.Drawing.Point(32, 16);
             this.txtSeach.Name = "txtSeach";
             this.txtSeach.PasswordChar = '\0';
             this.txtSeach.PlaceholderText = "";
             this.txtSeach.SelectedText = "";
             this.txtSeach.ShadowDecoration.Parent = this.txtSeach;
-            this.txtSeach.Size = new System.Drawing.Size(288, 36);
+            this.txtSeach.Size = new System.Drawing.Size(278, 36);
             this.txtSeach.TabIndex = 0;
             this.txtSeach.TextChanged += new System.EventHandler(this.txtSeach_TextChanged);
             // 
-            // flowPNLListSong
+            // pnlListBorder
             // 
-            this.flowPNLListSong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowPNLListSong.BackColor = System.Drawing.Color.Transparent;
-            this.flowPNLListSong.Location = new System.Drawing.Point(32, 50);
-            this.flowPNLListSong.Name = "flowPNLListSong";
-            this.flowPNLListSong.Size = new System.Drawing.Size(544, 540);
-            this.flowPNLListSong.TabIndex = 4;
+            this.pnlListBorder.BackColor = System.Drawing.Color.Transparent;
+            this.pnlListBorder.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(71)))));
+            this.pnlListBorder.BorderRadius = 5;
+            this.pnlListBorder.BorderThickness = 5;
+            this.pnlListBorder.Controls.Add(this.pnlListContent);
+            this.pnlListBorder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlListBorder.Location = new System.Drawing.Point(0, 0);
+            this.pnlListBorder.Name = "pnlListBorder";
+            this.pnlListBorder.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlListBorder.ShadowDecoration.Parent = this.pnlListBorder;
+            this.pnlListBorder.Size = new System.Drawing.Size(608, 622);
+            this.pnlListBorder.TabIndex = 5;
             // 
             // FormList
             // 
@@ -123,21 +140,23 @@ namespace KaraokeApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(608, 622);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlListBorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormList";
             this.Text = "FormList";
             this.Load += new System.EventHandler(this.FormList_Load);
-            this.panel1.ResumeLayout(false);
+            this.pnlListContent.ResumeLayout(false);
+            this.pnlListBorder.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlListContent;
         private Guna.UI2.WinForms.Guna2TextBox txtSeach;
         private Guna.UI2.WinForms.Guna2ComboBox cbType;
         private System.Windows.Forms.Panel flowPNLListSong;
+        private Guna.UI2.WinForms.Guna2Panel pnlListBorder;
     }
 }

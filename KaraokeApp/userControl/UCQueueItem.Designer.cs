@@ -102,6 +102,7 @@
             this.buttonPlay.ShadowDecoration.Parent = this.buttonPlay;
             this.buttonPlay.Size = new System.Drawing.Size(25, 25);
             this.buttonPlay.TabIndex = 11;
+            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
             // 
             // buttonMenu
             // 

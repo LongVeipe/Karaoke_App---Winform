@@ -85,8 +85,6 @@ namespace KaraokeApp
 
         }
 
-
-
         public void LoadFavouriteList()
         {
             foreach (Song songIndex in lovelyMusics)
@@ -151,7 +149,7 @@ namespace KaraokeApp
                 currentMusic.PauseMusic();
             }
             currentMusic = uc;
-            ((FormMain)(this.Parent.Parent.Parent)).PlaySong(uc.GetSongItem());
+            ((FormMain)(this.Parent.Parent.Parent.Parent)).PlaySong(uc.GetSongItem());
         
         }
         private void FormHome_Load(object sender, EventArgs e)
@@ -282,6 +280,21 @@ namespace KaraokeApp
         private void cbxDevice_SelectedIndexChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.DeviceId = ((Device)cbxDevice.SelectedItem).DeviceId;
+        }
+
+        public void SwitchMode(bool isDark)
+        {
+            this.BackColor = isDark ? FormMain.clrBackgroundDark : FormMain.clrBackgroundLight;
+            pnlFavorite.BorderColor = pnlFavoriteContent.BackColor =           
+            pnlRecent.BorderColor = pnlRecentContent.BackColor =
+            pnlSearch.BorderColor = pnlSearchContent.BackColor = isDark ? FormMain.clrCardDark : FormMain.clrCardLight;
+        }
+
+        public void SwitchLanguage(bool isEnglish)
+        {
+            lblDevice.Text = isEnglish ? "Device" : "Thiết Bị";
+            lblFavorite.Text = isEnglish ? "Favorite Playlist" : "Yêu Thích";
+            lblRecent.Text = isEnglish ? "Recently Played" : "Vừa Phát";
         }
     }
 }
