@@ -32,9 +32,9 @@
             this.labelArtist = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonLovely = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.buttonPlay = new Guna.UI2.WinForms.Guna2ImageButton();
             this.buttonMenu = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pictureBoxArtwork = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.buttonPlay = new Guna.UI2.WinForms.Guna2ImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtwork)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,26 +83,6 @@
             this.buttonLovely.CheckedChanged += new System.EventHandler(this.buttonLovely_CheckedChanged);
             this.buttonLovely.Click += new System.EventHandler(this.buttonLovely_Click);
             // 
-            // buttonPlay
-            // 
-            this.buttonPlay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPlay.CheckedState.ImageSize = new System.Drawing.Size(30, 30);
-            this.buttonPlay.CheckedState.Parent = this.buttonPlay;
-            this.buttonPlay.HoverState.ImageSize = new System.Drawing.Size(25, 25);
-            this.buttonPlay.HoverState.Parent = this.buttonPlay;
-            this.buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("buttonPlay.Image")));
-            this.buttonPlay.ImageOffset = new System.Drawing.Point(0, 0);
-            this.buttonPlay.ImageRotate = 0F;
-            this.buttonPlay.ImageSize = new System.Drawing.Size(25, 25);
-            this.buttonPlay.Location = new System.Drawing.Point(311, 11);
-            this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.PressedState.ImageSize = new System.Drawing.Size(23, 23);
-            this.buttonPlay.PressedState.Parent = this.buttonPlay;
-            this.buttonPlay.ShadowDecoration.Parent = this.buttonPlay;
-            this.buttonPlay.Size = new System.Drawing.Size(25, 25);
-            this.buttonPlay.TabIndex = 11;
-            // 
             // buttonMenu
             // 
             this.buttonMenu.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -136,13 +116,34 @@
             this.pictureBoxArtwork.TabIndex = 7;
             this.pictureBoxArtwork.TabStop = false;
             // 
+            // buttonPlay
+            // 
+            this.buttonPlay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonPlay.CheckedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.buttonPlay.CheckedState.Parent = this.buttonPlay;
+            this.buttonPlay.HoverState.ImageSize = new System.Drawing.Size(25, 25);
+            this.buttonPlay.HoverState.Parent = this.buttonPlay;
+            this.buttonPlay.Image = ((System.Drawing.Image)(resources.GetObject("buttonPlay.Image")));
+            this.buttonPlay.ImageOffset = new System.Drawing.Point(0, 0);
+            this.buttonPlay.ImageRotate = 0F;
+            this.buttonPlay.ImageSize = new System.Drawing.Size(25, 25);
+            this.buttonPlay.Location = new System.Drawing.Point(301, 11);
+            this.buttonPlay.Name = "buttonPlay";
+            this.buttonPlay.PressedState.ImageSize = new System.Drawing.Size(23, 23);
+            this.buttonPlay.PressedState.Parent = this.buttonPlay;
+            this.buttonPlay.ShadowDecoration.Parent = this.buttonPlay;
+            this.buttonPlay.Size = new System.Drawing.Size(25, 25);
+            this.buttonPlay.TabIndex = 11;
+            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
+            // 
             // UCQueueItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.buttonLovely);
             this.Controls.Add(this.buttonPlay);
+            this.Controls.Add(this.buttonLovely);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.labelArtist);
             this.Controls.Add(this.labelTitle);
@@ -156,12 +157,11 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2ImageButton buttonPlay;
         private Guna.UI2.WinForms.Guna2ImageButton buttonMenu;
         private System.Windows.Forms.Label labelArtist;
         private System.Windows.Forms.Label labelTitle;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxArtwork;
         private Guna.UI2.WinForms.Guna2ImageButton buttonLovely;
+        private Guna.UI2.WinForms.Guna2ImageButton buttonPlay;
     }
 }

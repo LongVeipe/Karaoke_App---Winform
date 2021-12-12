@@ -58,12 +58,32 @@ namespace KaraokeApp
 
             panelLovely.AutoScroll = panelRecently.AutoScroll = pnlShazamResult.AutoScroll = true;
 
-            UCSongItem uc = new UCSongItem();
-            this.pnlShazamResult.Controls.Add(uc);
+            int index = 0;
+            var devices = Enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active).Select((device, i) => {
+                string deviceType;
+                switch (device.DataFlow)
+                {
+                    case DataFlow.Capture:
+                        deviceType = "IN - ";
+                        break;
+                    case DataFlow.Render:
+                        deviceType = "OUT - ";
+                        break;
+                    default:
+                        deviceType = "UNK - ";
+                        break;
+                }
+                if (!String.IsNullOrEmpty(Properties.Settings.Default.DeviceId)
+                && device.ID == Properties.Settings.Default.DeviceId)
+                {
+                    index = i;
+                }
+                return new Device(device.ID, deviceType + device.FriendlyName);
+            }).ToArray();
+            cbxDevice.Items.AddRange(devices);
+            cbxDevice.SelectedIndex = index;
 
         }
-
-
 
         public void LoadFavouriteList()
         {
@@ -79,11 +99,18 @@ namespace KaraokeApp
             switch(e.Action)
             {
                 case NotifyCollectionChangedAction.Add:
-                     Song path = ((Song)e.NewItems[0]);
+                    foreach (Control item in panelRecently.Controls)
+                    {
+                        ((UCRecentlyItem)item).HadAlreadyPlayed();
+                    }
+                    Song path = ((Song)e.NewItems[0]);
                     UCRecentlyItem uc = new UCRecentlyItem(path);
                     uc.Tag = path;
+                    currentMusic = uc;
+                    uc.isPlaying();
                     this.panelRecently.Controls.Add(uc);
                     this.panelRecently.Controls.SetChildIndex(uc, 0);
+                    
                     break;
                 default:
                     break;
@@ -111,13 +138,41 @@ namespace KaraokeApp
             }
         }
        
-        void RemoveUCLovelyItem(string path)
+        public void RemoveUCLovelyItem(string path)
         {
             foreach (Control item in panelLovely.Controls)
             {
                 if (item.Tag.ToString() == path)
                 {
                     UCLovelyItem uc = (UCLovelyItem)item;
+                    uc.Dispose();
+                }
+            }
+        }
+
+
+
+        public void UpdateCurrentRecently()
+        {
+            foreach (Control item in panelRecently.Controls)
+            {
+                UCRecentlyItem uc = (UCRecentlyItem)item;
+                if (uc.GetSongItem() == DataPool.GetCurrentSong())
+                {
+                    uc.isPlaying();
+                    currentMusic = uc;
+                }
+                else
+                    uc.HadAlreadyPlayed();
+            }
+        }
+        public void RemoveUCRecentlyItem(string path)
+        {
+            foreach (Control item in panelRecently.Controls)
+            {
+                if (((Song)item.Tag).GetStreamLink() == path)
+                {
+                    UCRecentlyItem uc = (UCRecentlyItem)item;
                     uc.Dispose();
                 }
             }
@@ -129,7 +184,7 @@ namespace KaraokeApp
                 currentMusic.PauseMusic();
             }
             currentMusic = uc;
-            ((FormMain)(this.Parent.Parent.Parent)).PlaySong(uc.GetSongItem());
+            ((FormMain)(this.Parent.Parent.Parent.Parent)).PlaySong(uc.GetSongItem());
         
         }
         private void FormHome_Load(object sender, EventArgs e)
@@ -141,6 +196,8 @@ namespace KaraokeApp
                 {
                     UCRecentlyItem uc = new UCRecentlyItem(songIndex);
                     uc.Tag = songIndex.GetStreamLink();
+                    if (songIndex == DataPool.GetCurrentSong())
+                        uc.isPlaying();
                     this.panelRecently.Controls.Add(uc);
                 }
                 catch
@@ -152,7 +209,39 @@ namespace KaraokeApp
 
         private async void btnRecord_Click(object sender, EventArgs e)
         {
+            if (btnRecord.Checked) return;
+            btnRecord.Checked = true;
+            var timer = new System.Timers.Timer(500);
+            timer.Start();
 
+            try
+            {
+                string deviceID = Properties.Settings.Default.DeviceId;
+                if (String.IsNullOrEmpty(deviceID))
+                    deviceID = Enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active).FirstOrDefault().ID;
+
+
+                var cancel = new CancellationTokenSource();
+
+                Task.Delay(15000).ContinueWith((_) => { cancel.Cancel(); });
+
+                var match = await Task.Run(() => IdentifyAsync(deviceID, cancel.Token));
+                if (match != null)
+                {
+                    UCSongItem uc = new UCSongItem();
+                    await uc.SetPropertiesAsync(match);
+                    this.pnlShazamResult.Controls.Add(uc);
+                    this.pnlShazamResult.Controls.SetChildIndex(uc, 0);
+                }
+                else
+                    MessageBox.Show("No Song Matched");
+            }
+            catch
+            {
+                throw;
+            }
+            btnRecord.Checked = false;
+            timer.Stop();
         }
         public static async Task<ShazamMatch> IdentifyAsync(string deviceId, CancellationToken cancel)
         {
@@ -223,6 +312,26 @@ namespace KaraokeApp
                     Cover = data.Track?.Images?.CoverHQ ?? data.Track?.Images?.Cover ?? data.Track.Share.Image
                 };
             }
+        }
+
+        private void cbxDevice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.DeviceId = ((Device)cbxDevice.SelectedItem).DeviceId;
+        }
+
+        public void SwitchMode(bool isDark)
+        {
+            this.BackColor = isDark ? FormMain.clrBackgroundDark : FormMain.clrBackgroundLight;
+            pnlFavorite.BorderColor = pnlFavoriteContent.BackColor =           
+            pnlRecent.BorderColor = pnlRecentContent.BackColor =
+            pnlSearch.BorderColor = pnlSearchContent.BackColor = isDark ? FormMain.clrCardDark : FormMain.clrCardLight;
+        }
+
+        public void SwitchLanguage(bool isEnglish)
+        {
+            lblDevice.Text = isEnglish ? "Device" : "Thiết Bị";
+            lblFavorite.Text = isEnglish ? "Favorite Playlist" : "Yêu Thích";
+            lblRecent.Text = isEnglish ? "Recently Played" : "Vừa Phát";
         }
     }
 }

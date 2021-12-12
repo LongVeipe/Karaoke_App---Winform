@@ -18,6 +18,15 @@ namespace KaraokeApp
         private UCRecord currentRecordActivedItem;
         private List<Song> songList;
         private List<Record> recordList;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handlerParam = base.CreateParams;
+                handlerParam.ExStyle |= 0x02000000;
+                return handlerParam;
+            }
+        }
         public FormList()
         {
             InitializeComponent();
@@ -64,7 +73,7 @@ namespace KaraokeApp
             {
                 //currentMusic.PauseMusic();
             }
-            ((FormMain)(this.Parent.Parent.Parent)).PlayMusicInDB(filePath);
+            ((FormMain)(this.Parent.Parent.Parent.Parent)).PlayMusicInDB(filePath);
         }
 
         public void PlayKaraoke(UCSong currentItem)
@@ -74,7 +83,7 @@ namespace KaraokeApp
                 //currentMusic.PauseMusic();
             }
             currentSongActivedItem = currentItem;
-            ((FormMain)(this.Parent.Parent.Parent)).PlayingKaraoke();
+            ((FormMain)(this.Parent.Parent.Parent.Parent)).PlayingKaraoke();
         }
 
         private void txtSeach_TextChanged(object sender, EventArgs e)
@@ -163,6 +172,12 @@ namespace KaraokeApp
             rainSplashLoading.Stop();
             flowPNLListSong.Visible = true;
 
+        }
+
+        public void SwitchMode(bool isDark)
+        {
+            this.BackColor = isDark ? FormMain.clrBackgroundDark : FormMain.clrBackgroundLight;
+            pnlListBorder.BorderColor = pnlListContent.BackColor = isDark ? FormMain.clrCardDark : FormMain.clrCardLight;
         }
     }
 }

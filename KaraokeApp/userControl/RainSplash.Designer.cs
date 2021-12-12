@@ -31,31 +31,31 @@ namespace KaraokeApp.userControl
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbRain6 = new System.Windows.Forms.PictureBox();
+            this.pbRain8 = new System.Windows.Forms.PictureBox();
+            this.pbRain7 = new System.Windows.Forms.PictureBox();
+            this.pbRain5 = new System.Windows.Forms.PictureBox();
+            this.pbRain4 = new System.Windows.Forms.PictureBox();
+            this.pbRain3 = new System.Windows.Forms.PictureBox();
+            this.pbRain2 = new System.Windows.Forms.PictureBox();
             this.pbRain1 = new System.Windows.Forms.PictureBox();
             this.pbPuddle = new System.Windows.Forms.PictureBox();
             this.pbCloud = new System.Windows.Forms.PictureBox();
-            this.pbRain2 = new System.Windows.Forms.PictureBox();
-            this.pbRain3 = new System.Windows.Forms.PictureBox();
-            this.pbRain4 = new System.Windows.Forms.PictureBox();
-            this.pbRain5 = new System.Windows.Forms.PictureBox();
-            this.pbRain7 = new System.Windows.Forms.PictureBox();
-            this.pbRain8 = new System.Windows.Forms.PictureBox();
-            this.pbRain6 = new System.Windows.Forms.PictureBox();
             this.pnlLoading = new System.Windows.Forms.Panel();
             this.timerRain = new System.Windows.Forms.Timer(this.components);
             this.timerLoading = new System.Windows.Forms.Timer(this.components);
             this.lblLoading = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRain1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPuddle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloud)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,6 +73,76 @@ namespace KaraokeApp.userControl
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 137);
             this.panel1.TabIndex = 2;
+            // 
+            // pbRain6
+            // 
+            this.pbRain6.Image = global::KaraokeApp.Properties.Resources.rain_L;
+            this.pbRain6.Location = new System.Drawing.Point(130, 20);
+            this.pbRain6.Name = "pbRain6";
+            this.pbRain6.Size = new System.Drawing.Size(15, 30);
+            this.pbRain6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRain6.TabIndex = 7;
+            this.pbRain6.TabStop = false;
+            // 
+            // pbRain8
+            // 
+            this.pbRain8.Image = global::KaraokeApp.Properties.Resources.rain_L;
+            this.pbRain8.Location = new System.Drawing.Point(174, 5);
+            this.pbRain8.Name = "pbRain8";
+            this.pbRain8.Size = new System.Drawing.Size(15, 30);
+            this.pbRain8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRain8.TabIndex = 6;
+            this.pbRain8.TabStop = false;
+            // 
+            // pbRain7
+            // 
+            this.pbRain7.Image = global::KaraokeApp.Properties.Resources.rain_L;
+            this.pbRain7.Location = new System.Drawing.Point(151, 5);
+            this.pbRain7.Name = "pbRain7";
+            this.pbRain7.Size = new System.Drawing.Size(7, 63);
+            this.pbRain7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRain7.TabIndex = 5;
+            this.pbRain7.TabStop = false;
+            // 
+            // pbRain5
+            // 
+            this.pbRain5.Image = global::KaraokeApp.Properties.Resources.rain_L;
+            this.pbRain5.Location = new System.Drawing.Point(109, 29);
+            this.pbRain5.Name = "pbRain5";
+            this.pbRain5.Size = new System.Drawing.Size(7, 63);
+            this.pbRain5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRain5.TabIndex = 4;
+            this.pbRain5.TabStop = false;
+            // 
+            // pbRain4
+            // 
+            this.pbRain4.Image = global::KaraokeApp.Properties.Resources.rain_L;
+            this.pbRain4.Location = new System.Drawing.Point(87, 3);
+            this.pbRain4.Name = "pbRain4";
+            this.pbRain4.Size = new System.Drawing.Size(7, 63);
+            this.pbRain4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRain4.TabIndex = 3;
+            this.pbRain4.TabStop = false;
+            // 
+            // pbRain3
+            // 
+            this.pbRain3.Image = global::KaraokeApp.Properties.Resources.rain_L;
+            this.pbRain3.Location = new System.Drawing.Point(51, 5);
+            this.pbRain3.Name = "pbRain3";
+            this.pbRain3.Size = new System.Drawing.Size(15, 30);
+            this.pbRain3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRain3.TabIndex = 2;
+            this.pbRain3.TabStop = false;
+            // 
+            // pbRain2
+            // 
+            this.pbRain2.Image = global::KaraokeApp.Properties.Resources.rain_L;
+            this.pbRain2.Location = new System.Drawing.Point(38, 29);
+            this.pbRain2.Name = "pbRain2";
+            this.pbRain2.Size = new System.Drawing.Size(7, 63);
+            this.pbRain2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRain2.TabIndex = 1;
+            this.pbRain2.TabStop = false;
             // 
             // pbRain1
             // 
@@ -107,76 +177,6 @@ namespace KaraokeApp.userControl
             this.pbCloud.TabIndex = 0;
             this.pbCloud.TabStop = false;
             // 
-            // pbRain2
-            // 
-            this.pbRain2.Image = global::KaraokeApp.Properties.Resources.rain_L;
-            this.pbRain2.Location = new System.Drawing.Point(38, 29);
-            this.pbRain2.Name = "pbRain2";
-            this.pbRain2.Size = new System.Drawing.Size(7, 63);
-            this.pbRain2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRain2.TabIndex = 1;
-            this.pbRain2.TabStop = false;
-            // 
-            // pbRain3
-            // 
-            this.pbRain3.Image = global::KaraokeApp.Properties.Resources.rain_L;
-            this.pbRain3.Location = new System.Drawing.Point(51, 5);
-            this.pbRain3.Name = "pbRain3";
-            this.pbRain3.Size = new System.Drawing.Size(15, 30);
-            this.pbRain3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRain3.TabIndex = 2;
-            this.pbRain3.TabStop = false;
-            // 
-            // pbRain4
-            // 
-            this.pbRain4.Image = global::KaraokeApp.Properties.Resources.rain_L;
-            this.pbRain4.Location = new System.Drawing.Point(87, 3);
-            this.pbRain4.Name = "pbRain4";
-            this.pbRain4.Size = new System.Drawing.Size(7, 63);
-            this.pbRain4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRain4.TabIndex = 3;
-            this.pbRain4.TabStop = false;
-            // 
-            // pbRain5
-            // 
-            this.pbRain5.Image = global::KaraokeApp.Properties.Resources.rain_L;
-            this.pbRain5.Location = new System.Drawing.Point(109, 29);
-            this.pbRain5.Name = "pbRain5";
-            this.pbRain5.Size = new System.Drawing.Size(7, 63);
-            this.pbRain5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRain5.TabIndex = 4;
-            this.pbRain5.TabStop = false;
-            // 
-            // pbRain7
-            // 
-            this.pbRain7.Image = global::KaraokeApp.Properties.Resources.rain_L;
-            this.pbRain7.Location = new System.Drawing.Point(151, 5);
-            this.pbRain7.Name = "pbRain7";
-            this.pbRain7.Size = new System.Drawing.Size(7, 63);
-            this.pbRain7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRain7.TabIndex = 5;
-            this.pbRain7.TabStop = false;
-            // 
-            // pbRain8
-            // 
-            this.pbRain8.Image = global::KaraokeApp.Properties.Resources.rain_L;
-            this.pbRain8.Location = new System.Drawing.Point(174, 5);
-            this.pbRain8.Name = "pbRain8";
-            this.pbRain8.Size = new System.Drawing.Size(15, 30);
-            this.pbRain8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRain8.TabIndex = 6;
-            this.pbRain8.TabStop = false;
-            // 
-            // pbRain6
-            // 
-            this.pbRain6.Image = global::KaraokeApp.Properties.Resources.rain_L;
-            this.pbRain6.Location = new System.Drawing.Point(130, 20);
-            this.pbRain6.Name = "pbRain6";
-            this.pbRain6.Size = new System.Drawing.Size(15, 30);
-            this.pbRain6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRain6.TabIndex = 7;
-            this.pbRain6.TabStop = false;
-            // 
             // pnlLoading
             // 
             this.pnlLoading.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -209,7 +209,7 @@ namespace KaraokeApp.userControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.lblLoading);
             this.Controls.Add(this.pnlLoading);
             this.Controls.Add(this.panel1);
@@ -220,16 +220,16 @@ namespace KaraokeApp.userControl
             this.Size = new System.Drawing.Size(544, 540);
             this.Load += new System.EventHandler(this.RainSplash_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRain2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRain1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPuddle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloud)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRain6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

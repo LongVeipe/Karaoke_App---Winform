@@ -258,12 +258,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="FormSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSettings.Designer.cs">
-      <DependentUpon>FormSettings.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -353,9 +347,6 @@
     <EmbeddedResource Include="FormPlayer.resx">
       <DependentUpon>FormPlayer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSettings.resx">
-      <DependentUpon>FormSettings.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -440,6 +431,13 @@
     <None Include="imgs\bgrs\cloud.png" />
     <None Include="imgs\bgrs\puddle.png" />
     <None Include="imgs\bgrs\rain_L.png" />
+    <None Include="imgs\icons\england_96px.png" />
+    <None Include="imgs\icons\vietnam_96px.png" />
+    <None Include="imgs\icons\dark.png" />
+    <None Include="imgs\icons\dark1.png" />
+    <None Include="imgs\icons\light.png" />
+    <None Include="imgs\icons\Close_52px.png" />
+    <None Include="imgs\icons\close.png" />
     <Content Include="Resources\Background_Karaoke\1.jpg" />
     <Content Include="Resources\Background_Karaoke\10.jpg" />
     <Content Include="Resources\Background_Karaoke\11.jpg" />

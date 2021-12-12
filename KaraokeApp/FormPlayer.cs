@@ -73,7 +73,7 @@ namespace KaraokeApp
                 currentIndex++;
                 if (currentIndex > backgroundList.Count - 1)
                     currentIndex = 0;
-                backgroundPanel.BackgroundImage = backgroundList[currentIndex];
+                pnlContent.BackgroundImage = backgroundList[currentIndex];
 
                 //Animation
                 /*   scale+=10;
@@ -117,7 +117,7 @@ namespace KaraokeApp
                 string currentSongName = DataPool.GetCurrentSong().GetName();
                 OpenBeatFile(BEAT_PATH + currentSongName + ".m4a");
                 karaokeMode = true;
-                backgroundPanel.BackgroundImage = backgroundList[0];
+                pnlContent.BackgroundImage = backgroundList[0];
                 btnKaraoke.Enabled = false;
                 btnLyric.Enabled = true;
                 pnlRecord.Visible = true;
@@ -129,7 +129,7 @@ namespace KaraokeApp
             if (DataPool.GetCurrentSong() != null)
             {
                 karaokeMode = true;
-                backgroundPanel.BackgroundImage = backgroundList[0];
+                pnlContent.BackgroundImage = backgroundList[0];
                 btnKaraoke.Enabled = false;
                 btnLyric.Enabled = true;
                 pnlRecord.Visible = true;
@@ -193,7 +193,7 @@ namespace KaraokeApp
             }
             else
             {
-                MessageBox.Show("Bài hát không hỗ trợ Kara!");
+                MessageBox.Show(btnLyric.Text == "Lyric" ? "This song is unsupported Kara Mode" : "Bài hát không hỗ trợ Kara!");
             }
         }
 
@@ -266,10 +266,20 @@ namespace KaraokeApp
                 {
                     _record.DeleteMicFile();
                     _record = null;
-                    MessageBox.Show("Thu âm thành công!");
+                    MessageBox.Show(btnLyric.Text == "Lyric" ? "Recorded Successfully" : "Thu âm thành công!");
                 }
             }
 
+        }
+        public void SwitchMode(bool isDark)
+        {
+            this.BackColor = isDark ? FormMain.clrBackgroundDark : FormMain.clrBackgroundLight;
+            pnlBorder.BorderColor = pnlContent.BackColor = isDark ? FormMain.clrCardDark : FormMain.clrCardLight;
+        }
+
+        public void SwitchLanguage(bool isEnglish)
+        {
+            btnLyric.Text = isEnglish ? "Lyric" : "Lời Nhạc";
         }
     }
 }

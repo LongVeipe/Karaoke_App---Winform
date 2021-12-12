@@ -105,6 +105,10 @@ namespace KaraokeApp.userControl
             labelTitle.Text = title;
         }
 
+        public Song GetSongItem()
+        {
+            return this.songItem;
+        }
         private void buttonLovely_CheckedChanged(object sender, EventArgs e)
         {
             Console.WriteLine(buttonLovely.Checked);
@@ -114,5 +118,22 @@ namespace KaraokeApp.userControl
         {
             return songItem.GetStreamLink();
         }
+
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+            ((FormMain)this.Parent.Parent.Parent.Parent).PlayQueueItem(this);
+            buttonPlay.Visible = false;
+        }
+
+        public void IsPlaying()
+        {
+            buttonPlay.Visible = false;
+        }
+
+        public void NotPlayYet()
+        {
+            buttonPlay.Visible = true;
+        }
+
     }
 }

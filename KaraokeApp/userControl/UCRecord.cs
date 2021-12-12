@@ -29,7 +29,7 @@ namespace KaraokeApp.userControl
         private void btnPlayStream_Click(object sender, EventArgs e)
         {
             string absolutePath = Path.GetFullPath(recordItem.GetStreamLink());
-            ((FormList)(this.Parent.Parent.Parent))
+            ((FormList)(this.Parent.Parent.Parent.Parent))
                 .PlayRecord(this, absolutePath);
             Song newSong = null;
             DataPool.UpdateCurrentSong(newSong);

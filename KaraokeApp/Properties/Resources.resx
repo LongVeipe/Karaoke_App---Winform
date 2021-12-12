@@ -139,8 +139,17 @@
   <data name="icons8_align_right_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-align-right-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Close_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\Close_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_shuffle_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-shuffle-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inter_VariableFont_slnt_wght" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inter-VariableFont_slnt,wght.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="icons8_notification_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\icons8-notification-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="record_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\record_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -153,6 +162,9 @@
   </data>
   <data name="icons8_right_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-right-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vietnam_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\vietnam_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="microw_48px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\microw_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,8 +184,8 @@
   <data name="icons8_end_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-end-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Inter_VariableFont_slnt_wght" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inter-VariableFont_slnt,wght.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="icons8_end_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\icons8-end-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_home_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-home-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -183,6 +195,18 @@
   </data>
   <data name="icons8_end_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-end-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_left_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\icons8-left-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="england_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\england_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shazam_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\shazam_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pause_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\pause_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,11 +220,11 @@
   <data name="icons8_pause_button_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-pause-button-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_skip_to_start_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\icons8-skip-to-start-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dark1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\dark1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shazam_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\shazam_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pause_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\pause_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="microw_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\microw_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,6 +250,9 @@
   <data name="icons8_playlist_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-playlist-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pause_26px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\pause_26px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\bgrs\cloud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -238,11 +265,17 @@
   <data name="icons8_notification_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-notification-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dark11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\dark1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_heart_48_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-heart-48-red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_repeat_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icons\icons8-repeat-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_skip_to_start_48__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\icons8-skip-to-start-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-heart-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\icons8-heart-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -273,6 +306,9 @@
   </data>
   <data name="add_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icons\add_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icons\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rain_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\bgrs\rain_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

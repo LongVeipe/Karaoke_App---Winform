@@ -121,11 +121,22 @@ namespace KaraokeApp.data
                 favouriteList.Remove(_song);
             }
         }
-        public static void InsertToRecentlyPlayedList(Song _song)
+        public static bool InsertToRecentlyPlayedList(Song _song)
         {
             if (recentlyPlayedList == null)
                 recentlyPlayedList = new ObservableCollection<Song>();
-            recentlyPlayedList.Add(_song);
+            bool isAlreadyAdded = false;
+            foreach(Song songIndex in recentlyPlayedList)
+            {
+                if (songIndex == _song)
+                    isAlreadyAdded = true;
+            }
+            if(!isAlreadyAdded)
+            {
+                recentlyPlayedList.Add(_song);
+                return isAlreadyAdded;
+            }
+            return isAlreadyAdded;
         }
 
         public static Song SearchInSongList(String streamFile)

@@ -15,7 +15,6 @@ namespace KaraokeApp
     
     public partial class UCRecentlyItem : UserControl
     {
-        string musicPath;
         private Song songItem;
         Dictionary<int, Bitmap> randArtworks;
         public UCRecentlyItem(Song _song)
@@ -23,6 +22,7 @@ namespace KaraokeApp
             InitializeComponent();
 
             this.songItem = _song;
+            this.Tag = _song.GetStreamLink();
 
             randArtworks = new Dictionary<int, Bitmap>();
             randArtworks.Add(1, Properties.Resources.fullClrBgr1);
@@ -78,13 +78,26 @@ namespace KaraokeApp
         {
             buttonPlay.Visible = false;
 
-            ((FormHome)(this.Parent.Parent.Parent)).PlayRecently(this);
+            ((FormHome)(this.Parent.Parent.Parent.Parent.Parent)).PlayRecently(this);
         }
         
+        public void isPlaying()
+        {
+            buttonPlay.Visible = false;
+        }
+
+        public void HadAlreadyPlayed()
+        {
+            buttonPlay.Visible = true;
+        }
         public Song GetSongItem()
         {
             return songItem;
         }
 
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            ((FormHome)(this.Parent.Parent.Parent.Parent.Parent)).RemoveUCRecentlyItem(songItem.GetStreamLink());
+        }
     }
 }

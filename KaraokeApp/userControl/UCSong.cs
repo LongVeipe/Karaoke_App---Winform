@@ -36,7 +36,7 @@ namespace KaraokeApp.userControl
         {
             //buttonPlay.Visible = false;
             string absolutePath = Path.GetFullPath(songItem.GetStreamLink());
-            ((FormList)(this.Parent.Parent.Parent))
+            ((FormList)(this.Parent.Parent.Parent.Parent))
                 .AddSongToQueue(this, songItem);
         }
 
@@ -44,7 +44,7 @@ namespace KaraokeApp.userControl
         {
             DataPool.UpdateCurrentSong(songItem);
 
-            ((FormList)(this.Parent.Parent.Parent))
+            ((FormList)(this.Parent.Parent.Parent.Parent))
                .PlayKaraoke(this);
         }
     }
