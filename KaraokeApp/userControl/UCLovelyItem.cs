@@ -75,7 +75,8 @@ namespace KaraokeApp
         }
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            ((FormMain)this.Parent.Parent.Parent.Parent.Parent.Parent).AddQueueItem(songItem);
+            ((FormMain)this.Parent.Parent.Parent.Parent.Parent.Parent
+                .Parent.Parent.Parent).AddQueueItem(songItem);
         }
 
         private void buttonLovely_Click(object sender, EventArgs e)

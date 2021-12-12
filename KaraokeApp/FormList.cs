@@ -53,7 +53,7 @@ namespace KaraokeApp
                 //currentMusic.PauseMusic();
             }
             currentSongActivedItem = currentItem;
-            ((FormMain)(this.Parent.Parent.Parent)).AddQueueItem(_songItem);
+            ((FormMain)(this.Parent.Parent.Parent.Parent)).AddQueueItem(_songItem);
         }
 
         public void PlayRecord(UCRecord currentItem, string filePath)
