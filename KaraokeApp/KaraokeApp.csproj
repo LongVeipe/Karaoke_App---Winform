@@ -425,6 +425,7 @@
     <None Include="imgs\icons\dark1.png" />
     <None Include="imgs\icons\light.png" />
     <None Include="imgs\icons\Close_52px.png" />
+    <None Include="imgs\icons\close.png" />
     <Content Include="Resources\Background_Karaoke\1.jpg" />
     <Content Include="Resources\Background_Karaoke\10.jpg" />
     <Content Include="Resources\Background_Karaoke\11.jpg" />

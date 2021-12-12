@@ -503,8 +503,9 @@ namespace KaraokeApp
         {
             
             this.BackColor =  btnDark.Checked ? clrBackgroundDark : clrBackgroundLight;
-            this.labelScreenName.ForeColor = !btnDark.Checked ? clrBackgroundDark : clrBackgroundLight;
-            this.pnlNav.BackColor = this.panelPlaying.BackColor = btnDark.Checked ? clrPanelDark : clrPanelLight;
+            labelScreenName.ForeColor = !btnDark.Checked ? clrBackgroundDark : clrBackgroundLight;
+            pnlNav.BackColor = panelPlaying.BackColor = btnDark.Checked ? clrPanelDark : clrPanelLight;
+            pnlLine.FillColor = btnDark.Checked ? Color.FromArgb(45, 48, 75) : Color.Green;
 
             isDark = btnDark.Checked;
 
@@ -576,6 +577,11 @@ namespace KaraokeApp
             isEnglish = btnLanguage.Checked;
             SwitchLanguage();
             btnLanguage.Checked = !btnLanguage.Checked;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -33,12 +33,6 @@
             this.timerMusic = new System.Windows.Forms.Timer(this.components);
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.pnlNav = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnDark = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.buttonLyric = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnLanguage = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.buttonPlayList = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.buttonHome = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pnlContent = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.labelScreenName = new System.Windows.Forms.Label();
@@ -46,31 +40,38 @@
             this.panelPlaying = new Guna.UI2.WinForms.Guna2Panel();
             this.panelQueue = new Guna.UI2.WinForms.Guna2Panel();
             this.lblQueue = new System.Windows.Forms.Label();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlLine = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlControl = new Guna.UI2.WinForms.Guna2Panel();
+            this.trackBar = new Guna.UI2.WinForms.Guna2TrackBar();
+            this.labelPlayingArtist = new System.Windows.Forms.Label();
+            this.labelPlayingTitle = new System.Windows.Forms.Label();
+            this.panelTopPlaying = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblPlaying = new System.Windows.Forms.Label();
+            this.pnlMain = new Guna.UI2.WinForms.Guna2Panel();
             this.buttonRepeat = new Guna.UI2.WinForms.Guna2CircleButton();
             this.buttonNext = new Guna.UI2.WinForms.Guna2CircleButton();
             this.buttonBack = new Guna.UI2.WinForms.Guna2CircleButton();
             this.buttonPlay = new Guna.UI2.WinForms.Guna2ImageButton();
             this.buttonShuffle = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.trackBar = new Guna.UI2.WinForms.Guna2TrackBar();
-            this.labelPlayingArtist = new System.Windows.Forms.Label();
-            this.labelPlayingTitle = new System.Windows.Forms.Label();
             this.pictureBoxPlayingArtwork = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.panelTopPlaying = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSelectSongs = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.lblPlaying = new System.Windows.Forms.Label();
-            this.pnlMain = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnClose = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnDark = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.buttonLyric = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnLanguage = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.buttonPlayList = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.buttonHome = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.pnlNav.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.pnlContent.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.panelPlaying.SuspendLayout();
             this.pnlControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayingArtwork)).BeginInit();
             this.panelTopPlaying.SuspendLayout();
             this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayingArtwork)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timerMusic
@@ -92,6 +93,7 @@
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
+            this.pnlNav.Controls.Add(this.btnClose);
             this.pnlNav.Controls.Add(this.btnDark);
             this.pnlNav.Controls.Add(this.guna2CirclePictureBox1);
             this.pnlNav.Controls.Add(this.buttonLyric);
@@ -104,162 +106,6 @@
             this.pnlNav.ShadowDecoration.Parent = this.pnlNav;
             this.pnlNav.Size = new System.Drawing.Size(72, 690);
             this.pnlNav.TabIndex = 3;
-            // 
-            // btnDark
-            // 
-            this.btnDark.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnDark.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.btnDark.CheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnDark.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnDark.CheckedState.Image = global::KaraokeApp.Properties.Resources.dark11;
-            this.btnDark.CheckedState.Parent = this.btnDark;
-            this.btnDark.CustomImages.Parent = this.btnDark;
-            this.btnDark.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDark.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDark.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDark.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDark.DisabledState.Parent = this.btnDark;
-            this.btnDark.FillColor = System.Drawing.Color.Transparent;
-            this.btnDark.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDark.ForeColor = System.Drawing.Color.White;
-            this.btnDark.HoverState.Parent = this.btnDark;
-            this.btnDark.Image = global::KaraokeApp.Properties.Resources.light;
-            this.btnDark.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnDark.Location = new System.Drawing.Point(16, 592);
-            this.btnDark.Name = "btnDark";
-            this.btnDark.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnDark.ShadowDecoration.Parent = this.btnDark;
-            this.btnDark.Size = new System.Drawing.Size(40, 40);
-            this.btnDark.TabIndex = 8;
-            this.btnDark.Tag = "Settings";
-            this.btnDark.Click += new System.EventHandler(this.btnDark_Click);
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(6, 6);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 7;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // buttonLyric
-            // 
-            this.buttonLyric.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonLyric.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.buttonLyric.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
-            this.buttonLyric.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
-            this.buttonLyric.CheckedState.Image = global::KaraokeApp.Properties.Resources.micro_48px;
-            this.buttonLyric.CheckedState.Parent = this.buttonLyric;
-            this.buttonLyric.CustomImages.Parent = this.buttonLyric;
-            this.buttonLyric.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonLyric.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonLyric.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonLyric.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonLyric.DisabledState.Parent = this.buttonLyric;
-            this.buttonLyric.FillColor = System.Drawing.Color.Transparent;
-            this.buttonLyric.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonLyric.ForeColor = System.Drawing.Color.White;
-            this.buttonLyric.HoverState.Parent = this.buttonLyric;
-            this.buttonLyric.Image = global::KaraokeApp.Properties.Resources.microw_48px;
-            this.buttonLyric.Location = new System.Drawing.Point(16, 222);
-            this.buttonLyric.Name = "buttonLyric";
-            this.buttonLyric.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.buttonLyric.ShadowDecoration.Parent = this.buttonLyric;
-            this.buttonLyric.Size = new System.Drawing.Size(40, 40);
-            this.buttonLyric.TabIndex = 6;
-            this.buttonLyric.Tag = "Lyric";
-            this.buttonLyric.Click += new System.EventHandler(this.ActivateButton);
-            // 
-            // btnLanguage
-            // 
-            this.btnLanguage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnLanguage.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.btnLanguage.CheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnLanguage.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnLanguage.CheckedState.Image = global::KaraokeApp.Properties.Resources.vietnam_96px;
-            this.btnLanguage.CheckedState.Parent = this.btnLanguage;
-            this.btnLanguage.CustomImages.Parent = this.btnLanguage;
-            this.btnLanguage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLanguage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLanguage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLanguage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLanguage.DisabledState.Parent = this.btnLanguage;
-            this.btnLanguage.FillColor = System.Drawing.Color.Transparent;
-            this.btnLanguage.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLanguage.ForeColor = System.Drawing.Color.White;
-            this.btnLanguage.HoverState.Parent = this.btnLanguage;
-            this.btnLanguage.Image = global::KaraokeApp.Properties.Resources.england_96px;
-            this.btnLanguage.Location = new System.Drawing.Point(16, 638);
-            this.btnLanguage.Name = "btnLanguage";
-            this.btnLanguage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnLanguage.ShadowDecoration.Parent = this.btnLanguage;
-            this.btnLanguage.Size = new System.Drawing.Size(40, 40);
-            this.btnLanguage.TabIndex = 5;
-            this.btnLanguage.Tag = "";
-            this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
-            // 
-            // buttonPlayList
-            // 
-            this.buttonPlayList.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonPlayList.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.buttonPlayList.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
-            this.buttonPlayList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
-            this.buttonPlayList.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.buttonPlayList.CheckedState.Parent = this.buttonPlayList;
-            this.buttonPlayList.CustomImages.Parent = this.buttonPlayList;
-            this.buttonPlayList.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonPlayList.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonPlayList.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonPlayList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonPlayList.DisabledState.Parent = this.buttonPlayList;
-            this.buttonPlayList.FillColor = System.Drawing.Color.Transparent;
-            this.buttonPlayList.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonPlayList.ForeColor = System.Drawing.Color.White;
-            this.buttonPlayList.HoverState.Parent = this.buttonPlayList;
-            this.buttonPlayList.Image = ((System.Drawing.Image)(resources.GetObject("buttonPlayList.Image")));
-            this.buttonPlayList.Location = new System.Drawing.Point(16, 158);
-            this.buttonPlayList.Name = "buttonPlayList";
-            this.buttonPlayList.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.buttonPlayList.ShadowDecoration.Parent = this.buttonPlayList;
-            this.buttonPlayList.Size = new System.Drawing.Size(40, 40);
-            this.buttonPlayList.TabIndex = 3;
-            this.buttonPlayList.Tag = "List";
-            this.buttonPlayList.Click += new System.EventHandler(this.ActivateButton);
-            // 
-            // buttonHome
-            // 
-            this.buttonHome.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.buttonHome.Checked = true;
-            this.buttonHome.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
-            this.buttonHome.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
-            this.buttonHome.CheckedState.Parent = this.buttonHome;
-            this.buttonHome.CustomImages.Parent = this.buttonHome;
-            this.buttonHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonHome.DisabledState.Parent = this.buttonHome;
-            this.buttonHome.FillColor = System.Drawing.Color.Transparent;
-            this.buttonHome.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonHome.ForeColor = System.Drawing.Color.White;
-            this.buttonHome.HoverState.Parent = this.buttonHome;
-            this.buttonHome.Image = ((System.Drawing.Image)(resources.GetObject("buttonHome.Image")));
-            this.buttonHome.Location = new System.Drawing.Point(16, 94);
-            this.buttonHome.Name = "buttonHome";
-            this.buttonHome.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.buttonHome.ShadowDecoration.Parent = this.buttonHome;
-            this.buttonHome.Size = new System.Drawing.Size(40, 40);
-            this.buttonHome.TabIndex = 0;
-            this.buttonHome.Tag = "Home";
-            this.buttonHome.Click += new System.EventHandler(this.ActivateButton);
             // 
             // pnlContent
             // 
@@ -323,7 +169,7 @@
             this.panelPlaying.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
             this.panelPlaying.Controls.Add(this.panelQueue);
             this.panelPlaying.Controls.Add(this.lblQueue);
-            this.panelPlaying.Controls.Add(this.guna2Panel5);
+            this.panelPlaying.Controls.Add(this.pnlLine);
             this.panelPlaying.Controls.Add(this.pnlControl);
             this.panelPlaying.Controls.Add(this.trackBar);
             this.panelPlaying.Controls.Add(this.player);
@@ -348,7 +194,7 @@
             this.panelQueue.Location = new System.Drawing.Point(8, 500);
             this.panelQueue.Name = "panelQueue";
             this.panelQueue.ShadowDecoration.Parent = this.panelQueue;
-            this.panelQueue.Size = new System.Drawing.Size(291, 178);
+            this.panelQueue.Size = new System.Drawing.Size(291, 185);
             this.panelQueue.TabIndex = 11;
             // 
             // lblQueue
@@ -362,17 +208,18 @@
             this.lblQueue.TabIndex = 10;
             this.lblQueue.Text = "Queue";
             // 
-            // guna2Panel5
+            // pnlLine
             // 
-            this.guna2Panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(75)))));
-            this.guna2Panel5.Location = new System.Drawing.Point(15, 434);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
-            this.guna2Panel5.Size = new System.Drawing.Size(277, 2);
-            this.guna2Panel5.TabIndex = 9;
+            this.pnlLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(75)))));
+            this.pnlLine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(75)))));
+            this.pnlLine.Location = new System.Drawing.Point(15, 434);
+            this.pnlLine.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.pnlLine.Name = "pnlLine";
+            this.pnlLine.ShadowDecoration.Parent = this.pnlLine;
+            this.pnlLine.Size = new System.Drawing.Size(277, 2);
+            this.pnlLine.TabIndex = 9;
             // 
             // pnlControl
             // 
@@ -387,6 +234,82 @@
             this.pnlControl.ShadowDecoration.Parent = this.pnlControl;
             this.pnlControl.Size = new System.Drawing.Size(245, 67);
             this.pnlControl.TabIndex = 8;
+            // 
+            // trackBar
+            // 
+            this.trackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBar.HoverState.Parent = this.trackBar;
+            this.trackBar.Location = new System.Drawing.Point(37, 305);
+            this.trackBar.Name = "trackBar";
+            this.trackBar.Size = new System.Drawing.Size(235, 23);
+            this.trackBar.TabIndex = 7;
+            this.trackBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
+            this.trackBar.Value = 0;
+            this.trackBar.ValueChanged += new System.EventHandler(this.trackBar_ValueChanged);
+            this.trackBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.trackBar_Scroll);
+            // 
+            // labelPlayingArtist
+            // 
+            this.labelPlayingArtist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPlayingArtist.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayingArtist.ForeColor = System.Drawing.Color.White;
+            this.labelPlayingArtist.Location = new System.Drawing.Point(3, 279);
+            this.labelPlayingArtist.Name = "labelPlayingArtist";
+            this.labelPlayingArtist.Size = new System.Drawing.Size(303, 23);
+            this.labelPlayingArtist.TabIndex = 5;
+            this.labelPlayingArtist.Text = "...";
+            this.labelPlayingArtist.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPlayingTitle
+            // 
+            this.labelPlayingTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPlayingTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayingTitle.ForeColor = System.Drawing.Color.White;
+            this.labelPlayingTitle.Location = new System.Drawing.Point(3, 256);
+            this.labelPlayingTitle.Name = "labelPlayingTitle";
+            this.labelPlayingTitle.Size = new System.Drawing.Size(303, 23);
+            this.labelPlayingTitle.TabIndex = 4;
+            this.labelPlayingTitle.Text = "...";
+            this.labelPlayingTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelTopPlaying
+            // 
+            this.panelTopPlaying.Controls.Add(this.btnSelectSongs);
+            this.panelTopPlaying.Controls.Add(this.lblPlaying);
+            this.panelTopPlaying.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTopPlaying.Location = new System.Drawing.Point(0, 0);
+            this.panelTopPlaying.Name = "panelTopPlaying";
+            this.panelTopPlaying.ShadowDecoration.Parent = this.panelTopPlaying;
+            this.panelTopPlaying.Size = new System.Drawing.Size(309, 78);
+            this.panelTopPlaying.TabIndex = 2;
+            // 
+            // lblPlaying
+            // 
+            this.lblPlaying.AutoSize = true;
+            this.lblPlaying.Font = new System.Drawing.Font("Comic Sans MS", 14.25F);
+            this.lblPlaying.ForeColor = System.Drawing.Color.White;
+            this.lblPlaying.Location = new System.Drawing.Point(22, 26);
+            this.lblPlaying.Name = "lblPlaying";
+            this.lblPlaying.Size = new System.Drawing.Size(71, 26);
+            this.lblPlaying.TabIndex = 0;
+            this.lblPlaying.Text = "Playing";
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.BackColor = System.Drawing.Color.Transparent;
+            this.pnlMain.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.pnlMain.Controls.Add(this.panelPlaying);
+            this.pnlMain.Controls.Add(this.pnlContent);
+            this.pnlMain.Controls.Add(this.pnlNav);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(5, 5);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.ShadowDecoration.Parent = this.pnlMain;
+            this.pnlMain.Size = new System.Drawing.Size(1290, 690);
+            this.pnlMain.TabIndex = 0;
             // 
             // buttonRepeat
             // 
@@ -507,46 +430,6 @@
             this.buttonShuffle.TabIndex = 0;
             this.buttonShuffle.Click += new System.EventHandler(this.buttonShuffle_Click);
             // 
-            // trackBar
-            // 
-            this.trackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBar.HoverState.Parent = this.trackBar;
-            this.trackBar.Location = new System.Drawing.Point(37, 305);
-            this.trackBar.Name = "trackBar";
-            this.trackBar.Size = new System.Drawing.Size(235, 23);
-            this.trackBar.TabIndex = 7;
-            this.trackBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
-            this.trackBar.Value = 0;
-            this.trackBar.ValueChanged += new System.EventHandler(this.trackBar_ValueChanged);
-            this.trackBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.trackBar_Scroll);
-            // 
-            // labelPlayingArtist
-            // 
-            this.labelPlayingArtist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelPlayingArtist.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlayingArtist.ForeColor = System.Drawing.Color.White;
-            this.labelPlayingArtist.Location = new System.Drawing.Point(3, 279);
-            this.labelPlayingArtist.Name = "labelPlayingArtist";
-            this.labelPlayingArtist.Size = new System.Drawing.Size(303, 23);
-            this.labelPlayingArtist.TabIndex = 5;
-            this.labelPlayingArtist.Text = "...";
-            this.labelPlayingArtist.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelPlayingTitle
-            // 
-            this.labelPlayingTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelPlayingTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlayingTitle.ForeColor = System.Drawing.Color.White;
-            this.labelPlayingTitle.Location = new System.Drawing.Point(3, 256);
-            this.labelPlayingTitle.Name = "labelPlayingTitle";
-            this.labelPlayingTitle.Size = new System.Drawing.Size(303, 23);
-            this.labelPlayingTitle.TabIndex = 4;
-            this.labelPlayingTitle.Text = "...";
-            this.labelPlayingTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pictureBoxPlayingArtwork
             // 
             this.pictureBoxPlayingArtwork.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -562,17 +445,6 @@
             this.pictureBoxPlayingArtwork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPlayingArtwork.TabIndex = 3;
             this.pictureBoxPlayingArtwork.TabStop = false;
-            // 
-            // panelTopPlaying
-            // 
-            this.panelTopPlaying.Controls.Add(this.btnSelectSongs);
-            this.panelTopPlaying.Controls.Add(this.lblPlaying);
-            this.panelTopPlaying.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopPlaying.Location = new System.Drawing.Point(0, 0);
-            this.panelTopPlaying.Name = "panelTopPlaying";
-            this.panelTopPlaying.ShadowDecoration.Parent = this.panelTopPlaying;
-            this.panelTopPlaying.Size = new System.Drawing.Size(309, 78);
-            this.panelTopPlaying.TabIndex = 2;
             // 
             // btnSelectSongs
             // 
@@ -595,30 +467,196 @@
             this.btnSelectSongs.TabIndex = 1;
             this.btnSelectSongs.Click += new System.EventHandler(this.btnSelectSongs_Click);
             // 
-            // lblPlaying
+            // btnClose
             // 
-            this.lblPlaying.AutoSize = true;
-            this.lblPlaying.Font = new System.Drawing.Font("Comic Sans MS", 14.25F);
-            this.lblPlaying.ForeColor = System.Drawing.Color.White;
-            this.lblPlaying.Location = new System.Drawing.Point(22, 26);
-            this.lblPlaying.Name = "lblPlaying";
-            this.lblPlaying.Size = new System.Drawing.Size(71, 26);
-            this.lblPlaying.TabIndex = 0;
-            this.lblPlaying.Text = "Playing";
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
+            this.btnClose.CheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnClose.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btnClose.CheckedState.Image = global::KaraokeApp.Properties.Resources.vietnam_96px;
+            this.btnClose.CheckedState.Parent = this.btnClose;
+            this.btnClose.CustomImages.Parent = this.btnClose;
+            this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClose.DisabledState.Parent = this.btnClose;
+            this.btnClose.FillColor = System.Drawing.Color.Transparent;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.HoverState.Parent = this.btnClose;
+            this.btnClose.Image = global::KaraokeApp.Properties.Resources.close;
+            this.btnClose.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnClose.Location = new System.Drawing.Point(16, 643);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnClose.ShadowDecoration.Parent = this.btnClose;
+            this.btnClose.Size = new System.Drawing.Size(40, 40);
+            this.btnClose.TabIndex = 9;
+            this.btnClose.Tag = "";
+            this.btnClose.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // pnlMain
+            // btnDark
             // 
-            this.pnlMain.BackColor = System.Drawing.Color.Transparent;
-            this.pnlMain.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
-            this.pnlMain.Controls.Add(this.panelPlaying);
-            this.pnlMain.Controls.Add(this.pnlContent);
-            this.pnlMain.Controls.Add(this.pnlNav);
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(5, 5);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.ShadowDecoration.Parent = this.pnlMain;
-            this.pnlMain.Size = new System.Drawing.Size(1290, 690);
-            this.pnlMain.TabIndex = 0;
+            this.btnDark.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnDark.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
+            this.btnDark.CheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnDark.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btnDark.CheckedState.Image = global::KaraokeApp.Properties.Resources.dark11;
+            this.btnDark.CheckedState.Parent = this.btnDark;
+            this.btnDark.CustomImages.Parent = this.btnDark;
+            this.btnDark.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDark.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDark.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDark.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDark.DisabledState.Parent = this.btnDark;
+            this.btnDark.FillColor = System.Drawing.Color.Transparent;
+            this.btnDark.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDark.ForeColor = System.Drawing.Color.White;
+            this.btnDark.HoverState.Parent = this.btnDark;
+            this.btnDark.Image = global::KaraokeApp.Properties.Resources.light;
+            this.btnDark.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnDark.Location = new System.Drawing.Point(16, 551);
+            this.btnDark.Name = "btnDark";
+            this.btnDark.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnDark.ShadowDecoration.Parent = this.btnDark;
+            this.btnDark.Size = new System.Drawing.Size(40, 40);
+            this.btnDark.TabIndex = 8;
+            this.btnDark.Tag = "Settings";
+            this.btnDark.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnDark.Click += new System.EventHandler(this.btnDark_Click);
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(6, 6);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 7;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // buttonLyric
+            // 
+            this.buttonLyric.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonLyric.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
+            this.buttonLyric.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
+            this.buttonLyric.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
+            this.buttonLyric.CheckedState.Image = global::KaraokeApp.Properties.Resources.micro_48px;
+            this.buttonLyric.CheckedState.Parent = this.buttonLyric;
+            this.buttonLyric.CustomImages.Parent = this.buttonLyric;
+            this.buttonLyric.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonLyric.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonLyric.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonLyric.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonLyric.DisabledState.Parent = this.buttonLyric;
+            this.buttonLyric.FillColor = System.Drawing.Color.Transparent;
+            this.buttonLyric.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonLyric.ForeColor = System.Drawing.Color.White;
+            this.buttonLyric.HoverState.Parent = this.buttonLyric;
+            this.buttonLyric.Image = global::KaraokeApp.Properties.Resources.microw_48px;
+            this.buttonLyric.Location = new System.Drawing.Point(16, 222);
+            this.buttonLyric.Name = "buttonLyric";
+            this.buttonLyric.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.buttonLyric.ShadowDecoration.Parent = this.buttonLyric;
+            this.buttonLyric.Size = new System.Drawing.Size(40, 40);
+            this.buttonLyric.TabIndex = 6;
+            this.buttonLyric.Tag = "Lyric";
+            this.buttonLyric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.buttonLyric.Click += new System.EventHandler(this.ActivateButton);
+            // 
+            // btnLanguage
+            // 
+            this.btnLanguage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnLanguage.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
+            this.btnLanguage.CheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnLanguage.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btnLanguage.CheckedState.Image = global::KaraokeApp.Properties.Resources.vietnam_96px;
+            this.btnLanguage.CheckedState.Parent = this.btnLanguage;
+            this.btnLanguage.CustomImages.Parent = this.btnLanguage;
+            this.btnLanguage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLanguage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLanguage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLanguage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLanguage.DisabledState.Parent = this.btnLanguage;
+            this.btnLanguage.FillColor = System.Drawing.Color.Transparent;
+            this.btnLanguage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLanguage.ForeColor = System.Drawing.Color.White;
+            this.btnLanguage.HoverState.Parent = this.btnLanguage;
+            this.btnLanguage.Image = global::KaraokeApp.Properties.Resources.england_96px;
+            this.btnLanguage.Location = new System.Drawing.Point(16, 597);
+            this.btnLanguage.Name = "btnLanguage";
+            this.btnLanguage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnLanguage.ShadowDecoration.Parent = this.btnLanguage;
+            this.btnLanguage.Size = new System.Drawing.Size(40, 40);
+            this.btnLanguage.TabIndex = 5;
+            this.btnLanguage.Tag = "";
+            this.btnLanguage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
+            // 
+            // buttonPlayList
+            // 
+            this.buttonPlayList.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonPlayList.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
+            this.buttonPlayList.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
+            this.buttonPlayList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
+            this.buttonPlayList.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.buttonPlayList.CheckedState.Parent = this.buttonPlayList;
+            this.buttonPlayList.CustomImages.Parent = this.buttonPlayList;
+            this.buttonPlayList.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonPlayList.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonPlayList.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonPlayList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonPlayList.DisabledState.Parent = this.buttonPlayList;
+            this.buttonPlayList.FillColor = System.Drawing.Color.Transparent;
+            this.buttonPlayList.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonPlayList.ForeColor = System.Drawing.Color.White;
+            this.buttonPlayList.HoverState.Parent = this.buttonPlayList;
+            this.buttonPlayList.Image = ((System.Drawing.Image)(resources.GetObject("buttonPlayList.Image")));
+            this.buttonPlayList.Location = new System.Drawing.Point(16, 158);
+            this.buttonPlayList.Name = "buttonPlayList";
+            this.buttonPlayList.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.buttonPlayList.ShadowDecoration.Parent = this.buttonPlayList;
+            this.buttonPlayList.Size = new System.Drawing.Size(40, 40);
+            this.buttonPlayList.TabIndex = 3;
+            this.buttonPlayList.Tag = "List";
+            this.buttonPlayList.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.buttonPlayList.Click += new System.EventHandler(this.ActivateButton);
+            // 
+            // buttonHome
+            // 
+            this.buttonHome.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
+            this.buttonHome.Checked = true;
+            this.buttonHome.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(94)))), ((int)(((byte)(124)))));
+            this.buttonHome.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(88)))));
+            this.buttonHome.CheckedState.Parent = this.buttonHome;
+            this.buttonHome.CustomImages.Parent = this.buttonHome;
+            this.buttonHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonHome.DisabledState.Parent = this.buttonHome;
+            this.buttonHome.FillColor = System.Drawing.Color.Transparent;
+            this.buttonHome.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonHome.ForeColor = System.Drawing.Color.White;
+            this.buttonHome.HoverState.Parent = this.buttonHome;
+            this.buttonHome.Image = ((System.Drawing.Image)(resources.GetObject("buttonHome.Image")));
+            this.buttonHome.Location = new System.Drawing.Point(16, 94);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.buttonHome.ShadowDecoration.Parent = this.buttonHome;
+            this.buttonHome.Size = new System.Drawing.Size(40, 40);
+            this.buttonHome.TabIndex = 0;
+            this.buttonHome.Tag = "Home";
+            this.buttonHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.buttonHome.Click += new System.EventHandler(this.ActivateButton);
             // 
             // FormMain
             // 
@@ -638,17 +676,17 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.pnlNav.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.pnlContent.ResumeLayout(false);
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel6.PerformLayout();
             this.panelPlaying.ResumeLayout(false);
             this.panelPlaying.PerformLayout();
             this.pnlControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayingArtwork)).EndInit();
             this.panelTopPlaying.ResumeLayout(false);
             this.panelTopPlaying.PerformLayout();
             this.pnlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayingArtwork)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -670,7 +708,7 @@
         private Guna.UI2.WinForms.Guna2Panel panelPlaying;
         private Guna.UI2.WinForms.Guna2Panel panelQueue;
         private System.Windows.Forms.Label lblQueue;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2Panel pnlLine;
         private Guna.UI2.WinForms.Guna2Panel pnlControl;
         private Guna.UI2.WinForms.Guna2CircleButton buttonRepeat;
         private Guna.UI2.WinForms.Guna2CircleButton buttonNext;
@@ -685,6 +723,7 @@
         private Guna.UI2.WinForms.Guna2ImageButton btnSelectSongs;
         private System.Windows.Forms.Label lblPlaying;
         private Guna.UI2.WinForms.Guna2Panel pnlMain;
+        private Guna.UI2.WinForms.Guna2CircleButton btnClose;
     }
 }
 
