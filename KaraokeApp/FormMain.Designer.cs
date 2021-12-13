@@ -337,7 +337,7 @@
             this.labelScreenName.ForeColor = System.Drawing.Color.White;
             this.labelScreenName.Location = new System.Drawing.Point(0, 0);
             this.labelScreenName.Name = "labelScreenName";
-            this.labelScreenName.Size = new System.Drawing.Size(68, 30);
+            this.labelScreenName.Size = new System.Drawing.Size(88, 38);
             this.labelScreenName.TabIndex = 0;
             this.labelScreenName.Text = "Home";
             // 
@@ -395,7 +395,7 @@
             this.lblQueue.ForeColor = System.Drawing.Color.White;
             this.lblQueue.Location = new System.Drawing.Point(22, 459);
             this.lblQueue.Name = "lblQueue";
-            this.lblQueue.Size = new System.Drawing.Size(69, 26);
+            this.lblQueue.Size = new System.Drawing.Size(86, 33);
             this.lblQueue.TabIndex = 10;
             this.lblQueue.Text = "Queue";
             // 
@@ -640,7 +640,7 @@
             this.lblPlaying.ForeColor = System.Drawing.Color.White;
             this.lblPlaying.Location = new System.Drawing.Point(22, 26);
             this.lblPlaying.Name = "lblPlaying";
-            this.lblPlaying.Size = new System.Drawing.Size(71, 26);
+            this.lblPlaying.Size = new System.Drawing.Size(93, 33);
             this.lblPlaying.TabIndex = 0;
             this.lblPlaying.Text = "Playing";
             // 
