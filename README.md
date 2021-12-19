@@ -14,15 +14,15 @@
 ## Yêu cầu hệ thống
 
 - Hệ quản trị cơ sở dữ liệu: [MongoDB](https://mongodb.com/)
-- (Optional) Đây là một số bài hát để test: [Link GoogleDrive](https://drive.google.com/file/d/1HWAME_OBJTjZydze5wvt_GQ46nIp4Zna/view?usp=sharing)
+- (**Optional**) Đây là một số bài hát để test: [Link GoogleDrive](https://drive.google.com/file/d/1HWAME_OBJTjZydze5wvt_GQ46nIp4Zna/view?usp=sharing)
 
 ## Cách sử dụng
 
-- Click vào button Select Song và chọn những bài hát muốn thêm (Bài hát sẽ tự động thêm vào Cơ sở dữ liệu)
+- Click vào button **Select Song** và chọn những bài hát muốn thêm (Bài hát sẽ tự động thêm vào Cơ sở dữ liệu)
 
 ![](./KaraokeApp/imgs/Project/3.png)
 
-- Với Lyric của bài hát thì thêm file .lrc của bài hát tương ứng vào thư mục ./KaraokeApp/Resources/lyric. Tương tự với file .m4a cho thư mục beat
+- Với Lyric của bài hát thì thêm file **.lrc** của bài hát tương ứng vào thư mục **./KaraokeApp/Resources/lyric**. Tương tự với file **.m4a** cho thư mục beat
 
 ![](./KaraokeApp/imgs/Project/4.png)
 
